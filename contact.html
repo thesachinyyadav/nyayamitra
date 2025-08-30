@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Nyaya Mitra</title>
+    <link rel="icon" type="image/jpeg" href="nyaya_mitra_logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="nyaya_mitra_logo.jpg" alt="Nyaya Mitra">
+                <h1>Nyaya Mitra</h1>
+            </a>
+            <div class="nav-center">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="sos-alerts.html">SOS Alerts</a>
+                <a href="document-analyzer.html">Document Analyzer</a>
+                <a href="civic-feedback.html">Civic Feedback</a>
+                <a href="whistleblower.html">Whistleblower</a>
+            </div>
+            <div class="nav-actions">
+                <a href="about.html" class="btn btn-secondary">Learn More</a>
+                <a href="contact.html" class="btn btn-primary active">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1><i class="fas fa-envelope"></i> Contact Us</h1>
+            <p>Get in touch with our team. We're here to help you with any questions about our legal tech platform.</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Our Location</h3>
+                    <p>
+                        Nyaya Mitra Technology Center<br>
+                        BCA Department<br>
+                        University Campus<br>
+                        Innovation District, Tech City 560001
+                    </p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone Support</h3>
+                    <p>
+                        Main Office: +91 80 2345 6789<br>
+                        Support Line: +91 80 2345 6790<br>
+                        Emergency: +91 80 2345 6791<br>
+                        <small>Available 24/7</small>
+                    </p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Support</h3>
+                    <p>
+                        General: info@nyayamitra.org<br>
+                        Support: support@nyayamitra.org<br>
+                        Legal: legal@nyayamitra.org<br>
+                        <small>Response within 24 hours</small>
+                    </p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Office Hours</h3>
+                    <p>
+                        Monday - Friday: 9:00 AM - 6:00 PM<br>
+                        Saturday: 10:00 AM - 4:00 PM<br>
+                        Sunday: Closed<br>
+                        <small>Emergency support 24/7</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2>Send Us a Message</h2>
+                    <p>Have a question, suggestion, or feedback? We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Personal Information</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" class="form-control" placeholder="Your first name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" class="form-control" placeholder="Your last name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" class="form-control" placeholder="your.email@example.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control" placeholder="+91 12345 67890">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="organization">Organization (Optional)</label>
+                                <input type="text" id="organization" class="form-control" placeholder="Your organization or company">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="designation">Designation (Optional)</label>
+                                <input type="text" id="designation" class="form-control" placeholder="Your job title or role">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-question-circle"></i> Inquiry Details</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inquiryType">Type of Inquiry *</label>
+                                <select id="inquiryType" class="form-control" required>
+                                    <option value="">Select inquiry type</option>
+                                    <option value="general">General Information</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="feature">Feature Request</option>
+                                    <option value="bug">Bug Report</option>
+                                    <option value="partnership">Partnership</option>
+                                    <option value="media">Media Inquiry</option>
+                                    <option value="legal">Legal Consultation</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="priority">Priority Level</label>
+                                <select id="priority" class="form-control">
+                                    <option value="low">Low - General inquiry</option>
+                                    <option value="medium" selected>Medium - Standard support</option>
+                                    <option value="high">High - Urgent issue</option>
+                                    <option value="critical">Critical - Emergency</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" class="form-control" 
+                                placeholder="Brief description of your inquiry" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Detailed Message *</label>
+                            <textarea id="message" class="form-control" rows="6" 
+                                placeholder="Please provide detailed information about your inquiry, including any relevant context, steps you've taken, or specific questions you have..." required></textarea>
+                            <div class="char-count">
+                                <span id="messageCharCount">0</span>/2000 characters
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-bell"></i> Communication Preferences</h3>
+                        
+                        <div class="preference-options">
+                            <div class="preference-group">
+                                <label>Preferred Contact Method:</label>
+                                <div class="radio-group">
+                                    <label class="radio-item">
+                                        <input type="radio" name="contactMethod" value="email" checked>
+                                        <span class="radio-mark"></span>
+                                        Email
+                                    </label>
+                                    <label class="radio-item">
+                                        <input type="radio" name="contactMethod" value="phone">
+                                        <span class="radio-mark"></span>
+                                        Phone Call
+                                    </label>
+                                    <label class="radio-item">
+                                        <input type="radio" name="contactMethod" value="both">
+                                        <span class="radio-mark"></span>
+                                        Both Email & Phone
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="preference-group">
+                                <label>Best Time to Contact:</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" value="morning" checked>
+                                        <span class="checkmark"></span>
+                                        Morning (9 AM - 12 PM)
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" value="afternoon">
+                                        <span class="checkmark"></span>
+                                        Afternoon (12 PM - 5 PM)
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" value="evening">
+                                        <span class="checkmark"></span>
+                                        Evening (5 PM - 8 PM)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="newsletter-signup">
+                            <label class="checkbox-item">
+                                <input type="checkbox" id="newsletter">
+                                <span class="checkmark"></span>
+                                Subscribe to our newsletter for updates about new features and legal tech insights
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="clearContactForm()">
+                            <i class="fas fa-times"></i> Clear Form
+                        </button>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Team</h2>
+                <p>The dedicated team behind Nyaya Mitra, working to revolutionize legal accessibility in India.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>Dr. Priya Sharma</h3>
+                    <div class="member-role">Project Supervisor & Legal Tech Expert</div>
+                    <div class="member-bio">
+                        Ph.D. in Computer Science, specializing in AI applications in legal technology. 10+ years of experience in legal informatics.
+                    </div>
+                    <div class="member-contact">
+                        <a href="mailto:priya.sharma@university.edu"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>Arjun Patel</h3>
+                    <div class="member-role">Lead Developer & BCA Student</div>
+                    <div class="member-bio">
+                        Final year BCA student specializing in full-stack development and AI integration. Passionate about using technology for social good.
+                    </div>
+                    <div class="member-contact">
+                        <a href="mailto:arjun.patel@student.edu"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>Sneha Reddy</h3>
+                    <div class="member-role">UI/UX Designer & BCA Student</div>
+                    <div class="member-bio">
+                        BCA student with expertise in user experience design and human-computer interaction. Focused on making legal tech accessible to everyone.
+                    </div>
+                    <div class="member-contact">
+                        <a href="mailto:sneha.reddy@student.edu"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>Vikram Singh</h3>
+                    <div class="member-role">Legal Research & BCA Student</div>
+                    <div class="member-bio">
+                        BCA student with background in legal studies. Responsible for ensuring accuracy of legal information and compliance requirements.
+                    </div>
+                    <div class="member-contact">
+                        <a href="mailto:vikram.singh@student.edu"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- University Credits -->
+    <section class="credits-section">
+        <div class="container">
+            <div class="credits-content">
+                <div class="university-info">
+                    <div class="university-logo">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="university-details">
+                        <h3>University Technology Center</h3>
+                        <p>Bachelor of Computer Applications (BCA) Program</p>
+                        <div class="university-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Innovation District, Tech City</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>Academic Year 2024-2025</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-award"></i>
+                                <span>Mini Project - Final Year</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-info">
+                    <h4>Project Information</h4>
+                    <div class="project-details">
+                        <div class="detail-item">
+                            <strong>Project Title:</strong>
+                            <span>Nyaya Mitra - AI-Powered Legal Tech Platform</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Course:</strong>
+                            <span>BCA Mini Project (6th Semester)</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Technologies:</strong>
+                            <span>HTML5, CSS3, JavaScript, AI Integration</span>
+                        </div>
+                        <div class="detail-item">
+                            <strong>Project Duration:</strong>
+                            <span>January 2025 - April 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media & Links -->
+    <section class="social-section">
+        <div class="container">
+            <div class="social-content">
+                <h2>Connect With Us</h2>
+                <p>Stay updated with our latest developments and legal tech insights.</p>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="social-link twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="#" class="social-link linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="#" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" class="social-link youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>YouTube</span>
+                    </a>
+                    <a href="#" class="social-link github">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                
+                <div class="quick-access">
+                    <h3>Quick Access</h3>
+                    <div class="quick-links">
+                        <a href="https://studio.pickaxeproject.com/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0" 
+                           target="_blank" class="quick-link">
+                            <i class="fas fa-robot"></i>
+                            <span>AI Legal Assistant</span>
+                        </a>
+                        <a href="sos-alerts.html" class="quick-link">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Emergency SOS</span>
+                        </a>
+                        <a href="whistleblower.html" class="quick-link">
+                            <i class="fas fa-user-secret"></i>
+                            <span>Report Corruption</span>
+                        </a>
+                        <a href="sos-alerts.html" class="quick-link">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Emergency SOS</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about Nyaya Mitra and our services.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What is Nyaya Mitra?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nyaya Mitra is an AI-powered legal technology platform designed to make legal services accessible to everyone in India. We provide tools for legal consultation, case tracking, document analysis, and emergency support.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Is the platform free to use?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, most of our basic services are completely free. We believe in making legal assistance accessible to all citizens. Some premium features may have nominal charges to maintain the platform.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How secure is my data?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We take data security very seriously. All communications are encrypted, and we follow strict data protection protocols. For anonymous services like whistleblowing, we ensure complete anonymity.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I get real legal advice through the chatbot?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our AI chatbot provides general legal information and guidance. While it's very knowledgeable, it cannot replace professional legal advice from a licensed lawyer for complex legal matters.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How do I report a technical issue?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can report technical issues through our contact form above, send an email to support@nyayamitra.org, or use the AI chatbot for immediate assistance.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Is this project affiliated with any government agency?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nyaya Mitra is an independent academic project developed by BCA students. While we work to complement government legal services, we are not officially affiliated with any government agency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Nyaya Mitra</h4>
+                    <p>Making legal services accessible through technology. A student project dedicated to social good and legal empowerment.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="document-analyzer.html">Document Analyzer</a></li>
+                        <li><a href="sos-alerts.html">Emergency SOS</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="document-analyzer.html">Document Analysis</a></li>
+                        <li><a href="whistleblower.html">Whistleblower Portal</a></li>
+                        <li><a href="civic-feedback.html">Civic Feedback</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@nyayamitra.org</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 80 2345 6789</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>BCA Department, University Campus</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nyaya Mitra - BCA Mini Project. Developed by students for social impact.</p>
+                <p>University Technology Center | Academic Year 2024-25</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chatbot -->
+    <div class="floating-chatbot">
+        <a href="https://studio.pickaxeproject.com/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0" 
+           target="_blank" class="chatbot-float-btn">
+            <i class="fas fa-robot"></i>
+        </a>
+        <div class="chatbot-tooltip">Ask Nyaya Mitra</div>
+    </div>
+
+    <script src="js/database.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Initialize page functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            setupFormHandlers();
+            setupFAQ();
+            initializeContactForm();
+        });
+
+        // Character count for message field
+        const messageField = document.getElementById('message');
+        const messageCharCount = document.getElementById('messageCharCount');
+        
+        messageField.addEventListener('input', function() {
+            const count = this.value.length;
+            messageCharCount.textContent = count;
+            
+            if (count > 2000) {
+                messageCharCount.style.color = '#e74c3c';
+                this.value = this.value.substring(0, 2000);
+                messageCharCount.textContent = '2000';
+            } else {
+                messageCharCount.style.color = '#666';
+            }
+        });
+
+        function setupFormHandlers() {
+            // Contact form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                submitContactForm();
+            });
+
+            // Dynamic form behavior based on inquiry type
+            document.getElementById('inquiryType').addEventListener('change', function() {
+                const type = this.value;
+                updateFormForInquiryType(type);
+            });
+        }
+
+        function updateFormForInquiryType(type) {
+            const priorityField = document.getElementById('priority');
+            const subjectField = document.getElementById('subject');
+            
+            // Suggest priority based on inquiry type
+            if (type === 'bug' || type === 'technical') {
+                priorityField.value = 'high';
+            } else if (type === 'legal') {
+                priorityField.value = 'medium';
+            } else if (type === 'general' || type === 'feedback') {
+                priorityField.value = 'low';
+            }
+            
+            // Suggest subject templates
+            const subjectTemplates = {
+                'technical': 'Technical Issue: ',
+                'bug': 'Bug Report: ',
+                'feature': 'Feature Request: ',
+                'partnership': 'Partnership Inquiry: ',
+                'media': 'Media Request: ',
+                'legal': 'Legal Consultation: ',
+                'feedback': 'Feedback: '
+            };
+            
+            if (subjectTemplates[type] && !subjectField.value) {
+                subjectField.placeholder = subjectTemplates[type] + 'Brief description';
+            }
+        }
+
+        async function submitContactForm() {
+            const submitBtn = document.querySelector('#contactForm button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending Message...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Collect form data
+                const formData = {
+                    name: `${document.getElementById('firstName').value} ${document.getElementById('lastName').value}`,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    subject: `${document.getElementById('inquiryType').value}: ${document.getElementById('subject').value}`,
+                    message: document.getElementById('message').value,
+                    priority: document.getElementById('priority').value,
+                    contactMethod: document.querySelector('input[name="contactMethod"]:checked').value,
+                    newsletter: document.getElementById('newsletter').checked,
+                    inquiryType: document.getElementById('inquiryType').value
+                };
+                
+                // Save to database
+                const result = await db.createContactMessage(formData);
+                
+                if (result && result.length > 0) {
+                    const ticketId = `NYM-${result[0].id || Date.now().toString().slice(-6)}`;
+                    showDatabaseStatus(true, 'Contact message saved successfully');
+                    showContactSuccess(ticketId, formData);
+                } else {
+                    throw new Error('Failed to save message to database');
+                }
+                
+                document.getElementById('contactForm').reset();
+                const messageCharCount = document.getElementById('messageCharCount');
+                if (messageCharCount) messageCharCount.textContent = '0';
+                
+            } catch (error) {
+                console.error('Database save error:', error);
+                showDatabaseStatus(false, 'Message saved locally - Database connection issue');
+                
+                // Fallback: save locally
+                const localMessages = JSON.parse(localStorage.getItem('contact_messages_backup') || '[]');
+                const localMessage = {
+                    id: Date.now(),
+                    timestamp: new Date().toISOString(),
+                    ...formData
+                };
+                localMessages.push(localMessage);
+                localStorage.setItem('contact_messages_backup', JSON.stringify(localMessages));
+                
+                const ticketId = `NYM-${Date.now().toString().slice(-6)}`;
+                showContactSuccess(ticketId, formData);
+                
+                document.getElementById('contactForm').reset();
+                const messageCharCount = document.getElementById('messageCharCount');
+                if (messageCharCount) messageCharCount.textContent = '0';
+                
+            } finally {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        }
+
+        function showContactSuccess(ticketId, formData) {
+            const priorityText = formData.priority === 'critical' ? 'immediately' : 
+                               formData.priority === 'high' ? 'within 4 hours' :
+                               formData.priority === 'medium' ? 'within 24 hours' : 'within 48 hours';
+            
+            const firstName = formData.name.split(' ')[0];
+            const message = `Thank you ${firstName}! Your message has been received. 
+                           Reference ID: ${ticketId}. 
+                           We'll respond ${priorityText} via ${formData.contactMethod}.`;
+            
+            showNotification(message, 'success');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function clearContactForm() {
+            if (confirm('Are you sure you want to clear the contact form? All entered data will be lost.')) {
+                document.getElementById('contactForm').reset();
+                document.getElementById('messageCharCount').textContent = '0';
+            }
+        }
+
+        function initializeContactForm() {
+            // Auto-fill current date for better UX
+            const now = new Date();
+            const currentTime = now.toLocaleString();
+            
+            // Add form submission timestamp (hidden field could be added)
+            console.log('Form initialized at:', currentTime);
+        }
+
+        // FAQ functionality
+        function setupFAQ() {
+            document.querySelectorAll('.faq-item').forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = question.querySelector('i');
+                
+                question.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('active');
+                    
+                    // Close all other FAQ items
+                    document.querySelectorAll('.faq-item').forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.display = 'none';
+                        otherItem.querySelector('.faq-question i').style.transform = 'rotate(0deg)';
+                    });
+                    
+                    // Toggle current item
+                    if (!isOpen) {
+                        item.classList.add('active');
+                        answer.style.display = 'block';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        }
+
+        // Add page-specific styles
+        const contactStyles = document.createElement('style');
+        contactStyles.textContent = `
+            .contact-info-section {
+                padding: 80px 0;
+                background: #f8f9fa;
+            }
+            
+            .contact-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+            
+            .contact-card {
+                background: white;
+                padding: 40px 30px;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+                border-top: 4px solid #d37827;
+            }
+            
+            .contact-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .contact-icon {
+                width: 80px;
+                height: 80px;
+                background: linear-gradient(135deg, #d37827, #f39c12);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 25px;
+            }
+            
+            .contact-icon i {
+                font-size: 2rem;
+                color: white;
+            }
+            
+            .contact-card h3 {
+                color: #171a1c;
+                margin-bottom: 20px;
+                font-size: 1.3rem;
+            }
+            
+            .contact-card p {
+                color: #666;
+                line-height: 1.8;
+            }
+            
+            .contact-card small {
+                color: #4CAF50;
+                font-weight: 600;
+            }
+            
+            .contact-form-section {
+                padding: 80px 0;
+            }
+            
+            .form-container {
+                max-width: 900px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 20px;
+                padding: 50px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            }
+            
+            .form-header {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+            
+            .form-header h2 {
+                color: #171a1c;
+                margin-bottom: 15px;
+                font-size: 2.2rem;
+            }
+            
+            .form-section {
+                margin-bottom: 40px;
+                padding-bottom: 30px;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .form-section:last-child {
+                border-bottom: none;
+            }
+            
+            .form-section h3 {
+                color: #171a1c;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-size: 1.4rem;
+            }
+            
+            .form-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+                margin-bottom: 20px;
+            }
+            
+            .char-count {
+                text-align: right;
+                font-size: 0.85rem;
+                color: #666;
+                margin-top: 8px;
+            }
+            
+            .preference-options {
+                margin-top: 20px;
+            }
+            
+            .preference-group {
+                margin-bottom: 25px;
+            }
+            
+            .preference-group > label {
+                display: block;
+                font-weight: 600;
+                color: #171a1c;
+                margin-bottom: 15px;
+            }
+            
+            .radio-group {
+                display: flex;
+                gap: 25px;
+                flex-wrap: wrap;
+            }
+            
+            .radio-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+            }
+            
+            .radio-item input[type="radio"] {
+                margin: 0;
+            }
+            
+            .checkbox-group {
+                display: flex;
+                gap: 25px;
+                flex-wrap: wrap;
+            }
+            
+            .checkbox-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+            }
+            
+            .checkbox-item input[type="checkbox"] {
+                margin: 0;
+            }
+            
+            .newsletter-signup {
+                margin-top: 25px;
+                padding: 20px;
+                background: #f8f9fa;
+                border-radius: 10px;
+                border-left: 4px solid #4CAF50;
+            }
+            
+            .form-actions {
+                display: flex;
+                gap: 25px;
+                justify-content: center;
+                margin-top: 50px;
+                flex-wrap: wrap;
+            }
+            
+            .team-section {
+                padding: 80px 0;
+                background: #f8f9fa;
+            }
+            
+            .team-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 40px;
+                margin-top: 50px;
+            }
+            
+            .team-member {
+                background: white;
+                padding: 40px 30px;
+                border-radius: 20px;
+                text-align: center;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
+                border-top: 4px solid #d37827;
+            }
+            
+            .team-member:hover {
+                transform: translateY(-10px);
+            }
+            
+            .member-photo {
+                width: 100px;
+                height: 100px;
+                margin: 0 auto 25px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #d37827, #f39c12);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .member-photo i {
+                font-size: 3rem;
+                color: white;
+            }
+            
+            .team-member h3 {
+                color: #171a1c;
+                margin-bottom: 10px;
+                font-size: 1.3rem;
+            }
+            
+            .member-role {
+                color: #d37827;
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+            
+            .member-bio {
+                color: #666;
+                line-height: 1.6;
+                margin-bottom: 25px;
+                font-size: 0.95rem;
+            }
+            
+            .member-contact {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .member-contact a {
+                width: 40px;
+                height: 40px;
+                background: #f8f9fa;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #666;
+                transition: all 0.3s ease;
+            }
+            
+            .member-contact a:hover {
+                background: #d37827;
+                color: white;
+                transform: translateY(-3px);
+            }
+            
+            .credits-section {
+                padding: 80px 0;
+                background: linear-gradient(135deg, #171a1c 0%, #2c3e50 100%);
+                color: white;
+            }
+            
+            .credits-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+                align-items: center;
+            }
+            
+            .university-info {
+                display: flex;
+                gap: 30px;
+                align-items: center;
+            }
+            
+            .university-logo {
+                width: 100px;
+                height: 100px;
+                background: linear-gradient(135deg, #d37827, #f39c12);
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+            
+            .university-logo i {
+                font-size: 3rem;
+                color: white;
+            }
+            
+            .university-details h3 {
+                color: #d37827;
+                margin-bottom: 10px;
+                font-size: 1.5rem;
+            }
+            
+            .university-details p {
+                color: #bbb;
+                margin-bottom: 20px;
+            }
+            
+            .university-meta {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .meta-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #ccc;
+                font-size: 0.9rem;
+            }
+            
+            .meta-item i {
+                color: #d37827;
+                width: 16px;
+            }
+            
+            .project-info h4 {
+                color: #d37827;
+                margin-bottom: 25px;
+                font-size: 1.3rem;
+            }
+            
+            .project-details {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .detail-item {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .detail-item strong {
+                color: #fff;
+                font-size: 0.9rem;
+            }
+            
+            .detail-item span {
+                color: #bbb;
+            }
+            
+            .social-section {
+                padding: 80px 0;
+                background: #f8f9fa;
+                text-align: center;
+            }
+            
+            .social-content h2 {
+                color: #171a1c;
+                margin-bottom: 15px;
+            }
+            
+            .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                margin: 50px 0;
+                flex-wrap: wrap;
+            }
+            
+            .social-link {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 30px 25px;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                transition: all 0.3s ease;
+                text-decoration: none;
+                min-width: 120px;
+            }
+            
+            .social-link:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            }
+            
+            .social-link.facebook:hover { border-top: 4px solid #1877f2; }
+            .social-link.twitter:hover { border-top: 4px solid #1da1f2; }
+            .social-link.linkedin:hover { border-top: 4px solid #0077b5; }
+            .social-link.instagram:hover { border-top: 4px solid #e4405f; }
+            .social-link.youtube:hover { border-top: 4px solid #ff0000; }
+            .social-link.github:hover { border-top: 4px solid #333; }
+            
+            .social-link i {
+                font-size: 2.5rem;
+                color: #666;
+                transition: color 0.3s ease;
+            }
+            
+            .social-link.facebook:hover i { color: #1877f2; }
+            .social-link.twitter:hover i { color: #1da1f2; }
+            .social-link.linkedin:hover i { color: #0077b5; }
+            .social-link.instagram:hover i { color: #e4405f; }
+            .social-link.youtube:hover i { color: #ff0000; }
+            .social-link.github:hover i { color: #333; }
+            
+            .social-link span {
+                color: #171a1c;
+                font-weight: 600;
+            }
+            
+            .quick-access {
+                margin-top: 60px;
+            }
+            
+            .quick-access h3 {
+                color: #171a1c;
+                margin-bottom: 30px;
+            }
+            
+            .quick-links {
+                display: flex;
+                justify-content: center;
+                gap: 25px;
+                flex-wrap: wrap;
+            }
+            
+            .quick-link {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 12px 20px;
+                background: #d37827;
+                color: white;
+                border-radius: 25px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+            
+            .quick-link:hover {
+                background: #f39c12;
+                transform: translateY(-3px);
+            }
+            
+            .faq-section {
+                padding: 80px 0;
+            }
+            
+            .faq-container {
+                max-width: 800px;
+                margin: 0 auto;
+                margin-top: 50px;
+            }
+            
+            .faq-item {
+                background: white;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                overflow: hidden;
+            }
+            
+            .faq-question {
+                padding: 25px 30px;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: #f8f9fa;
+                transition: all 0.3s ease;
+            }
+            
+            .faq-question:hover {
+                background: #e9ecef;
+            }
+            
+            .faq-question h4 {
+                color: #171a1c;
+                margin: 0;
+                font-size: 1.1rem;
+            }
+            
+            .faq-question i {
+                color: #d37827;
+                transition: transform 0.3s ease;
+            }
+            
+            .faq-answer {
+                padding: 0 30px;
+                display: none;
+                background: white;
+            }
+            
+            .faq-answer p {
+                padding: 20px 0;
+                color: #666;
+                line-height: 1.7;
+                margin: 0;
+            }
+            
+            .contact-info {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .contact-info p {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin: 0;
+                color: #ccc;
+            }
+            
+            .contact-info i {
+                color: #d37827;
+                width: 16px;
+            }
+            
+            @media (max-width: 768px) {
+                .contact-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .form-row {
+                    grid-template-columns: 1fr;
+                }
+                
+                .radio-group,
+                .checkbox-group {
+                    flex-direction: column;
+                    gap: 15px;
+                }
+                
+                .team-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .credits-content {
+                    grid-template-columns: 1fr;
+                    gap: 40px;
+                }
+                
+                .university-info {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                
+                .social-links {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .quick-links {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .form-actions {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        `;
+        document.head.appendChild(contactStyles);
+    </script>
+</body>
+</html>

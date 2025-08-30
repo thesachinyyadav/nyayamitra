@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whistleblower Portal - Nyaya Mitra</title>
+    <link rel="icon" type="image/jpeg" href="nyaya_mitra_logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="nyaya_mitra_logo.jpg" alt="Nyaya Mitra">
+                <h1>Nyaya Mitra</h1>
+            </a>
+            <div class="nav-center">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="sos-alerts.html">SOS Alerts</a>
+                <a href="document-analyzer.html">Document Analyzer</a>
+                <a href="civic-feedback.html">Civic Feedback</a>
+                <a href="whistleblower.html" class="active">Whistleblower</a>
+            </div>
+            <div class="nav-actions">
+                <a href="about.html" class="btn btn-secondary">Learn More</a>
+                <a href="contact.html" class="btn btn-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1><i class="fas fa-user-secret"></i> Secure Whistleblower Portal</h1>
+            <p>Report corruption safely and anonymously. Our secure platform protects your identity while enabling you to contribute to a transparent and accountable society.</p>
+        </div>
+    </section>
+
+    <!-- Security Assurance -->
+    <section class="security-section">
+        <div class="container">
+            <div class="security-grid">
+                <div class="security-feature">
+                    <div class="security-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>100% Anonymous</h3>
+                    <p>Your identity is never stored or tracked</p>
+                </div>
+                <div class="security-feature">
+                    <div class="security-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Military-Grade Encryption</h3>
+                    <p>All communications are encrypted end-to-end</p>
+                </div>
+                <div class="security-feature">
+                    <div class="security-icon">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h3>No Data Tracking</h3>
+                    <p>We don't collect IP addresses or personal data</p>
+                </div>
+                <div class="security-feature">
+                    <div class="security-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Secure Channels</h3>
+                    <p>Protected communication with authorities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Report Form Section -->
+    <section class="report-section">
+        <div class="container">
+            <div class="report-container">
+                <div class="report-header">
+                    <h2>Report Corruption Anonymously</h2>
+                    <p>Help us build a corruption-free society. Your report will be handled with complete confidentiality.</p>
+                    <div class="anonymity-indicator">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Your anonymity is guaranteed</span>
+                    </div>
+                </div>
+
+                <form class="report-form" id="whistleblowerForm">
+                    <div class="form-section">
+                        <h3><i class="fas fa-info-circle"></i> Corruption Details</h3>
+                        
+                        <div class="form-group">
+                            <label for="corruptionType">Type of Corruption *</label>
+                            <select id="corruptionType" class="form-control" required>
+                                <option value="">Select corruption type</option>
+                                <option value="bribery">Bribery</option>
+                                <option value="embezzlement">Embezzlement</option>
+                                <option value="fraud">Fraud</option>
+                                <option value="nepotism">Nepotism</option>
+                                <option value="abuse-of-power">Abuse of Power</option>
+                                <option value="misuse-of-funds">Misuse of Public Funds</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="department">Government Department/Agency *</label>
+                            <select id="department" class="form-control" required>
+                                <option value="">Select department</option>
+                                <option value="police">Police Department</option>
+                                <option value="revenue">Revenue Department</option>
+                                <option value="municipal">Municipal Corporation</option>
+                                <option value="transport">Transport Department</option>
+                                <option value="education">Education Department</option>
+                                <option value="health">Health Department</option>
+                                <option value="judiciary">Judiciary</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="location">Location/City *</label>
+                                <input type="text" id="location" class="form-control" placeholder="City, State" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="incidentDate">Approximate Date</label>
+                                <input type="date" id="incidentDate" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Detailed Description *</label>
+                            <textarea id="description" class="form-control" rows="6" 
+                                placeholder="Please provide detailed information about the corruption incident, including what happened, who was involved, and any evidence you may have..." required></textarea>
+                            <div class="char-count">
+                                <span id="charCount">0</span>/2000 characters
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-users"></i> People Involved</h3>
+                        
+                        <div class="form-group">
+                            <label for="officialName">Name of Corrupt Official(s)</label>
+                            <input type="text" id="officialName" class="form-control" placeholder="Name(s) of the person(s) involved">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="officialPosition">Position/Designation</label>
+                            <input type="text" id="officialPosition" class="form-control" placeholder="Job title or position">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="witnesses">Witnesses (if any)</label>
+                            <textarea id="witnesses" class="form-control" rows="3" 
+                                placeholder="Names and details of any witnesses (optional)"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-paperclip"></i> Evidence</h3>
+                        
+                        <div class="form-group">
+                            <label for="evidenceType">Type of Evidence Available</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="documents">
+                                    <span class="checkmark"></span>
+                                    Documents
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="photos">
+                                    <span class="checkmark"></span>
+                                    Photos/Screenshots
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="recordings">
+                                    <span class="checkmark"></span>
+                                    Audio/Video Recordings
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="financial">
+                                    <span class="checkmark"></span>
+                                    Financial Records
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" value="communication">
+                                    <span class="checkmark"></span>
+                                    Messages/Emails
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="evidenceDetails">Evidence Description</label>
+                            <textarea id="evidenceDetails" class="form-control" rows="4" 
+                                placeholder="Describe the evidence you have. Note: Do not upload files through this form for security reasons. Instructions for secure evidence submission will be provided after report submission."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-envelope"></i> Follow-up Communication</h3>
+                        
+                        <div class="communication-options">
+                            <div class="comm-option">
+                                <input type="radio" id="noComm" name="communication" value="none" checked>
+                                <label for="noComm">
+                                    <div class="option-icon"><i class="fas fa-ban"></i></div>
+                                    <div class="option-content">
+                                        <h4>No Communication</h4>
+                                        <p>Submit report anonymously with no follow-up</p>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="comm-option">
+                                <input type="radio" id="secureComm" name="communication" value="secure">
+                                <label for="secureComm">
+                                    <div class="option-icon"><i class="fas fa-shield-alt"></i></div>
+                                    <div class="option-content">
+                                        <h4>Secure Anonymous Communication</h4>
+                                        <p>Receive updates through secure, anonymous channel</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="secureCommDetails" style="display: none;">
+                            <div class="secure-comm-info">
+                                <p><strong>Secure Communication Process:</strong></p>
+                                <ul>
+                                    <li>You will receive a unique, anonymous tracking ID</li>
+                                    <li>Use this ID to check status updates on our secure portal</li>
+                                    <li>All communications are encrypted and anonymous</li>
+                                    <li>No personal information is required or stored</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <div class="disclaimer">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Important Disclaimer</h4>
+                            <ul>
+                                <li>Your identity will remain completely anonymous</li>
+                                <li>False reports are discouraged and may be subject to legal action</li>
+                                <li>Reports are forwarded to appropriate anti-corruption agencies</li>
+                                <li>Investigation timelines vary based on case complexity</li>
+                                <li>This platform is for reporting corruption in public services only</li>
+                            </ul>
+                            
+                            <label class="consent-checkbox">
+                                <input type="checkbox" id="consent" required>
+                                <span class="checkmark"></span>
+                                I understand and agree to the terms. I confirm that the information provided is true to the best of my knowledge.
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="clearForm()">
+                            <i class="fas fa-times"></i> Clear Form
+                        </button>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i> Submit Anonymous Report
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Track Report Section -->
+    <section class="track-section">
+        <div class="container">
+            <div class="track-container">
+                <div class="track-header">
+                    <h2>Track Your Report</h2>
+                    <p>If you have submitted a report with secure communication enabled, you can track its status here.</p>
+                </div>
+                
+                <form class="track-form" id="trackForm">
+                    <div class="form-group">
+                        <label for="trackingId">Anonymous Tracking ID</label>
+                        <input type="text" id="trackingId" class="form-control" placeholder="Enter your tracking ID (e.g., WB-2025-ABCD1234)">
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Check Status
+                    </button>
+                </form>
+                
+                <div class="sample-tracking">
+                    <button class="btn btn-outline" onclick="showSampleTracking()">
+                        <i class="fas fa-eye"></i> View Sample Tracking
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Information Section -->
+    <section class="page-content">
+        <div class="container">
+            <div class="content-section" data-aos="fade-up">
+                <h2>How the Whistleblower Portal Works</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Secure Submission</h3>
+                            <p>Submit your corruption report through our encrypted, anonymous platform. Your identity is never recorded or tracked.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Initial Review</h3>
+                            <p>Our system automatically processes and categorizes your report, assigning it to the appropriate anti-corruption agency.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Investigation</h3>
+                            <p>The relevant authorities conduct a thorough investigation while maintaining the confidentiality of the report source.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Action & Follow-up</h3>
+                            <p>Appropriate action is taken based on investigation findings. You can track progress if you opted for secure communication.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section" data-aos="fade-up">
+                <h2>Types of Corruption We Handle</h2>
+                <div class="corruption-types">
+                    <div class="corruption-card">
+                        <div class="corruption-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3>Bribery</h3>
+                        <p>Offering, giving, receiving, or soliciting money or gifts to influence official actions.</p>
+                    </div>
+                    
+                    <div class="corruption-card">
+                        <div class="corruption-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <h3>Embezzlement</h3>
+                        <p>Theft or misappropriation of public funds by officials entrusted with those assets.</p>
+                    </div>
+                    
+                    <div class="corruption-card">
+                        <div class="corruption-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3>Nepotism</h3>
+                        <p>Favoritism shown to family members or friends in hiring, promotion, or contract awards.</p>
+                    </div>
+                    
+                    <div class="corruption-card">
+                        <div class="corruption-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3>Abuse of Power</h3>
+                        <p>Using official position for personal gain or to harm others beyond lawful authority.</p>
+                    </div>
+                    
+                    <div class="corruption-card">
+                        <div class="corruption-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Fraud</h3>
+                        <p>Deliberate deception to secure unfair advantage or deprive others of legal rights.</p>
+                    </div>
+                    
+                    <div class="corruption-card">
+                        <div class="corruption-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>Misuse of Funds</h3>
+                        <p>Using public money for unauthorized purposes or personal benefit.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section" data-aos="fade-up">
+                <h2>Your Safety & Protection</h2>
+                <div class="protection-measures">
+                    <div class="protection-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Legal Protection</h3>
+                        <p>Whistleblowers are protected under the Whistleblowers Protection Act, 2014, which prohibits retaliation.</p>
+                    </div>
+                    
+                    <div class="protection-item">
+                        <i class="fas fa-user-secret"></i>
+                        <h3>Identity Protection</h3>
+                        <p>Your identity is never disclosed to anyone, including the accused parties or investigating agencies.</p>
+                    </div>
+                    
+                    <div class="protection-item">
+                        <i class="fas fa-lock"></i>
+                        <h3>Technical Security</h3>
+                        <p>Advanced encryption and security measures ensure your communication cannot be traced back to you.</p>
+                    </div>
+                    
+                    <div class="protection-item">
+                        <i class="fas fa-gavel"></i>
+                        <h3>Legal Support</h3>
+                        <p>If needed, legal assistance is available to protect your rights and ensure proper investigation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Together We Can Build a Corruption-Free Society</h2>
+                <p>Your courage to report corruption makes a difference. Every report helps create a more transparent and accountable government.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-large" onclick="document.querySelector('.report-section').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-flag"></i> Report Corruption Now
+                    </button>
+                    <a href="document-analyzer.html" class="btn btn-secondary">
+                        <i class="fas fa-search"></i> Analyze Documents
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Nyaya Mitra</h4>
+                    <p>Secure, anonymous platform for reporting corruption and building a transparent society. Your safety and anonymity are our top priorities.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Report Types</h4>
+                    <ul>
+                        <li><a href="#bribery">Bribery</a></li>
+                        <li><a href="#embezzlement">Embezzlement</a></li>
+                        <li><a href="#fraud">Fraud</a></li>
+                        <li><a href="#abuse">Abuse of Power</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Your Safety</h4>
+                    <ul>
+                        <li><a href="#anonymity">Anonymous Reporting</a></li>
+                        <li><a href="#protection">Legal Protection</a></li>
+                        <li><a href="#security">Technical Security</a></li>
+                        <li><a href="#support">Legal Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Need Help?</h4>
+                    <p>Questions about the reporting process?</p>
+                    <a href="https://studio.pickaxeproject.com/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0"
+                       target="_blank" class="btn btn-outline">
+                        <i class="fas fa-robot"></i> Ask AI Assistant
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nyaya Mitra - Secure Whistleblower Portal. All rights reserved.</p>
+                <p>Protected by advanced encryption - Your identity is safe with us.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chatbot -->
+    <div class="floating-chatbot">
+        <a href="https://studio.pickaxeproject.com/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0" 
+           target="_blank" class="chatbot-float-btn">
+            <i class="fas fa-robot"></i>
+        </a>
+        <div class="chatbot-tooltip">Ask Nyaya Mitra</div>
+    </div>
+
+    <script src="js/database.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Character count for description
+        const descriptionField = document.getElementById('description');
+        const charCount = document.getElementById('charCount');
+        
+        descriptionField.addEventListener('input', function() {
+            const count = this.value.length;
+            charCount.textContent = count;
+            
+            if (count > 2000) {
+                charCount.style.color = '#e74c3c';
+                this.value = this.value.substring(0, 2000);
+                charCount.textContent = '2000';
+            } else {
+                charCount.style.color = '#666';
+            }
+        });
+
+        // Communication option handling
+        document.querySelectorAll('input[name="communication"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const secureCommDetails = document.getElementById('secureCommDetails');
+                if (this.value === 'secure') {
+                    secureCommDetails.style.display = 'block';
+                } else {
+                    secureCommDetails.style.display = 'none';
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('whistleblowerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting Securely...';
+            submitBtn.disabled = true;
+            
+            // Simulate secure submission
+            setTimeout(() => {
+                const communicationType = document.querySelector('input[name="communication"]:checked').value;
+                let trackingId = null;
+                
+                if (communicationType === 'secure') {
+                    trackingId = generateTrackingId();
+                }
+                
+                showSubmissionSuccess(trackingId);
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 3000);
+        });
+
+        function generateTrackingId() {
+            const prefix = 'WB-2025-';
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let result = '';
+            for (let i = 0; i < 8; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return prefix + result;
+        }
+
+        function showSubmissionSuccess(trackingId) {
+            let message = 'Your corruption report has been submitted successfully and anonymously. ';
+            
+            if (trackingId) {
+                message += `Your tracking ID is: ${trackingId}. Please save this ID to track your report status.`;
+            } else {
+                message += 'Your report will be forwarded to the appropriate authorities for investigation.';
+            }
+            
+            showNotification(message, 'success');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function clearForm() {
+            if (confirm('Are you sure you want to clear all form data? This action cannot be undone.')) {
+                document.getElementById('whistleblowerForm').reset();
+                document.getElementById('charCount').textContent = '0';
+                document.getElementById('secureCommDetails').style.display = 'none';
+            }
+        }
+
+        // Track report functionality
+        document.getElementById('trackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const trackingId = document.getElementById('trackingId').value;
+            
+            if (!trackingId) {
+                showNotification('Please enter a valid tracking ID', 'error');
+                return;
+            }
+            
+            // Simulate tracking lookup
+            showNotification('Looking up report status...', 'info');
+            
+            setTimeout(() => {
+                showTrackingResult(trackingId);
+            }, 2000);
+        });
+
+        function showTrackingResult(trackingId) {
+            const statusInfo = {
+                'WB-2025-ABCD1234': {
+                    status: 'Under Investigation',
+                    submitted: '15/01/2025',
+                    lastUpdate: '28/01/2025',
+                    department: 'Anti-Corruption Bureau',
+                    updates: [
+                        { date: '15/01/2025', event: 'Report received and verified' },
+                        { date: '18/01/2025', event: 'Assigned to investigating officer' },
+                        { date: '25/01/2025', event: 'Initial inquiry completed' },
+                        { date: '28/01/2025', event: 'Formal investigation initiated' }
+                    ]
+                }
+            };
+            
+            const info = statusInfo[trackingId] || {
+                status: 'In Review',
+                submitted: '20/01/2025',
+                lastUpdate: '25/01/2025',
+                department: 'Internal Affairs',
+                updates: [
+                    { date: '20/01/2025', event: 'Report received and verified' },
+                    { date: '25/01/2025', event: 'Preliminary review in progress' }
+                ]
+            };
+            
+            const resultHtml = `
+                <div class="tracking-result">
+                    <h3>Report Status: ${info.status}</h3>
+                    <div class="status-details">
+                        <div class="status-item">
+                            <strong>Tracking ID:</strong> ${trackingId}
+                        </div>
+                        <div class="status-item">
+                            <strong>Submitted:</strong> ${info.submitted}
+                        </div>
+                        <div class="status-item">
+                            <strong>Last Update:</strong> ${info.lastUpdate}
+                        </div>
+                        <div class="status-item">
+                            <strong>Investigating Department:</strong> ${info.department}
+                        </div>
+                    </div>
+                    <div class="status-timeline">
+                        <h4>Investigation Timeline:</h4>
+                        ${info.updates.map(update => `
+                            <div class="timeline-item">
+                                <div class="timeline-date">${update.date}</div>
+                                <div class="timeline-event">${update.event}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            // Show result in a modal or section
+            showNotification('Report status retrieved successfully!', 'success');
+            
+            // For demo purposes, we'll show an alert
+            alert(`Report Status Found!\n\nStatus: ${info.status}\nLast Update: ${info.lastUpdate}\nDepartment: ${info.department}`);
+        }
+
+        function showSampleTracking() {
+            document.getElementById('trackingId').value = 'WB-2025-ABCD1234';
+            showTrackingResult('WB-2025-ABCD1234');
+        }
+
+        // Add page-specific styles
+        const whistleblowerStyles = document.createElement('style');
+        whistleblowerStyles.textContent = `
+            .security-section {
+                padding: 60px 0;
+                background: #f8f9fa;
+            }
+            
+            .security-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 30px;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+            
+            .security-feature {
+                background: white;
+                padding: 30px 20px;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                border-top: 4px solid #4CAF50;
+            }
+            
+            .security-icon {
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, #4CAF50, #45a049);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 15px;
+            }
+            
+            .security-icon i {
+                font-size: 1.5rem;
+                color: white;
+            }
+            
+            .security-feature h3 {
+                color: #171a1c;
+                margin-bottom: 10px;
+                font-size: 1.1rem;
+            }
+            
+            .security-feature p {
+                color: #666;
+                font-size: 0.9rem;
+            }
+            
+            .report-section {
+                padding: 80px 0;
+            }
+            
+            .report-container {
+                max-width: 800px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 20px;
+                padding: 40px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            }
+            
+            .report-header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            
+            .report-header h2 {
+                color: #171a1c;
+                margin-bottom: 15px;
+            }
+            
+            .anonymity-indicator {
+                background: rgba(76, 175, 80, 0.1);
+                color: #4CAF50;
+                padding: 12px 20px;
+                border-radius: 25px;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 20px;
+                font-weight: 600;
+            }
+            
+            .form-section {
+                margin-bottom: 40px;
+                padding-bottom: 30px;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .form-section:last-child {
+                border-bottom: none;
+            }
+            
+            .form-section h3 {
+                color: #171a1c;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 1.3rem;
+            }
+            
+            .form-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+            
+            .char-count {
+                text-align: right;
+                font-size: 0.85rem;
+                color: #666;
+                margin-top: 5px;
+            }
+            
+            .checkbox-group {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+                margin-top: 10px;
+            }
+            
+            .checkbox-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+                padding: 10px;
+                border-radius: 8px;
+                transition: background-color 0.3s ease;
+            }
+            
+            .checkbox-item:hover {
+                background: #f8f9fa;
+            }
+            
+            .checkbox-item input[type="checkbox"] {
+                margin: 0;
+            }
+            
+            .communication-options {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 20px;
+            }
+            
+            .comm-option {
+                border: 2px solid #f0f0f0;
+                border-radius: 10px;
+                transition: all 0.3s ease;
+            }
+            
+            .comm-option:hover {
+                border-color: #d37827;
+            }
+            
+            .comm-option input[type="radio"] {
+                display: none;
+            }
+            
+            .comm-option input[type="radio"]:checked + label {
+                background: rgba(211, 120, 39, 0.1);
+                border-color: #d37827;
+            }
+            
+            .comm-option label {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                padding: 20px;
+                cursor: pointer;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+            }
+            
+            .option-icon {
+                width: 50px;
+                height: 50px;
+                background: #f8f9fa;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+            
+            .option-icon i {
+                font-size: 1.3rem;
+                color: #d37827;
+            }
+            
+            .option-content h4 {
+                color: #171a1c;
+                margin-bottom: 5px;
+            }
+            
+            .option-content p {
+                color: #666;
+                margin: 0;
+                font-size: 0.9rem;
+            }
+            
+            .secure-comm-info {
+                background: #f8f9fa;
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 15px;
+                border-left: 4px solid #4CAF50;
+            }
+            
+            .secure-comm-info ul {
+                margin: 10px 0 0 20px;
+                color: #666;
+            }
+            
+            .disclaimer {
+                background: #fff3cd;
+                border: 1px solid #ffeaa7;
+                border-radius: 10px;
+                padding: 25px;
+                margin-top: 20px;
+            }
+            
+            .disclaimer h4 {
+                color: #856404;
+                margin-bottom: 15px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .disclaimer ul {
+                color: #856404;
+                margin: 15px 0;
+                padding-left: 20px;
+            }
+            
+            .consent-checkbox {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                margin-top: 20px;
+                cursor: pointer;
+            }
+            
+            .consent-checkbox input[type="checkbox"] {
+                margin-top: 3px;
+            }
+            
+            .form-actions {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                margin-top: 40px;
+                flex-wrap: wrap;
+            }
+            
+            .track-section {
+                padding: 60px 0;
+                background: #f8f9fa;
+            }
+            
+            .track-container {
+                max-width: 600px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 20px;
+                padding: 40px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+                text-align: center;
+            }
+            
+            .track-header h2 {
+                color: #171a1c;
+                margin-bottom: 15px;
+            }
+            
+            .track-form {
+                margin: 30px 0;
+            }
+            
+            .sample-tracking {
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 1px solid #f0f0f0;
+            }
+            
+            .process-steps {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+            
+            .process-step {
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+                padding: 30px;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+            
+            .step-number {
+                width: 50px;
+                height: 50px;
+                background: linear-gradient(135deg, #d37827, #f39c12);
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+                flex-shrink: 0;
+            }
+            
+            .step-content h3 {
+                color: #171a1c;
+                margin-bottom: 10px;
+            }
+            
+            .corruption-types {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+            
+            .corruption-card {
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                text-align: center;
+                transition: transform 0.3s ease;
+                border-top: 4px solid #e74c3c;
+            }
+            
+            .corruption-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .corruption-icon {
+                width: 70px;
+                height: 70px;
+                background: linear-gradient(135deg, #e74c3c, #c0392b);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+            }
+            
+            .corruption-icon i {
+                font-size: 2rem;
+                color: white;
+            }
+            
+            .protection-measures {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+            
+            .protection-item {
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                border-top: 4px solid #4CAF50;
+            }
+            
+            .protection-item i {
+                font-size: 2.5rem;
+                color: #4CAF50;
+                margin-bottom: 20px;
+            }
+            
+            .cta-section {
+                background: linear-gradient(135deg, #171a1c 0%, #2c3e50 100%);
+                color: white;
+                padding: 80px 0;
+                text-align: center;
+            }
+            
+            .cta-content h2 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                color: #4CAF50;
+            }
+            
+            .cta-buttons {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 40px;
+            }
+            
+            @media (max-width: 768px) {
+                .security-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .form-row {
+                    grid-template-columns: 1fr;
+                }
+                
+                .checkbox-group {
+                    grid-template-columns: 1fr;
+                }
+                
+                .communication-options {
+                    gap: 10px;
+                }
+                
+                .comm-option label {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 15px;
+                }
+                
+                .process-steps {
+                    grid-template-columns: 1fr;
+                }
+                
+                .process-step {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                
+                .corruption-types {
+                    grid-template-columns: 1fr;
+                }
+                
+                .form-actions {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        `;
+        document.head.appendChild(whistleblowerStyles);
+    </script>
+</body>
+</html>

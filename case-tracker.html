@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judicial Case Tracker - Nyaya Mitra</title>
+    <link rel="icon" type="image/jpeg" href="nyaya_mitra_logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="nyaya_mitra_logo.jpg" alt="Nyaya Mitra Logo">
+                <span>Nyaya Mitra</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="sos-alerts.html" class="nav-link">SOS Alerts</a>
+                <a href="chatbot.html" class="nav-link">Chatbot</a>
+                <a href="document-analyzer.html" class="nav-link">Analyzer</a>
+                <a href="case-tracker.html" class="nav-link active">Case Tracker</a>
+                <a href="whistleblower.html" class="nav-link">Whistleblower</a>
+                <a href="civic-feedback.html" class="nav-link">Feedback</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1><i class="fas fa-search"></i> Judicial Case Tracker</h1>
+            <p>Track your legal cases in real-time by case number or party name. Get detailed status updates, hearing schedules, and important notifications for your ongoing legal matters.</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-header">
+                    <h2>Search Your Case</h2>
+                    <p>Enter your case details to track progress and get updates</p>
+                </div>
+                
+                <div class="search-tabs">
+                    <button class="tab-btn active" onclick="switchTab('case-number')">
+                        <i class="fas fa-hashtag"></i> By Case Number
+                    </button>
+                    <button class="tab-btn" onclick="switchTab('party-name')">
+                        <i class="fas fa-user"></i> By Party Name
+                    </button>
+                    <button class="tab-btn" onclick="switchTab('advocate')">
+                        <i class="fas fa-user-tie"></i> By Advocate
+                    </button>
+                </div>
+                
+                <div class="search-content">
+                    <!-- Case Number Search -->
+                    <div id="case-number" class="tab-content active">
+                        <form class="search-form" id="caseNumberForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="caseNumber">Case Number</label>
+                                    <input type="text" id="caseNumber" class="form-control" placeholder="e.g., 123/2025" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="caseYear">Year</label>
+                                    <select id="caseYear" class="form-control" required>
+                                        <option value="">Select Year</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="courtType">Court Type</label>
+                                    <select id="courtType" class="form-control" required>
+                                        <option value="">Select Court</option>
+                                        <option value="supreme">Supreme Court</option>
+                                        <option value="high">High Court</option>
+                                        <option value="district">District Court</option>
+                                        <option value="magistrate">Magistrate Court</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-search"></i> Track Case
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Party Name Search -->
+                    <div id="party-name" class="tab-content">
+                        <form class="search-form" id="partyNameForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="partyName">Party Name</label>
+                                    <input type="text" id="partyName" class="form-control" placeholder="Enter plaintiff or defendant name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="partyType">Party Type</label>
+                                    <select id="partyType" class="form-control" required>
+                                        <option value="">Select Type</option>
+                                        <option value="plaintiff">Plaintiff</option>
+                                        <option value="defendant">Defendant</option>
+                                        <option value="petitioner">Petitioner</option>
+                                        <option value="respondent">Respondent</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <select id="state" class="form-control" required>
+                                        <option value="">Select State</option>
+                                        <option value="delhi">Delhi</option>
+                                        <option value="mumbai">Mumbai</option>
+                                        <option value="bangalore">Bangalore</option>
+                                        <option value="chennai">Chennai</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-search"></i> Search Cases
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Advocate Search -->
+                    <div id="advocate" class="tab-content">
+                        <form class="search-form" id="advocateForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="advocateName">Advocate Name</label>
+                                    <input type="text" id="advocateName" class="form-control" placeholder="Enter advocate's name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="barNumber">Bar Registration Number</label>
+                                    <input type="text" id="barNumber" class="form-control" placeholder="Optional - Bar registration number">
+                                </div>
+                                <div class="form-group">
+                                    <label for="advocateState">State Bar</label>
+                                    <select id="advocateState" class="form-control" required>
+                                        <option value="">Select State Bar</option>
+                                        <option value="delhi">Delhi Bar Association</option>
+                                        <option value="mumbai">Mumbai Bar Association</option>
+                                        <option value="bangalore">Bangalore Bar Association</option>
+                                        <option value="chennai">Chennai Bar Association</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-search"></i> Find Cases
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Sample Search Button -->
+                <div class="sample-search">
+                    <p>Want to see how it works?</p>
+                    <button class="btn btn-outline" onclick="showSampleCase()">
+                        <i class="fas fa-eye"></i> View Sample Case
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" id="resultsSection" style="display: none;">
+        <div class="container">
+            <div class="results-header">
+                <h2>Case Details</h2>
+                <button class="btn btn-secondary" onclick="hideResults()">
+                    <i class="fas fa-arrow-left"></i> New Search
+                </button>
+            </div>
+            
+            <div class="case-details" id="caseDetails">
+                <!-- Case details will be populated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="page-content">
+        <div class="container">
+            <div class="content-section" data-aos="fade-up">
+                <h2>Track Every Aspect of Your Case</h2>
+                <div class="tracking-features">
+                    <div class="tracking-card">
+                        <div class="tracking-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Hearing Schedules</h3>
+                        <p>Get real-time updates on hearing dates, postponements, and schedule changes with automatic notifications.</p>
+                    </div>
+                    
+                    <div class="tracking-card">
+                        <div class="tracking-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Case Status Updates</h3>
+                        <p>Monitor case progress, court orders, judgments, and important milestones in your legal proceedings.</p>
+                    </div>
+                    
+                    <div class="tracking-card">
+                        <div class="tracking-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h3>Court Orders</h3>
+                        <p>Access and track all court orders, interim orders, and final judgments with detailed documentation.</p>
+                    </div>
+                    
+                    <div class="tracking-card">
+                        <div class="tracking-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h3>Smart Notifications</h3>
+                        <p>Receive timely alerts for important deadlines, hearing dates, and case developments via SMS and email.</p>
+                    </div>
+                    
+                    <div class="tracking-card">
+                        <div class="tracking-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Progress Timeline</h3>
+                        <p>Visualize your case journey with a detailed timeline showing all proceedings and milestones.</p>
+                    </div>
+                    
+                    <div class="tracking-card">
+                        <div class="tracking-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3>Document Access</h3>
+                        <p>Download case documents, orders, and pleadings directly from the tracking interface.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits Section -->
+            <div class="content-section" data-aos="fade-up">
+                <h2>Why Use Our Case Tracker?</h2>
+                <div class="benefits-comparison">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Save Time</h3>
+                        <p>No more frequent visits to court for status updates. Get all information online instantly.</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Stay Informed</h3>
+                        <p>Never miss important deadlines or hearings with automated notifications and reminders.</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Access</h3>
+                        <p>Track your cases on the go with our mobile-responsive interface available 24/7.</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Multi-Party Access</h3>
+                        <p>Share case updates with your advocate, family members, or business partners securely.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Court Coverage -->
+            <div class="content-section" data-aos="fade-up">
+                <h2>Court Coverage</h2>
+                <p>Our case tracking system covers major courts across India with real-time data integration.</p>
+                
+                <div class="court-coverage">
+                    <div class="court-level">
+                        <div class="court-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3>Supreme Court of India</h3>
+                        <p>Track cases in the highest court of the land with comprehensive coverage of all proceedings.</p>
+                        <div class="coverage-stats">
+                            <span class="stat">100% Coverage</span>
+                            <span class="stat">Real-time Updates</span>
+                        </div>
+                    </div>
+                    
+                    <div class="court-level">
+                        <div class="court-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>High Courts</h3>
+                        <p>Complete coverage of all 25 High Courts across different states and union territories.</p>
+                        <div class="coverage-stats">
+                            <span class="stat">25 High Courts</span>
+                            <span class="stat">Daily Updates</span>
+                        </div>
+                    </div>
+                    
+                    <div class="court-level">
+                        <div class="court-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>District & Lower Courts</h3>
+                        <p>Extensive network covering district courts, magistrate courts, and special tribunals.</p>
+                        <div class="coverage-stats">
+                            <span class="stat">500+ Courts</span>
+                            <span class="stat">Regular Updates</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Start Tracking Your Cases Today</h2>
+                <p>Never miss another hearing or deadline. Stay updated with real-time case tracking and notifications.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-large" onclick="document.querySelector('.search-section').scrollIntoView({behavior: 'smooth'})">
+                        <i class="fas fa-search"></i> Track Your Case Now
+                    </button>
+                    <a href="chatbot.html" class="btn btn-secondary">
+                        <i class="fas fa-robot"></i> Get Legal Advice
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Nyaya Mitra</h4>
+                    <p>Comprehensive case tracking system for transparent and efficient legal proceedings. Real-time access to court case information.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Court Types</h4>
+                    <ul>
+                        <li><a href="#supreme">Supreme Court</a></li>
+                        <li><a href="#high">High Courts</a></li>
+                        <li><a href="#district">District Courts</a></li>
+                        <li><a href="#magistrate">Magistrate Courts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Search Options</h4>
+                    <ul>
+                        <li><a href="#case-number">By Case Number</a></li>
+                        <li><a href="#party-name">By Party Name</a></li>
+                        <li><a href="#advocate">By Advocate</a></li>
+                        <li><a href="#status">Case Status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Need Help?</h4>
+                    <p>Having trouble tracking your case?</p>
+                    <a href="https://studio.pickaxeproject.com/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0"
+                       target="_blank" class="btn btn-outline">
+                        <i class="fas fa-robot"></i> Ask AI Assistant
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nyaya Mitra - Judicial Case Tracking System. All rights reserved.</p>
+                <p>Real-time case data sourced from official court systems across India.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chatbot -->
+    <div class="floating-chatbot">
+        <a href="https://studio.pickaxeproject.com/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0" 
+           target="_blank" class="chatbot-float-btn">
+            <i class="fas fa-robot"></i>
+        </a>
+        <div class="chatbot-tooltip">Ask Nyaya Mitra</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Tab switching functionality
+        function switchTab(tabName) {
+            // Remove active class from all tabs and content
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            // Add active class to selected tab and content
+            event.target.classList.add('active');
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Form submission handlers
+        document.getElementById('caseNumberForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const caseNumber = document.getElementById('caseNumber').value;
+            const caseYear = document.getElementById('caseYear').value;
+            const courtType = document.getElementById('courtType').value;
+            
+            searchCase({
+                type: 'case-number',
+                caseNumber: caseNumber,
+                year: caseYear,
+                court: courtType
+            });
+        });
+
+        document.getElementById('partyNameForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const partyName = document.getElementById('partyName').value;
+            const partyType = document.getElementById('partyType').value;
+            const state = document.getElementById('state').value;
+            
+            searchCase({
+                type: 'party-name',
+                name: partyName,
+                partyType: partyType,
+                state: state
+            });
+        });
+
+        document.getElementById('advocateForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const advocateName = document.getElementById('advocateName').value;
+            const barNumber = document.getElementById('barNumber').value;
+            const advocateState = document.getElementById('advocateState').value;
+            
+            searchCase({
+                type: 'advocate',
+                name: advocateName,
+                barNumber: barNumber,
+                state: advocateState
+            });
+        });
+
+        function searchCase(searchData) {
+            // Show loading state
+            showNotification('Searching case database...', 'info');
+            
+            // Simulate API call
+            setTimeout(() => {
+                showCaseResults(generateSampleCase(searchData));
+            }, 2000);
+        }
+
+        function showSampleCase() {
+            const sampleData = {
+                type: 'sample',
+                caseNumber: '123/2025',
+                court: 'Delhi High Court'
+            };
+            showCaseResults(generateSampleCase(sampleData));
+        }
+
+        function generateSampleCase(searchData) {
+            return {
+                caseNumber: searchData.caseNumber || '123/2025',
+                title: 'Rajesh Kumar vs. State of Delhi',
+                court: 'Delhi High Court',
+                judge: 'Hon\'ble Justice Pradeep Nandrajog',
+                filingDate: '15/01/2025',
+                status: 'Active - Pending Hearing',
+                nextHearing: '28/02/2025',
+                caseType: 'Criminal Appeal',
+                parties: {
+                    petitioner: 'Rajesh Kumar',
+                    respondent: 'State of Delhi',
+                    advocate: 'Adv. Sanjay Sharma'
+                },
+                timeline: [
+                    { date: '15/01/2025', event: 'Case Filed', status: 'completed' },
+                    { date: '22/01/2025', event: 'First Hearing', status: 'completed' },
+                    { date: '05/02/2025', event: 'Document Submission', status: 'completed' },
+                    { date: '28/02/2025', event: 'Next Hearing', status: 'upcoming' }
+                ],
+                orders: [
+                    { date: '22/01/2025', title: 'Notice to Respondent', type: 'Interim Order' },
+                    { date: '05/02/2025', title: 'Document Filing Order', type: 'Procedural Order' }
+                ]
+            };
+        }
+
+        function showCaseResults(caseData) {
+            const resultsSection = document.getElementById('resultsSection');
+            const caseDetails = document.getElementById('caseDetails');
+            
+            caseDetails.innerHTML = `
+                <div class="case-header">
+                    <div class="case-title">
+                        <h3>${caseData.title}</h3>
+                        <div class="case-meta">
+                            <span class="case-number">Case No: ${caseData.caseNumber}</span>
+                            <span class="case-court">${caseData.court}</span>
+                            <span class="case-type">${caseData.caseType}</span>
+                        </div>
+                    </div>
+                    <div class="case-status">
+                        <span class="status-badge active">${caseData.status}</span>
+                    </div>
+                </div>
+                
+                <div class="case-info-grid">
+                    <div class="info-card">
+                        <h4><i class="fas fa-user-tie"></i> Case Details</h4>
+                        <div class="info-content">
+                            <div class="info-item">
+                                <span class="label">Judge:</span>
+                                <span class="value">${caseData.judge}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Filing Date:</span>
+                                <span class="value">${caseData.filingDate}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Next Hearing:</span>
+                                <span class="value highlight">${caseData.nextHearing}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h4><i class="fas fa-users"></i> Parties Involved</h4>
+                        <div class="info-content">
+                            <div class="info-item">
+                                <span class="label">Petitioner:</span>
+                                <span class="value">${caseData.parties.petitioner}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Respondent:</span>
+                                <span class="value">${caseData.parties.respondent}</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Advocate:</span>
+                                <span class="value">${caseData.parties.advocate}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-timeline">
+                    <h4><i class="fas fa-clock"></i> Case Timeline</h4>
+                    <div class="timeline">
+                        ${caseData.timeline.map(item => `
+                            <div class="timeline-item ${item.status}">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-date">${item.date}</div>
+                                    <div class="timeline-event">${item.event}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <div class="case-orders">
+                    <h4><i class="fas fa-gavel"></i> Court Orders</h4>
+                    <div class="orders-list">
+                        ${caseData.orders.map(order => `
+                            <div class="order-item">
+                                <div class="order-date">${order.date}</div>
+                                <div class="order-content">
+                                    <div class="order-title">${order.title}</div>
+                                    <div class="order-type">${order.type}</div>
+                                </div>
+                                <div class="order-actions">
+                                    <button class="btn btn-outline btn-sm">
+                                        <i class="fas fa-download"></i> Download
+                                    </button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <div class="case-actions">
+                    <button class="btn btn-primary" onclick="setupNotifications()">
+                        <i class="fas fa-bell"></i> Setup Notifications
+                    </button>
+                    <button class="btn btn-secondary" onclick="downloadCaseSummary()">
+                        <i class="fas fa-download"></i> Download Summary
+                    </button>
+                    <button class="btn btn-outline" onclick="shareCase()">
+                        <i class="fas fa-share"></i> Share Case
+                    </button>
+                </div>
+            `;
+            
+            resultsSection.style.display = 'block';
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
+            showNotification('Case details loaded successfully!', 'success');
+        }
+
+        function hideResults() {
+            document.getElementById('resultsSection').style.display = 'none';
+            document.querySelector('.search-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function setupNotifications() {
+            showNotification('Notification preferences updated! You will receive SMS and email alerts for case updates.', 'success');
+        }
+
+        function downloadCaseSummary() {
+            showNotification('Case summary downloaded successfully!', 'success');
+        }
+
+        function shareCase() {
+            showNotification('Case link copied to clipboard!', 'info');
+        }
+
+        // Add page-specific styles
+        const caseTrackerStyles = document.createElement('style');
+        caseTrackerStyles.textContent = `
+            .search-section {
+                padding: 80px 0;
+                background: #f8f9fa;
+            }
+            
+            .search-container {
+                max-width: 900px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 20px;
+                padding: 40px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            }
+            
+            .search-header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            
+            .search-header h2 {
+                color: #171a1c;
+                margin-bottom: 10px;
+            }
+            
+            .search-tabs {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 40px;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .tab-btn {
+                background: none;
+                border: none;
+                padding: 15px 30px;
+                cursor: pointer;
+                font-weight: 500;
+                color: #666;
+                transition: all 0.3s ease;
+                border-bottom: 3px solid transparent;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .tab-btn.active {
+                color: #d37827;
+                border-bottom-color: #d37827;
+            }
+            
+            .tab-btn:hover {
+                color: #d37827;
+            }
+            
+            .tab-content {
+                display: none;
+            }
+            
+            .tab-content.active {
+                display: block;
+            }
+            
+            .search-form {
+                margin-bottom: 30px;
+            }
+            
+            .form-row {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+                margin-bottom: 30px;
+            }
+            
+            .sample-search {
+                text-align: center;
+                padding-top: 30px;
+                border-top: 1px solid #f0f0f0;
+            }
+            
+            .sample-search p {
+                margin-bottom: 15px;
+                color: #666;
+            }
+            
+            .results-section {
+                padding: 80px 0;
+            }
+            
+            .results-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 40px;
+            }
+            
+            .case-details {
+                background: white;
+                border-radius: 20px;
+                padding: 40px;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            }
+            
+            .case-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 40px;
+                padding-bottom: 20px;
+                border-bottom: 2px solid #f0f0f0;
+            }
+            
+            .case-title h3 {
+                color: #171a1c;
+                margin-bottom: 15px;
+                font-size: 1.8rem;
+            }
+            
+            .case-meta {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            
+            .case-meta span {
+                background: #f8f9fa;
+                padding: 5px 12px;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                color: #666;
+            }
+            
+            .status-badge {
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
+            
+            .status-badge.active {
+                background: #4CAF50;
+                color: white;
+            }
+            
+            .case-info-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-bottom: 40px;
+            }
+            
+            .info-card {
+                background: #f8f9fa;
+                padding: 30px;
+                border-radius: 15px;
+                border-left: 4px solid #d37827;
+            }
+            
+            .info-card h4 {
+                color: #171a1c;
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .info-content {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .info-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 0;
+                border-bottom: 1px solid #e9ecef;
+            }
+            
+            .info-item:last-child {
+                border-bottom: none;
+            }
+            
+            .label {
+                font-weight: 500;
+                color: #666;
+            }
+            
+            .value {
+                color: #171a1c;
+                font-weight: 600;
+            }
+            
+            .value.highlight {
+                color: #d37827;
+                font-weight: 700;
+            }
+            
+            .case-timeline {
+                margin-bottom: 40px;
+            }
+            
+            .case-timeline h4 {
+                color: #171a1c;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .timeline {
+                position: relative;
+                padding-left: 30px;
+            }
+            
+            .timeline::before {
+                content: '';
+                position: absolute;
+                left: 10px;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background: #e9ecef;
+            }
+            
+            .timeline-item {
+                position: relative;
+                margin-bottom: 30px;
+            }
+            
+            .timeline-marker {
+                position: absolute;
+                left: -25px;
+                top: 5px;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #e9ecef;
+                border: 3px solid white;
+                box-shadow: 0 0 0 2px #e9ecef;
+            }
+            
+            .timeline-item.completed .timeline-marker {
+                background: #4CAF50;
+                box-shadow: 0 0 0 2px #4CAF50;
+            }
+            
+            .timeline-item.upcoming .timeline-marker {
+                background: #d37827;
+                box-shadow: 0 0 0 2px #d37827;
+            }
+            
+            .timeline-content {
+                background: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+                border-left: 3px solid #e9ecef;
+            }
+            
+            .timeline-item.completed .timeline-content {
+                border-left-color: #4CAF50;
+            }
+            
+            .timeline-item.upcoming .timeline-content {
+                border-left-color: #d37827;
+            }
+            
+            .timeline-date {
+                font-weight: 600;
+                color: #d37827;
+                font-size: 0.9rem;
+                margin-bottom: 5px;
+            }
+            
+            .timeline-event {
+                color: #171a1c;
+                font-weight: 500;
+            }
+            
+            .case-orders h4 {
+                color: #171a1c;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .orders-list {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 40px;
+            }
+            
+            .order-item {
+                background: #f8f9fa;
+                padding: 20px;
+                border-radius: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-left: 4px solid #d37827;
+            }
+            
+            .order-date {
+                font-weight: 600;
+                color: #d37827;
+                margin-bottom: 5px;
+            }
+            
+            .order-title {
+                color: #171a1c;
+                font-weight: 500;
+                margin-bottom: 3px;
+            }
+            
+            .order-type {
+                color: #666;
+                font-size: 0.9rem;
+            }
+            
+            .case-actions {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 40px;
+                padding-top: 30px;
+                border-top: 1px solid #f0f0f0;
+            }
+            
+            .tracking-features {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+            
+            .tracking-card {
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                text-align: center;
+                transition: transform 0.3s ease;
+            }
+            
+            .tracking-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .tracking-icon {
+                width: 70px;
+                height: 70px;
+                background: linear-gradient(135deg, #d37827, #f39c12);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+            }
+            
+            .tracking-icon i {
+                font-size: 2rem;
+                color: white;
+            }
+            
+            .benefits-comparison {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+            
+            .benefit-item {
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                text-align: center;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                border: 1px solid #f0f0f0;
+                transition: transform 0.3s ease;
+            }
+            
+            .benefit-item:hover {
+                transform: translateY(-5px);
+                border-color: #d37827;
+            }
+            
+            .benefit-icon {
+                width: 60px;
+                height: 60px;
+                background: linear-gradient(135deg, #d37827, #f39c12);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+            }
+            
+            .benefit-icon i {
+                font-size: 1.5rem;
+                color: white;
+            }
+            
+            .court-coverage {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+                margin-top: 40px;
+            }
+            
+            .court-level {
+                background: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                text-align: center;
+            }
+            
+            .court-icon {
+                width: 80px;
+                height: 80px;
+                background: linear-gradient(135deg, #d37827, #f39c12);
+                border-radius: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 20px;
+            }
+            
+            .court-icon i {
+                font-size: 2.5rem;
+                color: white;
+            }
+            
+            .coverage-stats {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                margin-top: 15px;
+            }
+            
+            .stat {
+                background: rgba(211, 120, 39, 0.1);
+                color: #d37827;
+                padding: 5px 12px;
+                border-radius: 20px;
+                font-size: 0.85rem;
+                font-weight: 600;
+            }
+            
+            .cta-section {
+                background: linear-gradient(135deg, #171a1c 0%, #2c3e50 100%);
+                color: white;
+                padding: 80px 0;
+                text-align: center;
+            }
+            
+            .cta-content h2 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                color: #d37827;
+            }
+            
+            .cta-buttons {
+                display: flex;
+                gap: 20px;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 40px;
+            }
+            
+            .btn-sm {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+            
+            @media (max-width: 768px) {
+                .search-tabs {
+                    flex-direction: column;
+                }
+                
+                .tab-btn {
+                    border-bottom: none;
+                    border-left: 3px solid transparent;
+                    justify-content: center;
+                }
+                
+                .tab-btn.active {
+                    border-left-color: #d37827;
+                    border-bottom-color: transparent;
+                }
+                
+                .form-row {
+                    grid-template-columns: 1fr;
+                }
+                
+                .case-header {
+                    flex-direction: column;
+                    gap: 20px;
+                }
+                
+                .case-meta {
+                    justify-content: center;
+                }
+                
+                .case-info-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .tracking-features {
+                    grid-template-columns: 1fr;
+                }
+                
+                .order-item {
+                    flex-direction: column;
+                    gap: 15px;
+                    text-align: center;
+                }
+                
+                .case-actions {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                
+                .results-header {
+                    flex-direction: column;
+                    gap: 20px;
+                    text-align: center;
+                }
+            }
+        `;
+        document.head.appendChild(caseTrackerStyles);
+    </script>
+</body>
+</html>
