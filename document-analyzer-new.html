@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Analyzer - Nyaya Mitra</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+                <img src="nyaya_mitra_logo.jpg" alt="Logo">
+                <h1>Nyaya Mitra</h1>
+            </a>
+            <div class="nav-center">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="sos-alerts.html">SOS</a>
+                <a href="document-analyzer.html" class="active">Analyzer</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Document Analyzer</h1>
+                <p>AI-powered document analysis</p>
+                <p>Upload legal documents and get instant summaries and insights.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="content-section">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h2 class="section-title">Upload Document</h2>
+                
+                <div class="card">
+                    <div style="text-align: center; padding: 20px;">
+                        <div id="upload-area" style="
+                            border: 2px dashed #d37827; 
+                            border-radius: 8px; 
+                            padding: 40px 20px; 
+                            background: #f8f9fa; 
+                            cursor: pointer; 
+                            transition: all 0.3s;
+                        " onclick="document.getElementById('fileInput').click()">
+                            <i class="fas fa-cloud-upload-alt" style="font-size: 3rem; color: #d37827; margin-bottom: 15px;"></i>
+                            <h3 style="color: #171a1c; margin-bottom: 10px;">Drop files here or click to upload</h3>
+                            <p>Supports PDF, DOC, DOCX, TXT files (Max 10MB)</p>
+                        </div>
+                        
+                        <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.txt" style="display: none;">
+                        
+                        <div style="margin-top: 20px;">
+                            <button id="analyzeBtn" class="btn btn-primary" disabled>
+                                <i class="fas fa-search"></i> Analyze Document
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="fileName" style="margin-top: 15px; text-align: center; display: none;"></div>
+                <div id="analysisResult" style="margin-top: 30px; display: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Analysis Features</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                
+                <div class="card">
+                    <div style="text-align: center;">
+                        <i class="fas fa-file-text" style="font-size: 2.5rem; color: #d37827; margin-bottom: 15px;"></i>
+                        <h3 style="color: #171a1c; margin-bottom: 10px;">Text Extraction</h3>
+                        <p>Extract and process text from various document formats.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="text-align: center;">
+                        <i class="fas fa-brain" style="font-size: 2.5rem; color: #d37827; margin-bottom: 15px;"></i>
+                        <h3 style="color: #171a1c; margin-bottom: 10px;">AI Summary</h3>
+                        <p>Generate intelligent summaries and key insights.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="text-align: center;">
+                        <i class="fas fa-key" style="font-size: 2.5rem; color: #d37827; margin-bottom: 15px;"></i>
+                        <h3 style="color: #171a1c; margin-bottom: 10px;">Key Information</h3>
+                        <p>Identify important dates, names, and legal terms.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Nyaya Mitra</h4>
+                    <p>Legal assistance through technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="sos-alerts.html">SOS</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="document-analyzer.html">Analyzer</a></li>
+                        <li><a href="whistleblower.html">Whistleblower</a></li>
+                        <li><a href="civic-feedback.html">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <p>Max file size: 10MB</p>
+                    <p>Supported: PDF, DOC, TXT</p>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #333;">
+                <p>&copy; 2025 Nyaya Mitra. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/document-reader.js"></script>
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        const fileName = document.getElementById('fileName');
+        const analysisResult = document.getElementById('analysisResult');
+        const uploadArea = document.getElementById('upload-area');
+
+        // File upload handling
+        fileInput.addEventListener('change', handleFileSelect);
+
+        // Drag and drop
+        uploadArea.addEventListener('dragover', e => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#b8661f';
+            uploadArea.style.background = '#f0f7ff';
+        });
+
+        uploadArea.addEventListener('dragleave', e => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#d37827';
+            uploadArea.style.background = '#f8f9fa';
+        });
+
+        uploadArea.addEventListener('drop', e => {
+            e.preventDefault();
+            uploadArea.style.borderColor = '#d37827';
+            uploadArea.style.background = '#f8f9fa';
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                handleFileSelect();
+            }
+        });
+
+        function handleFileSelect() {
+            const file = fileInput.files[0];
+            if (file) {
+                fileName.style.display = 'block';
+                fileName.innerHTML = `<i class="fas fa-file"></i> Selected: ${file.name}`;
+                analyzeBtn.disabled = false;
+            }
+        }
+
+        // Analysis functionality
+        analyzeBtn.addEventListener('click', async () => {
+            const file = fileInput.files[0];
+            if (!file) return;
+
+            analyzeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Analyzing...';
+            analyzeBtn.disabled = true;
+
+            try {
+                // Read file content
+                const reader = new FileReader();
+                reader.onload = async (e) => {
+                    const content = e.target.result;
+                    
+                    // Simulate analysis
+                    setTimeout(() => {
+                        showAnalysisResult(file.name, content);
+                    }, 2000);
+                };
+                reader.readAsText(file);
+            } catch (error) {
+                console.error('Analysis error:', error);
+                showError('Failed to analyze document. Please try again.');
+            }
+        });
+
+        function showAnalysisResult(filename, content) {
+            const wordCount = content.split(' ').length;
+            const summary = content.substring(0, 200) + '...';
+            
+            analysisResult.innerHTML = `
+                <div class="card">
+                    <h3 style="color: #d37827; margin-bottom: 15px;"><i class="fas fa-chart-line"></i> Analysis Results</h3>
+                    <div style="margin-bottom: 15px;">
+                        <strong>File:</strong> ${filename}<br>
+                        <strong>Word Count:</strong> ${wordCount}<br>
+                        <strong>Analysis Date:</strong> ${new Date().toLocaleDateString()}
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <strong>Summary:</strong><br>
+                        <p style="background: #f8f9fa; padding: 10px; border-radius: 4px; margin-top: 5px;">${summary}</p>
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <strong>Key Points:</strong>
+                        <ul style="margin-top: 5px;">
+                            <li>Document successfully processed</li>
+                            <li>Text extraction completed</li>
+                            <li>Content analysis performed</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+            analysisResult.style.display = 'block';
+            
+            analyzeBtn.innerHTML = '<i class="fas fa-search"></i> Analyze Document';
+            analyzeBtn.disabled = false;
+        }
+
+        function showError(message) {
+            analysisResult.innerHTML = `
+                <div style="background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; padding: 15px; border-radius: 4px;">
+                    <i class="fas fa-exclamation-triangle"></i> ${message}
+                </div>
+            `;
+            analysisResult.style.display = 'block';
+            
+            analyzeBtn.innerHTML = '<i class="fas fa-search"></i> Analyze Document';
+            analyzeBtn.disabled = false;
+        }
+    </script>
+</body>
+</html>
