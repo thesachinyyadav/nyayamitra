@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Nyaya Mitra</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="nyaya_mitra_logo.jpg">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="modern-index.css">
+    <link rel="stylesheet" href="nav-enhanced.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- Enhanced Navigation Header (same as index-enhanced.html) -->
+    <header class="enhanced-header" id="mainHeader">
+        <nav class="enhanced-nav">
+            <a href="index-enhanced.html" class="enhanced-logo">
+                <img src="nyaya_mitra_logo.jpg" alt="Nyaya Mitra Logo">
+                <span>Nyaya Mitra</span>
+            </a>
+            
+            <ul class="nav-menu-enhanced" id="navMenu">
+                <li class="nav-item-enhanced">
+                    <a href="index-enhanced.html">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item-enhanced">
+                    <a href="#" class="dropdown-toggle">
+                        <i class="fas fa-gavel"></i>
+                        Legal Services
+                        <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </a>
+                    <div class="dropdown-menu-enhanced">
+                        <a href="document-analyzer.html" class="dropdown-item-enhanced">
+                            <i class="fas fa-file-alt"></i>
+                            Document Analyzer
+                        </a>
+                        <a href="legal-consultation.html" class="dropdown-item-enhanced">
+                            <i class="fas fa-user-tie"></i>
+                            Legal Consultation
+                        </a>
+                        <a href="case-tracker.html" class="dropdown-item-enhanced">
+                            <i class="fas fa-clipboard-list"></i>
+                            Case Tracking
+                        </a>
+                    </div>
+                </li>
+                
+                <li class="nav-item-enhanced active">
+                    <a href="dashboard.html">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Dashboard
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="nav-cta-enhanced">
+                <div class="nav-search">
+                    <input type="text" placeholder="Search..." id="navSearch">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div class="theme-toggle" id="themeToggle"></div>
+                
+                <a href="#" class="btn-enhanced btn-outline-enhanced" id="userProfile">
+                    <i class="fas fa-user"></i>
+                    John Doe
+                </a>
+            </div>
+            
+            <div class="mobile-toggle-enhanced" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header">
+                <div class="dashboard-title">
+                    <h1>Welcome back, John!</h1>
+                    <p>Here's what's happening with your legal matters</p>
+                </div>
+                
+                <div class="dashboard-actions">
+                    <button class="btn-enhanced btn-primary-enhanced" onclick="showCreateCaseModal()">
+                        <i class="fas fa-plus"></i>
+                        New Case
+                    </button>
+                    <button class="btn-enhanced btn-outline-enhanced" onclick="showNotifications()">
+                        <i class="fas fa-bell"></i>
+                        Notifications
+                        <span class="notification-badge">3</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dashboard Stats -->
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>15</h3>
+                        <p>Active Cases</p>
+                        <span class="stat-change positive">+2 this month</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>47</h3>
+                        <p>Documents Analyzed</p>
+                        <span class="stat-change positive">+12 this week</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>3</h3>
+                        <p>Upcoming Hearings</p>
+                        <span class="stat-change neutral">Next: Tomorrow</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>89%</h3>
+                        <p>Success Rate</p>
+                        <span class="stat-change positive">+5% this quarter</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Recent Cases -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-briefcase"></i> Recent Cases</h3>
+                        <a href="my-cases.html" class="view-all">View All</a>
+                    </div>
+                    <div class="card-content">
+                        <div class="case-list" id="recentCases">
+                            <!-- Cases will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document Analysis -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-file-alt"></i> Recent Documents</h3>
+                        <a href="document-analyzer.html" class="view-all">Analyze New</a>
+                    </div>
+                    <div class="card-content">
+                        <div class="document-list" id="recentDocuments">
+                            <!-- Documents will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="quick-actions">
+                            <a href="sos-alerts.html" class="quick-action emergency">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>Emergency SOS</span>
+                            </a>
+                            <a href="document-analyzer.html" class="quick-action">
+                                <i class="fas fa-upload"></i>
+                                <span>Upload Document</span>
+                            </a>
+                            <a href="legal-consultation.html" class="quick-action">
+                                <i class="fas fa-video"></i>
+                                <span>Book Consultation</span>
+                            </a>
+                            <a href="civic-feedback.html" class="quick-action">
+                                <i class="fas fa-comment"></i>
+                                <span>Civic Feedback</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-bell"></i> Recent Notifications</h3>
+                        <a href="notifications.html" class="view-all">View All</a>
+                    </div>
+                    <div class="card-content">
+                        <div class="notification-list" id="recentNotifications">
+                            <!-- Notifications will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="enhanced-navigation.js"></script>
+    <script>
+        // Dashboard functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDashboardData();
+        });
+
+        async function loadDashboardData() {
+            try {
+                // In a real application, these would be API calls
+                loadRecentCases();
+                loadRecentDocuments();
+                loadRecentNotifications();
+            } catch (error) {
+                console.error('Error loading dashboard data:', error);
+            }
+        }
+
+        function loadRecentCases() {
+            const casesContainer = document.getElementById('recentCases');
+            const mockCases = [
+                { id: 1, number: 'NYM-2025-001', title: 'Property Dispute', status: 'in_progress', priority: 'high', lastUpdate: '2 hours ago' },
+                { id: 2, number: 'NYM-2025-002', title: 'Contract Review', status: 'pending', priority: 'medium', lastUpdate: '1 day ago' },
+                { id: 3, number: 'NYM-2025-003', title: 'Employment Issue', status: 'resolved', priority: 'low', lastUpdate: '3 days ago' }
+            ];
+
+            casesContainer.innerHTML = mockCases.map(case_ => `
+                <div class="case-item">
+                    <div class="case-info">
+                        <div class="case-title">${case_.title}</div>
+                        <div class="case-number">${case_.number}</div>
+                    </div>
+                    <div class="case-meta">
+                        <span class="case-status status-${case_.status}">${case_.status.replace('_', ' ')}</span>
+                        <span class="case-priority priority-${case_.priority}">${case_.priority}</span>
+                        <span class="case-time">${case_.lastUpdate}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadRecentDocuments() {
+            const documentsContainer = document.getElementById('recentDocuments');
+            const mockDocuments = [
+                { id: 1, name: 'contract_review.pdf', status: 'completed', confidence: 95, date: '2 hours ago' },
+                { id: 2, name: 'legal_notice.docx', status: 'processing', confidence: null, date: '1 hour ago' },
+                { id: 3, name: 'property_deed.pdf', status: 'completed', confidence: 87, date: '1 day ago' }
+            ];
+
+            documentsContainer.innerHTML = mockDocuments.map(doc => `
+                <div class="document-item">
+                    <div class="document-info">
+                        <i class="fas fa-file-alt"></i>
+                        <div>
+                            <div class="document-name">${doc.name}</div>
+                            <div class="document-date">${doc.date}</div>
+                        </div>
+                    </div>
+                    <div class="document-status">
+                        <span class="status-${doc.status}">${doc.status}</span>
+                        ${doc.confidence ? `<span class="confidence">${doc.confidence}% confident</span>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadRecentNotifications() {
+            const notificationsContainer = document.getElementById('recentNotifications');
+            const mockNotifications = [
+                { id: 1, title: 'Case Update', message: 'Your case NYM-2025-001 has been updated', type: 'info', time: '1 hour ago', unread: true },
+                { id: 2, title: 'Document Analysis Complete', message: 'Analysis of contract_review.pdf is ready', type: 'success', time: '2 hours ago', unread: true },
+                { id: 3, title: 'Hearing Scheduled', message: 'Court hearing scheduled for next week', type: 'warning', time: '1 day ago', unread: false }
+            ];
+
+            notificationsContainer.innerHTML = mockNotifications.map(notification => `
+                <div class="notification-item ${notification.unread ? 'unread' : ''}">
+                    <div class="notification-icon type-${notification.type}">
+                        <i class="fas fa-${notification.type === 'success' ? 'check-circle' : notification.type === 'warning' ? 'exclamation-triangle' : 'info-circle'}"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-title">${notification.title}</div>
+                        <div class="notification-message">${notification.message}</div>
+                        <div class="notification-time">${notification.time}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function showCreateCaseModal() {
+            alert('Create Case Modal would open here');
+            // In a real application, this would open a modal or redirect to case creation page
+        }
+
+        function showNotifications() {
+            window.location.href = 'notifications.html';
+        }
+    </script>
+</body>
+</html>

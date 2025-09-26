@@ -1,0 +1,85 @@
+{
+  "name": "Nyaya Mitra - Legal Assistance Platform",
+  "short_name": "Nyaya Mitra",
+  "description": "Comprehensive legal assistance platform with AI-powered tools and expert consultations",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#d37827",
+  "orientation": "portrait-primary",
+  "categories": ["legal", "productivity", "utilities"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "nyaya_mitra_logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "nyaya_mitra_logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/mobile.jpg",
+      "sizes": "720x1280",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ],
+  "features": [
+    "AI Document Analysis",
+    "Emergency SOS Alerts",
+    "Legal Consultations",
+    "Case Tracking",
+    "Civic Engagement"
+  ],
+  "shortcuts": [
+    {
+      "name": "Emergency SOS",
+      "short_name": "SOS",
+      "description": "Quick access to emergency alerts",
+      "url": "/sos-alerts.html",
+      "icons": [
+        {
+          "src": "nyaya_mitra_logo.jpg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Document Analyzer",
+      "short_name": "Analyze",
+      "description": "AI-powered document analysis",
+      "url": "/document-analyzer.html",
+      "icons": [
+        {
+          "src": "nyaya_mitra_logo.jpg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "User dashboard and case management",
+      "url": "/dashboard.html",
+      "icons": [
+        {
+          "src": "nyaya_mitra_logo.jpg",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}
