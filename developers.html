@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Nyaya Mitra</title>
+    <link rel="icon" type="image/jpeg" href="nyaya_mitra_logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="nav-dropdown.css">
+    <link rel="stylesheet" href="nav-enhanced.css">
+    <style>
+        /* Team page specific styles */
+        .page-hero {
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: #121212;
+            overflow: hidden;
+            padding: 100px 0 50px;
+        }
+        
+        .page-hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .page-hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(rgba(255,255,255,0.05) 2px, transparent 2px),
+                radial-gradient(rgba(255,255,255,0.05) 2px, transparent 2px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+        
+        .page-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(211, 120, 39, 0.5), rgba(18, 18, 18, 0.5));
+        }
+        
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+        
+        .page-hero-title {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .page-hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #f39c12;
+            margin-bottom: 15px;
+        }
+        
+        .page-hero-description {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .content-section {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .team-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid rgba(211, 120, 39, 0.1);
+        }
+        
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .team-card h3 {
+            font-size: 1.5rem;
+            color: #121212;
+            margin-bottom: 5px;
+        }
+        
+        .team-card .role {
+            color: #d37827;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .team-card .student-id {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .team-card .bio {
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .team-skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .skill-tag {
+            background: rgba(211, 120, 39, 0.1);
+            color: #d37827;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .university-section {
+            margin-top: 60px;
+        }
+        
+        .university-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .university-logo {
+            width: 80px;
+            height: 80px;
+            background: #121212;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .university-logo i {
+            color: #d37827;
+            font-size: 2.5rem;
+        }
+        
+        .university-info h3 {
+            font-size: 1.5rem;
+            color: #121212;
+            margin-bottom: 10px;
+        }
+        
+        .university-info p {
+            color: #444;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            
+            .university-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .page-hero-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Standard header will be inserted by script.js -->
+    <header class="header"></header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-background">
+            <div class="page-hero-pattern"></div>
+            <div class="page-hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-hero-title">Meet Our Development Team</h1>
+                <p class="page-hero-subtitle">BCA Students - Christ (Deemed to be University)</p>
+                <p class="page-hero-description">Passionate developers building legal technology solutions for social impact</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="team-grid">
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-photo">
+                        <img src="sachin.jpg" alt="Sachin Yadav" onerror="this.src='https://via.placeholder.com/200x200?text=SY'">
+                    </div>
+                    <h3>Sachin Yadav</h3>
+                    <p class="role">Lead Developer & Project Manager</p>
+                    <p class="student-id">Registration: 2341551</p>
+                    <p class="bio">Full-stack development and system architecture specialist. Leading the technical implementation of Nyaya Mitra platform.</p>
+                    <div class="team-skills">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Database Design</span>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-photo">
+                        <img src="surya.jpg" alt="Surya Vamshi S" onerror="this.src='https://via.placeholder.com/200x200?text=SV'">
+                    </div>
+                    <h3>Surya Vamshi S</h3>
+                    <p class="role">UI/UX Designer & Frontend Developer</p>
+                    <p class="student-id">Registration: 2341566</p>
+                    <p class="bio">Creative designer focused on user experience and modern web interfaces. Responsible for the visual design and user interaction flows.</p>
+                    <div class="team-skills">
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">Responsive Design</span>
+                    </div>
+                </div>
+
+                <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-photo">
+                        <img src="hema.jpg" alt="Hema C" onerror="this.src='https://via.placeholder.com/200x200?text=HC'">
+                    </div>
+                    <h3>Hema C</h3>
+                    <p class="role">Legal Research Specialist & Content Manager</p>
+                    <p class="student-id">Registration: 2341530</p>
+                    <p class="bio">Legal research specialist ensuring accuracy and compliance in all legal content. Managing data integration and content strategy.</p>
+                    <div class="team-skills">
+                        <span class="skill-tag">Legal Research</span>
+                        <span class="skill-tag">Content Strategy</span>
+                        <span class="skill-tag">Data Management</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- University Section -->
+            <div class="university-section" data-aos="fade-up">
+                <div class="university-card">
+                    <div class="university-logo">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="university-info">
+                        <h3>Christ (Deemed to be University)</h3>
+                        <p class="address">Hosur Road, Bangalore - 560027, Karnataka, India</p>
+                        <p class="program">Bachelor of Computer Applications (BCA)</p>
+                        <p class="project-info">Final Year Mini Project - 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standard footer will be inserted by script.js -->
+    <footer class="modern-footer"></footer>
+
+    <script src="script.js"></script>
+    <script type="module">
+        // Import navigation and footer components
+        import { insertNavigation } from './components/navigation.js';
+        import { insertFooter } from './components/footer.js';
+        
+        // Insert the navigation and footer when DOM content is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            insertNavigation('developers'); // Pass the current page id to highlight in nav
+            insertFooter();
+        });
+    </script>
+</body>
+</html>

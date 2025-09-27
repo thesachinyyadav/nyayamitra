@@ -7,196 +7,1770 @@
     <link rel="icon" type="image/jpeg" href="nyaya_mitra_logo.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="modern-index.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="nav-dropdown.css">
+    <link rel="stylesheet" href="nav-enhanced.css">
+    <link rel="stylesheet" href="css/modern-footer.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-brand">
-                <img src="nyaya_mitra_logo.jpg" alt="Nyaya Mitra">
-                <h1>Nyaya Mitra</h1>
-            </a>
-            <div class="nav-center">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="sos-alerts.html" class="active">SOS Alerts</a>
-                <a href="document-analyzer.html">Document Analyzer</a>
-                <a href="civic-feedback.html">Civic Feedback</a>
-                <a href="whistleblower.html">Whistleblower</a>
-            </div>
-            <div class="nav-actions">
-                <a href="about.html" class="btn btn-secondary">Learn More</a>
-                <a href="contact.html" class="btn btn-primary">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <!-- Standard navigation will be inserted by script.js -->
+    <header class="header"></header>
 
     <!-- Hero -->
-    <section class="page-hero">
+    <section class="sos-hero">
         <div class="container">
-            <h1><i class="fas fa-exclamation-triangle"></i> Emergency SOS Alerts</h1>
-            <p>Send instant emergency alerts with your location to authorities and emergency contacts.</p>
-            <p>Quick response system for immediate assistance in critical situations.</p>
+            <div class="sos-hero-content" data-aos="fade-up">
+                <div class="sos-badge">
+                    <span><i class="fas fa-shield-alt"></i> Emergency Service</span>
+                    <span><i class="fas fa-heartbeat"></i> 24/7 Support</span>
+                </div>
+                <h1><i class="fas fa-exclamation-triangle"></i> Emergency SOS Alerts</h1>
+                <p class="hero-tagline">Instant emergency response system that shares your location with authorities and emergency contacts when you need help most.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">4.2<small>min</small></span>
+                        <span class="stat-label">Avg. Response Time</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Service Availability</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98<small>%</small></span>
+                        <span class="stat-label">Alert Success Rate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,208C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
         </div>
     </section>
 
     <!-- Emergency Button -->
-    <section class="content-section">
+    <section class="content-section sos-button-section">
         <div class="container">
-            <div class="emergency-container">
-                <button id="emergency-button" class="emergency-btn">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <span>PRESS & HOLD FOR 3 SECONDS</span>
-                    <span class="subtext">Emergency Alert</span>
-                </button>
+            <h2 class="section-title" data-aos="fade-up">Emergency SOS Button</h2>
+            <p class="section-subtitle" data-aos="fade-up">Press and hold for 3 seconds to send an emergency alert with your location</p>
+            
+            <div class="emergency-container" data-aos="zoom-in">
+                <div class="emergency-button-wrapper">
+                    <div class="pulse-ring"></div>
+                    <button id="emergency-button" class="emergency-btn">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span class="emergency-text">PRESS & HOLD FOR 3 SECONDS</span>
+                        <span class="emergency-subtext">Emergency Alert</span>
+                    </button>
+                </div>
+
+                <div id="countdown-timer" class="countdown-timer">
+                    <svg class="countdown-svg" viewbox="0 0 100 100">
+                        <circle class="countdown-circle" cx="50" cy="50" r="45"></circle>
+                    </svg>
+                    <span id="countdown-number">3</span>
+                </div>
 
                 <div id="alert-message" class="alert-message" style="display: none;">
                     <i class="fas fa-check-circle"></i>
                     <span>Emergency alert sent successfully!</span>
                 </div>
             </div>
+            
+            <div class="emergency-features" data-aos="fade-up">
+                <div class="emergency-feature">
+                    <div class="feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="feature-text">
+                        <h4>Precise Location</h4>
+                        <p>Sends your exact GPS coordinates to responders</p>
+                    </div>
+                </div>
+                <div class="emergency-feature">
+                    <div class="feature-icon"><i class="fas fa-bell"></i></div>
+                    <div class="feature-text">
+                        <h4>Instant Alerts</h4>
+                        <p>Notifies emergency services and your contacts</p>
+                    </div>
+                </div>
+                <div class="emergency-feature">
+                    <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
+                    <div class="feature-text">
+                        <h4>Protected Privacy</h4>
+                        <p>Only shares location during emergencies</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Emergency Services -->
-    <section class="content-section">
+    <section class="content-section emergency-contacts-section">
         <div class="container">
-            <h2 class="section-title">Emergency Contacts</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-phone"></i>
+            <h2 class="section-title" data-aos="fade-up">Emergency Contacts</h2>
+            <p class="section-subtitle" data-aos="fade-up">Important numbers to call directly in case of emergency</p>
+            
+            <div class="emergency-contacts-grid">
+                <div class="emergency-contact-card" data-aos="fade-up">
+                    <div class="contact-card-inner">
+                        <div class="contact-card-front">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>Police Emergency</h3>
+                            <div class="emergency-number">100</div>
+                            <div class="call-now">Tap to Call</div>
+                        </div>
+                        <div class="contact-card-back">
+                            <h4>When to Call:</h4>
+                            <ul>
+                                <li>Crime in progress</li>
+                                <li>Threat to life or property</li>
+                                <li>Suspicious activity</li>
+                                <li>Traffic accidents</li>
+                                <li>Public safety concerns</li>
+                            </ul>
+                            <a href="tel:100" class="call-button">
+                                <i class="fas fa-phone"></i> Call 100
+                            </a>
+                        </div>
                     </div>
-                    <h3>Police Emergency</h3>
-                    <p class="emergency-number">100</p>
-                    <p>For crimes, theft, violence, and security emergencies.</p>
                 </div>
 
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-ambulance"></i>
+                <div class="emergency-contact-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-card-inner">
+                        <div class="contact-card-front">
+                            <div class="contact-icon">
+                                <i class="fas fa-ambulance"></i>
+                            </div>
+                            <h3>Medical Emergency</h3>
+                            <div class="emergency-number">108</div>
+                            <div class="call-now">Tap to Call</div>
+                        </div>
+                        <div class="contact-card-back">
+                            <h4>When to Call:</h4>
+                            <ul>
+                                <li>Life-threatening situations</li>
+                                <li>Severe injury or illness</li>
+                                <li>Chest pain or difficulty breathing</li>
+                                <li>Unconsciousness</li>
+                                <li>Serious accidents</li>
+                            </ul>
+                            <a href="tel:108" class="call-button">
+                                <i class="fas fa-phone"></i> Call 108
+                            </a>
+                        </div>
                     </div>
-                    <h3>Medical Emergency</h3>
-                    <p class="emergency-number">108</p>
-                    <p>For medical emergencies, accidents, and health crises.</p>
                 </div>
 
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-fire"></i>
+                <div class="emergency-contact-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-card-inner">
+                        <div class="contact-card-front">
+                            <div class="contact-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h3>Fire Emergency</h3>
+                            <div class="emergency-number">101</div>
+                            <div class="call-now">Tap to Call</div>
+                        </div>
+                        <div class="contact-card-back">
+                            <h4>When to Call:</h4>
+                            <ul>
+                                <li>Fire outbreaks</li>
+                                <li>Smoke or gas leaks</li>
+                                <li>Building collapses</li>
+                                <li>People trapped in buildings</li>
+                                <li>Hazardous material incidents</li>
+                            </ul>
+                            <a href="tel:101" class="call-button">
+                                <i class="fas fa-phone"></i> Call 101
+                            </a>
+                        </div>
                     </div>
-                    <h3>Fire Emergency</h3>
-                    <p class="emergency-number">101</p>
-                    <p>For fire emergencies, gas leaks, and rescue operations.</p>
                 </div>
 
-                <div class="card">
-                    <div class="card-icon">
-                        <i class="fas fa-shield-alt"></i>
+                <div class="emergency-contact-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-card-inner">
+                        <div class="contact-card-front">
+                            <div class="contact-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Women Helpline</h3>
+                            <div class="emergency-number">1091</div>
+                            <div class="call-now">Tap to Call</div>
+                        </div>
+                        <div class="contact-card-back">
+                            <h4>When to Call:</h4>
+                            <ul>
+                                <li>Domestic violence</li>
+                                <li>Harassment or stalking</li>
+                                <li>Sexual assault</li>
+                                <li>Workplace harassment</li>
+                                <li>Human trafficking</li>
+                            </ul>
+                            <a href="tel:1091" class="call-button">
+                                <i class="fas fa-phone"></i> Call 1091
+                            </a>
+                        </div>
                     </div>
-                    <h3>Women Helpline</h3>
-                    <p class="emergency-number">1091</p>
-                    <p>For women in distress and domestic violence cases.</p>
+                </div>
+                
+                <div class="emergency-contact-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="contact-card-inner">
+                        <div class="contact-card-front">
+                            <div class="contact-icon">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <h3>Child Helpline</h3>
+                            <div class="emergency-number">1098</div>
+                            <div class="call-now">Tap to Call</div>
+                        </div>
+                        <div class="contact-card-back">
+                            <h4>When to Call:</h4>
+                            <ul>
+                                <li>Child abuse or neglect</li>
+                                <li>Child labor</li>
+                                <li>Children in distress</li>
+                                <li>Missing children</li>
+                                <li>Child trafficking</li>
+                            </ul>
+                            <a href="tel:1098" class="call-button">
+                                <i class="fas fa-phone"></i> Call 1098
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="emergency-contact-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="contact-card-inner">
+                        <div class="contact-card-front">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-volume"></i>
+                            </div>
+                            <h3>National Emergency</h3>
+                            <div class="emergency-number">112</div>
+                            <div class="call-now">Tap to Call</div>
+                        </div>
+                        <div class="contact-card-back">
+                            <h4>When to Call:</h4>
+                            <ul>
+                                <li>Any emergency situation</li>
+                                <li>Unified emergency response</li>
+                                <li>When unsure which service to call</li>
+                                <li>Multi-agency response needed</li>
+                                <li>Works across India</li>
+                            </ul>
+                            <a href="tel:112" class="call-button">
+                                <i class="fas fa-phone"></i> Call 112
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Instructions -->
-    <section class="content-section">
+    <section class="content-section instructions-section">
         <div class="container">
-            <h2 class="section-title">How to Use Emergency SOS</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="step-number">1</div>
-                    <h3>Allow Location</h3>
-                    <p>Grant location access for accurate emergency response and faster assistance.</p>
+            <h2 class="section-title" data-aos="fade-up">How to Use Emergency SOS</h2>
+            <p class="section-subtitle" data-aos="fade-up">Simple steps to ensure you get help when you need it most</p>
+            
+            <div class="sos-process" data-aos="fade-up">
+                <div class="process-step" data-aos="fade-right" data-aos-delay="100">
+                    <div class="step-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">01</div>
+                        <h3>Allow Location Access</h3>
+                        <p>Enable location services on your device for accurate positioning. This helps emergency responders find you quickly and provide timely assistance.</p>
+                        <div class="step-note">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Your location is only shared during an active emergency</span>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="card">
-                    <div class="step-number">2</div>
-                    <h3>Press & Hold</h3>
-                    <p>Hold the emergency button for 3 seconds to activate the alert system.</p>
+                
+                <div class="process-arrow">
+                    <i class="fas fa-long-arrow-alt-right"></i>
                 </div>
-
-                <div class="card">
-                    <div class="step-number">3</div>
-                    <h3>Alert Sent</h3>
-                    <p>Your location is automatically shared with emergency services and contacts.</p>
+                
+                <div class="process-step" data-aos="fade-right" data-aos-delay="300">
+                    <div class="step-icon">
+                        <i class="fas fa-hand-pointer"></i>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">02</div>
+                        <h3>Press & Hold SOS Button</h3>
+                        <p>Press and hold the red emergency button for 3 seconds. The countdown timer will show your progress as you hold the button down.</p>
+                        <div class="step-note">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>Release before 3 seconds to cancel</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-arrow">
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </div>
+                
+                <div class="process-step" data-aos="fade-right" data-aos-delay="500">
+                    <div class="step-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">03</div>
+                        <h3>Alert Automatically Sent</h3>
+                        <p>Your location, personal details, and emergency type are instantly shared with appropriate emergency services and your designated contacts.</p>
+                        <div class="step-note">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Confirmation message appears when alert is sent</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="process-arrow">
+                    <i class="fas fa-long-arrow-alt-right"></i>
+                </div>
+                
+                <div class="process-step" data-aos="fade-right" data-aos-delay="700">
+                    <div class="step-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">04</div>
+                        <h3>Receive Assistance</h3>
+                        <p>Emergency services will contact you and dispatch help to your location. Stay on the page if possible to receive status updates.</p>
+                        <div class="step-note">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Be prepared to receive a call from responders</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Emergency Preparation Section -->
+    <section class="content-section preparation-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Be Prepared For Emergencies</h2>
+            <p class="section-subtitle" data-aos="fade-up">Take these steps now to ensure faster assistance during critical situations</p>
+            
+            <div class="preparation-grid">
+                <div class="preparation-card" data-aos="zoom-in">
+                    <div class="preparation-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Update Your Profile</h3>
+                    <p>Ensure your emergency contacts, medical information, and personal details are up to date in your profile.</p>
+                    <a href="#" class="preparation-link">Update Profile <i class="fas fa-chevron-right"></i></a>
+                </div>
+                
+                <div class="preparation-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="preparation-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Medical Information</h3>
+                    <p>Add your blood type, allergies, medical conditions, and current medications to help emergency responders.</p>
+                    <a href="#" class="preparation-link">Add Medical Info <i class="fas fa-chevron-right"></i></a>
+                </div>
+                
+                <div class="preparation-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="preparation-icon">
+                        <i class="fas fa-address-card"></i>
+                    </div>
+                    <h3>Emergency Contacts</h3>
+                    <p>Add family members or friends who should be notified automatically when you send an SOS alert.</p>
+                    <a href="#" class="preparation-link">Add Contacts <i class="fas fa-chevron-right"></i></a>
+                </div>
+                
+                <div class="preparation-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="preparation-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Test The System</h3>
+                    <p>Run a test of the SOS system in training mode to ensure everything works correctly when you need it.</p>
+                    <a href="#" class="preparation-link">Run Test <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- FAQ Section -->
+    <section class="content-section faq-section">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Nyaya Mitra</h4>
-                    <p>Empowering citizens with accessible legal services through advanced technology and innovation. Your trusted partner in legal assistance and civic engagement.</p>
-                    <div class="social-links">
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <h2 class="section-title" data-aos="fade-up">Frequently Asked Questions</h2>
+            <p class="section-subtitle" data-aos="fade-up">Common questions about our SOS alert system</p>
+            
+            <div class="faq-container" data-aos="fade-up">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Who receives my emergency alert?</h3>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Your emergency alert is simultaneously sent to:</p>
+                        <ul>
+                            <li>The appropriate emergency service based on the type of emergency (police, ambulance, fire)</li>
+                            <li>Your designated emergency contacts that you've added to your profile</li>
+                            <li>The Nyaya Mitra support team who can provide additional assistance</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="sos-alerts.html">Emergency SOS</a></li>
-                        <li><a href="document-analyzer.html">Document Analyzer</a></li>
-                        <li><a href="whistleblower.html">Whistleblower Portal</a></li>
-                        <li><a href="civic-feedback.html">Civic Feedback</a></li>
-                        <li><a href="case-tracker.html">Case Tracker</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Emergency Contacts</h4>
-                    <div class="emergency-contact">
-                        <i class="fas fa-phone"></i>
-                        <strong>Police: 100</strong>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is my data secure and private?</h3>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
                     </div>
-                    <div class="emergency-contact">
-                        <i class="fas fa-ambulance"></i>
-                        <strong>Medical: 108</strong>
-                    </div>
-                    <div class="emergency-contact">
-                        <i class="fas fa-fire"></i>
-                        <strong>Fire: 101</strong>
+                    <div class="faq-answer">
+                        <p>Yes, your privacy and data security are our top priorities:</p>
+                        <ul>
+                            <li>Your location is only accessed when you activate the SOS alert</li>
+                            <li>Personal and medical information is encrypted and stored securely</li>
+                            <li>Data is only shared with emergency services during an active emergency</li>
+                            <li>We comply with all applicable privacy laws and regulations</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <span>info@nyayamitra.com</span>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What happens if I accidentally trigger an alert?</h3>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
                     </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <span>+91 9999999999</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>New Delhi, India</span>
+                    <div class="faq-answer">
+                        <p>The 3-second hold requirement helps prevent accidental triggers, but if you do accidentally send an alert:</p>
+                        <ul>
+                            <li>You'll receive a confirmation message with a "Cancel Alert" option</li>
+                            <li>You can immediately cancel the alert within 60 seconds of sending it</li>
+                            <li>If emergency services contact you, simply explain it was an accidental trigger</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Nyaya Mitra. All rights reserved. | Made with ❤️ for legal empowerment</p>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What information is included in my emergency alert?</h3>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Your emergency alert includes:</p>
+                        <ul>
+                            <li>Your current GPS location (latitude and longitude)</li>
+                            <li>Your name and contact information</li>
+                            <li>Any medical information you've added to your profile</li>
+                            <li>The time the alert was triggered</li>
+                            <li>Your emergency contacts' information</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I use this service in areas with poor connectivity?</h3>
+                        <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, the system is designed to work even in areas with limited connectivity:</p>
+                        <ul>
+                            <li>The app will attempt to send the alert using minimal data</li>
+                            <li>If data connectivity is unavailable, it will attempt to send an SMS</li>
+                            <li>The system will keep trying to send the alert until it succeeds</li>
+                            <li>Your last known location will be included even if current GPS cannot be determined</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
+    
+    <!-- Nearby Police Stations Section -->
+    <section class="content-section nearby-stations-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up"><i class="fas fa-map-marker-alt"></i> Find Nearest Police Stations</h2>
+            <p class="section-subtitle" data-aos="fade-up">Quickly locate police stations near you in case of emergency</p>
+            
+            <div class="nearby-stations-container" data-aos="fade-up">
+                <div class="location-finder">
+                    <div class="location-input">
+                        <input type="text" id="manualLocation" placeholder="Enter your location or use current location">
+                        <button class="btn btn-primary" id="detectLocationBtn">
+                            <i class="fas fa-location-arrow"></i> Use My Location
+                        </button>
+                    </div>
+                    <button class="btn btn-primary btn-large" id="searchLocationBtn">
+                        <i class="fas fa-search"></i> Find Police Stations
+                    </button>
+                </div>
+                
+                <div class="stations-results" id="stationsResults">
+                    <div class="stations-loading">
+                        <div class="spinner"></div>
+                        <p>Searching for police stations near you...</p>
+                    </div>
+                    
+                    <div class="stations-results-content" style="display: none;">
+                        <div class="stations-filters">
+                            <select id="distanceFilter">
+                                <option value="100">All Distances</option>
+                                <option value="1">Within 1 km</option>
+                                <option value="3">Within 3 km</option>
+                                <option value="5">Within 5 km</option>
+                                <option value="10">Within 10 km</option>
+                            </select>
+                            <select id="typeFilter">
+                                <option value="all">All Station Types</option>
+                                <option value="police">Police Stations</option>
+                                <option value="women">Women Police Stations</option>
+                                <option value="traffic">Traffic Police</option>
+                            </select>
+                        </div>
+                        
+                        <div class="stations-list"></div>
+                    </div>
+                </div>
+                
+                <div class="map-container" id="mapContainer" style="display: none;">
+                    <div id="policeStationsMap"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section sos-cta">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Stay Protected Everywhere You Go</h2>
+                <p>Download the Nyaya Mitra mobile app to access emergency SOS features even when you're offline or on the go</p>
+                <div class="app-badges">
+                    <a href="#" class="app-badge">
+                        <i class="fab fa-google-play"></i>
+                        <div class="badge-text">
+                            <span>GET IT ON</span>
+                            <strong>Google Play</strong>
+                        </div>
+                    </a>
+                    <a href="#" class="app-badge">
+                        <i class="fab fa-apple"></i>
+                        <div class="badge-text">
+                            <span>Download on the</span>
+                            <strong>App Store</strong>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standard footer will be inserted by script.js -->
+    <footer class="modern-footer"></footer>
 
     <script src="js/database.js"></script>
     <script src="script.js"></script>
-    <script>
-        // Emergency button functionality
+    <script src="js/police-stations.js"></script>
+    <style>
+        /* SOS Hero Section */
+        .sos-hero {
+            background: linear-gradient(135deg, #d30000 0%, #b80000 100%);
+            padding: 120px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            line-height: 0;
+        }
+        
+        .sos-badge {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .sos-badge span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+        }
+        
+        .sos-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .hero-tagline {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 800px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        .stat-number small {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            margin-left: 2px;
+        }
+        
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        /* SOS Button Section */
+        .sos-button-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #171a1c;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        
+        .emergency-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px 0;
+            position: relative;
+        }
+        
+        .emergency-button-wrapper {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .pulse-ring {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border-radius: 50%;
+            background: rgba(211, 0, 0, 0.1);
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.7;
+            }
+            70% {
+                transform: scale(1.1);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+        }
+        
+        .emergency-btn {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: #d37827;
+            color: white;
+            border: none;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 30px rgba(211, 120, 39, 0.4), 
+                        inset 0 -8px 0 rgba(0,0,0,0.2),
+                        0 0 20px rgba(211, 120, 39, 0.6);
+            z-index: 2;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .emergency-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(211, 120, 39, 0.5), 
+                        inset 0 -8px 0 rgba(0,0,0,0.2),
+                        0 0 30px rgba(211, 120, 39, 0.7);
+        }
+        
+        .emergency-btn:active {
+            transform: translateY(2px);
+        }
+        
+        .emergency-btn i {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: pulse-icon 1.5s infinite alternate;
+        }
+        
+        @keyframes pulse-icon {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+        
+        .emergency-text {
+            font-weight: 700;
+            font-size: 1.3rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        
+        .emergency-subtext {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        
+        .countdown-timer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 350px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+        }
+        
+        .countdown-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+        
+        .countdown-circle {
+            fill: none;
+            stroke: #ffffff;
+            stroke-width: 5;
+            stroke-dasharray: 283;
+            stroke-dashoffset: 283;
+            stroke-linecap: round;
+            opacity: 0.8;
+            cx: 50;
+            cy: 50;
+            r: 45;
+        }
+        
+        #countdown-number {
+            font-size: 8rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        .alert-message {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .error-message {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        
+        .info-message {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+        
+        .alert-actions {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .cancel-alert {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        
+        .cancel-alert:hover {
+            background: #c82333;
+        }
+        
+        .emergency-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .emergency-feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            width: 300px;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(211, 120, 39, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d37827;
+            font-size: 1.2rem;
+        }
+        
+        .feature-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #171a1c;
+        }
+        
+        .feature-text p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Emergency Contacts Section */
+        .emergency-contacts-section {
+            background: #f8f9fa;
+            padding: 100px 0;
+        }
+        
+        .emergency-contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .emergency-contact-card {
+            height: 280px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        
+        .contact-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .emergency-contact-card.flipped .contact-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .contact-card-front, .contact-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-card-front {
+            background: white;
+        }
+        
+        .contact-card-back {
+            background: white;
+            transform: rotateY(180deg);
+            text-align: left;
+            justify-content: space-between;
+        }
+        
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .emergency-contact-card:nth-child(1) .contact-icon {
+            background: rgba(13, 110, 253, 0.1);
+            color: #0d6efd;
+        }
+        
+        .emergency-contact-card:nth-child(2) .contact-icon {
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+        }
+        
+        .emergency-contact-card:nth-child(3) .contact-icon {
+            background: rgba(255, 193, 7, 0.1);
+            color: #ffc107;
+        }
+        
+        .emergency-contact-card:nth-child(4) .contact-icon {
+            background: rgba(32, 201, 151, 0.1);
+            color: #20c997;
+        }
+        
+        .emergency-contact-card:nth-child(5) .contact-icon {
+            background: rgba(111, 66, 193, 0.1);
+            color: #6f42c1;
+        }
+        
+        .emergency-contact-card:nth-child(6) .contact-icon {
+            background: rgba(23, 162, 184, 0.1);
+            color: #17a2b8;
+        }
+        
+        .emergency-contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #171a1c;
+            text-align: center;
+        }
+        
+        .emergency-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #d37827;
+            margin-bottom: 15px;
+        }
+        
+        .call-now {
+            font-size: 0.9rem;
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 30px;
+            color: #666;
+            margin-top: 20px;
+        }
+        
+        .contact-card-back h4 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #171a1c;
+        }
+        
+        .contact-card-back ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-card-back ul li {
+            margin-bottom: 8px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .call-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #d37827;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .call-button:hover {
+            background: #b8661f;
+            transform: translateY(-3px);
+        }
+        
+        /* Instructions Section */
+        .instructions-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .sos-process {
+            max-width: 1000px;
+            margin: 50px auto 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+        }
+        
+        .process-step {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .process-step:last-child {
+            margin-bottom: 0;
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            background: linear-gradient(135deg, #d37827, #f39c12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 10px 20px rgba(211, 120, 39, 0.3);
+        }
+        
+        .step-content {
+            padding-top: 10px;
+        }
+        
+        .step-number {
+            font-size: 1rem;
+            font-weight: 700;
+            background: rgba(211, 120, 39, 0.1);
+            color: #d37827;
+            padding: 5px 15px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .step-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #171a1c;
+        }
+        
+        .step-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .step-note {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(211, 120, 39, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 3px solid #d37827;
+        }
+        
+        .step-note i {
+            color: #d37827;
+        }
+        
+        .process-arrow {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #d37827;
+            margin: -20px 0;
+            padding-left: 80px;
+        }
+        
+        /* Preparation Section */
+        .preparation-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .preparation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .preparation-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .preparation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .preparation-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(211, 120, 39, 0.1), rgba(243, 156, 18, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: #d37827;
+        }
+        
+        .preparation-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #171a1c;
+        }
+        
+        .preparation-card p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .preparation-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #d37827;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .preparation-link:hover {
+            gap: 15px;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .faq-question {
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+        
+        .faq-question h3 {
+            font-size: 1.2rem;
+            color: #171a1c;
+            padding-right: 40px;
+        }
+        
+        .faq-toggle {
+            width: 30px;
+            height: 30px;
+            background: rgba(211, 120, 39, 0.1);
+            color: #d37827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            padding: 0 25px 25px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .faq-answer ul {
+            padding: 0 25px 25px 45px;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        /* Nearby Police Stations Section */
+        .nearby-stations-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .location-finder {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .location-input {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+        }
+        
+        .location-input input {
+            flex-grow: 1;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        .stations-results {
+            margin-top: 40px;
+        }
+        
+        .stations-loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 30px;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(211, 120, 39, 0.1);
+            border-radius: 50%;
+            border-top-color: #d37827;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .stations-list-container {
+            margin-top: 30px;
+        }
+        
+        .stations-filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stations-filters select {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+        
+        .stations-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .station-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid #0d6efd;
+        }
+        
+        .station-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .women-station {
+            border-left-color: #dc3545;
+        }
+        
+        .traffic-station {
+            border-left-color: #ffc107;
+        }
+        
+        .station-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .station-header h3 {
+            font-size: 1.3rem;
+            color: #171a1c;
+            margin: 0;
+        }
+        
+        .station-type {
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        
+        .police-type {
+            background: rgba(13, 110, 253, 0.1);
+            color: #0d6efd;
+        }
+        
+        .women-type {
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+        }
+        
+        .traffic-type {
+            background: rgba(255, 193, 7, 0.1);
+            color: #ffc107;
+        }
+        
+        .station-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .station-info {
+            flex-grow: 1;
+        }
+        
+        .station-info p {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .station-info i {
+            color: #d37827;
+            min-width: 16px;
+        }
+        
+        .station-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .rating-stars {
+            color: #ffc107;
+        }
+        
+        .rating-value {
+            font-weight: 600;
+            color: #171a1c;
+        }
+        
+        .station-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .btn-sm {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+        
+        .map-container {
+            height: 400px;
+            margin-top: 40px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        #policeStationsMap {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+        }
+        
+        .no-results i {
+            font-size: 3rem;
+            color: #d37827;
+            opacity: 0.6;
+            margin-bottom: 15px;
+        }
+        
+        .map-info-window {
+            padding: 5px;
+        }
+        
+        .map-info-window h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #171a1c;
+        }
+        
+        .map-info-window p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+        
+        .info-window-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .info-btn {
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .directions-btn {
+            background: #0d6efd;
+            color: white;
+        }
+        
+        .call-btn {
+            background: #d37827;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .location-input {
+                flex-direction: column;
+            }
+            
+            .station-details {
+                flex-direction: column;
+            }
+            
+            .station-actions {
+                flex-direction: row;
+                margin-top: 15px;
+                width: 100%;
+            }
+            
+            .station-actions .btn {
+                flex: 1;
+            }
+        }
+        
+        /* CTA Section */
+        .sos-cta {
+            background: linear-gradient(135deg, #d30000 0%, #b80000 100%);
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .sos-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .sos-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .app-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .app-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .app-badge:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-5px);
+        }
+        
+        .app-badge i {
+            font-size: 2rem;
+        }
+        
+        .badge-text {
+            text-align: left;
+        }
+        
+        .badge-text span {
+            font-size: 0.8rem;
+            display: block;
+        }
+        
+        .badge-text strong {
+            font-size: 1.2rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .sos-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+            
+            .emergency-btn {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .countdown-timer {
+                width: 300px;
+                height: 300px;
+            }
+            
+            #countdown-number {
+                font-size: 6rem;
+            }
+            
+            .process-step {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .step-content {
+                padding-top: 0;
+            }
+            
+            .process-arrow {
+                padding-left: 0;
+                transform: rotate(90deg);
+                margin: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .sos-hero {
+                padding: 80px 0 0;
+            }
+            
+            .sos-hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.1rem;
+            }
+            
+            .stat-item {
+                min-width: 130px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .emergency-btn {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .emergency-btn i {
+                font-size: 3.5rem;
+                margin-bottom: 15px;
+            }
+            
+            .emergency-text {
+                font-size: 1rem;
+            }
+            
+            .emergency-subtext {
+                font-size: 0.9rem;
+            }
+            
+            .countdown-timer {
+                width: 240px;
+                height: 240px;
+            }
+            
+            #countdown-number {
+                font-size: 5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .faq-question h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script type="module">
+        // Import navigation and footer components
+        import { insertNavigation } from './components/navigation.js';
+        import { insertFooter } from './components/footer.js';
+        
+        // Insert the navigation and footer when DOM content is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            insertNavigation('sos-alerts'); // Pass the current page id to highlight in nav
+            insertFooter();
+            
+            // Initialize AOS (Animate On Scroll)
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out',
+                once: true
+            });
+            
+            // Initialize FAQ accordions
+            initFaqAccordion();
+            
+            // Initialize flip cards
+            initFlipCards();
+        });
+
+        // Emergency button functionality with visual countdown
         const emergencyButton = document.getElementById('emergency-button');
         const alertMessage = document.getElementById('alert-message');
+        const countdownTimer = document.getElementById('countdown-timer');
+        const countdownNumber = document.getElementById('countdown-number');
+        const countdownCircle = document.querySelector('.countdown-circle');
         let holdTimer = null;
+        let countdownInterval = null;
+        let countdown = 3;
 
         emergencyButton.addEventListener('mousedown', startHold);
         emergencyButton.addEventListener('mouseup', stopHold);
@@ -204,22 +1778,48 @@
         emergencyButton.addEventListener('touchstart', startHold);
         emergencyButton.addEventListener('touchend', stopHold);
 
-        function startHold() {
+        function startHold(e) {
+            e.preventDefault(); // Prevent default touch behavior
             holdTimer = setTimeout(() => {
                 sendEmergencyAlert();
             }, 3000);
+            
+            // Start visual countdown
+            countdownTimer.style.display = 'flex';
+            countdown = 3;
+            countdownNumber.textContent = countdown;
+            countdownCircle.style.strokeDashoffset = '283';
+            
+            // Animate countdown
+            let progress = 0;
+            countdownInterval = setInterval(() => {
+                progress += 33.33;
+                countdown -= 1;
+                if (countdown >= 0) {
+                    countdownNumber.textContent = countdown;
+                }
+                countdownCircle.style.strokeDashoffset = 283 - (progress * 283 / 100);
+            }, 1000);
+            
             emergencyButton.style.background = '#b8661f';
+            emergencyButton.style.transform = 'scale(0.95)';
         }
 
         function stopHold() {
             if (holdTimer) {
                 clearTimeout(holdTimer);
                 holdTimer = null;
+                clearInterval(countdownInterval);
+                countdownTimer.style.display = 'none';
             }
             emergencyButton.style.background = '#d37827';
+            emergencyButton.style.transform = 'scale(1)';
         }
 
         function sendEmergencyAlert() {
+            clearInterval(countdownInterval);
+            countdownTimer.style.display = 'none';
+            
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     position => {
@@ -227,27 +1827,90 @@
                         const lon = position.coords.longitude;
                         
                         alertMessage.style.display = 'block';
+                        alertMessage.classList.add('success-message');
                         alertMessage.innerHTML = `
                             <strong><i class="fas fa-check-circle"></i> Emergency Alert Sent!</strong><br>
                             Your location (${lat.toFixed(6)}, ${lon.toFixed(6)}) has been shared with emergency services.
+                            <div class="alert-actions">
+                                <button id="cancel-alert" class="cancel-alert">Cancel Alert</button>
+                                <span class="countdown">59s to cancel</span>
+                            </div>
                         `;
+                        
+                        // Add cancel functionality
+                        document.getElementById('cancel-alert').addEventListener('click', () => {
+                            alertMessage.classList.remove('success-message');
+                            alertMessage.classList.add('info-message');
+                            alertMessage.innerHTML = `
+                                <strong><i class="fas fa-info-circle"></i> Alert Canceled</strong><br>
+                                Your emergency alert has been canceled successfully.
+                            `;
+                            setTimeout(() => {
+                                alertMessage.style.display = 'none';
+                            }, 5000);
+                        });
                         
                         console.log('Emergency alert sent with location:', lat, lon);
                     },
                     error => {
                         alertMessage.style.display = 'block';
-                        alertMessage.style.background = '#f8d7da';
-                        alertMessage.style.borderColor = '#f5c6cb';
-                        alertMessage.style.color = '#721c24';
+                        alertMessage.classList.add('error-message');
                         alertMessage.innerHTML = `
                             <strong><i class="fas fa-exclamation-triangle"></i> Location Access Denied</strong><br>
                             Please allow location access for emergency alerts to work properly.
+                            <div class="alert-actions">
+                                <button onclick="window.location.reload()">Try Again</button>
+                            </div>
                         `;
                     }
                 );
             } else {
-                alert('Geolocation is not supported by this browser.');
+                alertMessage.style.display = 'block';
+                alertMessage.classList.add('error-message');
+                alertMessage.innerHTML = `
+                    <strong><i class="fas fa-exclamation-triangle"></i> Error</strong><br>
+                    Geolocation is not supported by this browser. Please try using a different browser.
+                `;
             }
+        }
+        
+        // Initialize FAQ accordion functionality
+        function initFaqAccordion() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const toggle = item.querySelector('.faq-toggle');
+                
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                    
+                    if (item.classList.contains('active')) {
+                        toggle.innerHTML = '<i class="fas fa-minus"></i>';
+                    } else {
+                        toggle.innerHTML = '<i class="fas fa-plus"></i>';
+                    }
+                    
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-toggle').innerHTML = '<i class="fas fa-plus"></i>';
+                        }
+                    });
+                });
+            });
+        }
+        
+        // Initialize flip cards for emergency contacts
+        function initFlipCards() {
+            const contactCards = document.querySelectorAll('.emergency-contact-card');
+            
+            contactCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.classList.toggle('flipped');
+                });
+            });
         }
     </script>
 </body>

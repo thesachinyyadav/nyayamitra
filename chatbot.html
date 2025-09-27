@@ -3,67 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Legal Chatbot - Nyaya Mitra</title>
+    <title>NyayaBot - AI Legal Assistant - Nyaya Mitra</title>
     <link rel="icon" type="image/jpeg" href="nyaya_mitra_logo.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="modern-index.css">
+    <link rel="stylesheet" href="nav-dropdown.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/modern-footer.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    <meta name="description" content="Get instant legal advice and answers to 150+ frequently asked legal questions with NyayaBot, our AI-powered legal assistant available 24/7 in multiple Indian languages.">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="nyaya_mitra_logo.jpg" alt="Nyaya Mitra Logo">
-                <span>Nyaya Mitra</span>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="home.html" class="nav-link">Home</a>
-                <a href="sos-alerts.html" class="nav-link">SOS Alerts</a>
-                <a href="chatbot.html" class="nav-link active">Chatbot</a>
-                <a href="document-analyzer.html" class="nav-link">Analyzer</a>
-                <a href="case-tracker.html" class="nav-link">Case Tracker</a>
-                <a href="whistleblower.html" class="nav-link">Whistleblower</a>
-                <a href="civic-feedback.html" class="nav-link">Feedback</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Standard header will be inserted by script.js -->
+    <header class="header"></header>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
+    <!-- Enhanced Hero Section -->
+    <section class="page-hero chatbot-hero">
         <div class="container">
-            <h1><i class="fas fa-robot"></i> AI-Powered Legal Chatbot</h1>
-            <p>Get instant legal advice and answers to 150+ frequently asked legal questions in multiple languages, available 24/7 to assist with your legal queries.</p>
+            <div class="hero-content" data-aos="fade-up">
+                <div class="hero-badge">
+                    <span><i class="fas fa-star"></i> AI-Powered</span>
+                    <span><i class="fas fa-shield-alt"></i> 100% Secure</span>
+                </div>
+                <h1><i class="fas fa-robot"></i> Your Personal Legal Assistant</h1>
+                <p class="hero-tagline">Get instant legal advice and answers to 150+ frequently asked legal questions in multiple languages, available 24/7 to assist with your legal queries.</p>
+                <div class="hero-cta">
+                    <a href="#chatbot-embed" class="btn btn-primary btn-large pulse-animation">
+                        <i class="fas fa-comments"></i> Start Chatting Now
+                    </a>
+                    <a href="#usage-steps" class="btn btn-secondary btn-large">
+                        <i class="fas fa-info-circle"></i> How It Works
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="10000">0</span><span>+</span>
+                        <span class="stat-label">Users Helped</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="150">0</span><span>+</span>
+                        <span class="stat-label">Legal Topics</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number counter" data-target="8">0</span>
+                        <span class="stat-label">Languages</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+                <img src="https://res.cloudinary.com/dzkoxrsdj/image/upload/v1653339842/ai_chatbot_wj2zt1.png" alt="NyayaBot AI Legal Assistant" class="floating-animation">
+                <div class="ai-circles">
+                    <div class="circle c1"></div>
+                    <div class="circle c2"></div>
+                    <div class="circle c3"></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Chatbot Embed Section -->
-    <section class="chatbot-embed-section">
+    <!-- Enhanced Chatbot Embed Section -->
+    <section class="chatbot-embed-section" id="chatbot-embed">
         <div class="container">
-            <div class="chatbot-main">
+            <div class="section-heading" data-aos="fade-up">
+                <h2 class="section-title">Start Chatting Now</h2>
+                <p class="section-subtitle">Our AI-powered legal assistant is ready to help you with your legal questions</p>
+            </div>
+            
+            <div class="chatbot-main" data-aos="fade-up">
                 <div class="chatbot-header">
                     <div class="chatbot-title">
                         <img src="nyaya_mitra_logo.jpg" alt="Nyaya Mitra">
                         <div>
-                            <h2>Nyaya Mitra AI Assistant</h2>
+                            <h2>NyayaBot - Powered by Nyaya Mitra</h2>
                             <p>Your 24/7 Legal Companion</p>
                         </div>
                     </div>
                     <div class="chatbot-status">
                         <span class="status-indicator"></span>
-                        <span>Online</span>
+                        <span>Online & Ready to Help</span>
+                    </div>
+                </div>
+                
+                <div class="chatbot-toolbar">
+                    <div class="toolbar-actions">
+                        <button class="toolbar-btn" title="Clear Chat History">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                        <button class="toolbar-btn" title="Save Conversation">
+                            <i class="fas fa-save"></i>
+                        </button>
+                        <button class="toolbar-btn" title="Change Language">
+                            <i class="fas fa-language"></i>
+                        </button>
+                    </div>
+                    <div class="toolbar-info">
+                        <span class="encryption-badge">
+                            <i class="fas fa-lock"></i> End-to-End Encrypted
+                        </span>
                     </div>
                 </div>
                 
                 <div class="chatbot-container">
                     <iframe 
-                        src="https://studio.pickaxeproject.com/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0" 
+                        src="https://studio.pickaxe.co/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0" 
                         width="100%" 
                         height="600" 
                         frameborder="0"
@@ -71,11 +115,51 @@
                     </iframe>
                 </div>
                 
+                <div class="chatbot-features">
+                    <div class="feature-tag">
+                        <i class="fas fa-language"></i> Multi-language Support
+                    </div>
+                    <div class="feature-tag">
+                        <i class="fas fa-shield-alt"></i> Secure & Confidential
+                    </div>
+                    <div class="feature-tag">
+                        <i class="fas fa-bolt"></i> Instant Responses
+                    </div>
+                    <div class="feature-tag">
+                        <i class="fas fa-check-circle"></i> Verified Information
+                    </div>
+                </div>
+                
                 <div class="chatbot-cta">
                     <a href="https://studio.pickaxeproject.com/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0" 
                        target="_blank" class="btn btn-primary btn-large">
-                        <i class="fas fa-external-link-alt"></i> Open in New Window
+                        <i class="fas fa-external-link-alt"></i> Open NyayaBot in New Window
                     </a>
+                    <button class="btn btn-secondary" id="share-chatbot">
+                        <i class="fas fa-share-alt"></i> Share with Friends
+                    </button>
+                </div>
+            </div>
+            
+            <div class="chatbot-tips" data-aos="fade-up">
+                <h3><i class="fas fa-lightbulb"></i> Pro Tips for Better Results</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <span class="tip-number">01</span>
+                        <p>Be specific about your legal situation and provide relevant details</p>
+                    </div>
+                    <div class="tip-card">
+                        <span class="tip-number">02</span>
+                        <p>Use clear, simple language and avoid legal jargon unless necessary</p>
+                    </div>
+                    <div class="tip-card">
+                        <span class="tip-number">03</span>
+                        <p>Ask follow-up questions to get more detailed information</p>
+                    </div>
+                    <div class="tip-card">
+                        <span class="tip-number">04</span>
+                        <p>You can request examples or references to specific laws</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -86,38 +170,38 @@
         <div class="container">
             <div class="content-section" data-aos="fade-up">
                 <h2>Comprehensive Legal Assistance</h2>
-                <p>Our AI chatbot is trained on extensive legal databases and can help you with a wide range of legal topics and questions.</p>
+                <p>NyayaBot offers multilingual AI legal assistance across various legal topics, providing guidance on procedures, rights, and next steps.</p>
                 
                 <div class="features-grid">
                     <div class="feature-highlight">
                         <i class="fas fa-brain"></i>
-                        <h3>150+ Legal FAQs</h3>
-                        <p>Comprehensive knowledge base covering civil law, criminal law, family law, property law, labor law, and more.</p>
+                        <h3>150+ Legal Topics</h3>
+                        <p>Comprehensive coverage of civil, criminal, family, property, labor law and constitutional rights.</p>
                     </div>
                     <div class="feature-highlight">
                         <i class="fas fa-language"></i>
                         <h3>Multi-Language Support</h3>
-                        <p>Get legal assistance in Hindi, English, and other regional languages for better understanding.</p>
+                        <p>Legal assistance in 8 Indian languages including Hindi, English, Bengali, Tamil, Telugu, and more.</p>
                     </div>
                     <div class="feature-highlight">
                         <i class="fas fa-clock"></i>
                         <h3>24/7 Availability</h3>
-                        <p>Access legal guidance anytime, anywhere. Our AI assistant never sleeps and is always ready to help.</p>
+                        <p>Access legal guidance anytime, anywhere - our AI assistant never sleeps and is always ready to help.</p>
                     </div>
                     <div class="feature-highlight">
                         <i class="fas fa-shield-alt"></i>
                         <h3>Confidential & Secure</h3>
-                        <p>All conversations are encrypted and confidential. Your legal queries remain private and secure.</p>
+                        <p>End-to-end encrypted conversations ensure your legal queries remain completely private.</p>
                     </div>
                     <div class="feature-highlight">
                         <i class="fas fa-search"></i>
                         <h3>Case Law References</h3>
-                        <p>Get references to relevant case laws and legal precedents for your specific legal situation.</p>
+                        <p>Get citations to relevant case laws and legal precedents for your specific legal situation.</p>
                     </div>
                     <div class="feature-highlight">
                         <i class="fas fa-file-alt"></i>
                         <h3>Document Guidance</h3>
-                        <p>Learn about required documents and procedures for various legal processes and applications.</p>
+                        <p>Access templates and guidance on documentation required for various legal procedures.</p>
                     </div>
                 </div>
             </div>
@@ -125,7 +209,7 @@
             <!-- Language Support -->
             <div class="content-section" data-aos="fade-up">
                 <h2>Supported Languages</h2>
-                <p>Communicate with our AI assistant in your preferred language for better understanding and clarity.</p>
+                <p>Access legal assistance in your preferred language for better understanding and clarity.</p>
                 
                 <div class="language-grid">
                     <div class="language-card">
@@ -157,6 +241,16 @@
                         <div class="language-flag">🇮🇳</div>
                         <h3>Marathi</h3>
                         <p>मराठीत कायदेशीर मदत मिळवा</p>
+                    </div>
+                    <div class="language-card">
+                        <div class="language-flag">🇮🇳</div>
+                        <h3>Gujarati</h3>
+                        <p>ગુજરાતીમાં કાનૂની સહાય મેળવો</p>
+                    </div>
+                    <div class="language-card">
+                        <div class="language-flag">🇮🇳</div>
+                        <h3>Kannada</h3>
+                        <p>ಕನ್ನಡದಲ್ಲಿ ಕಾನೂನು ನೆರವು ಪಡೆಯಿರಿ</p>
                     </div>
                 </div>
             </div>
@@ -245,8 +339,8 @@
                 </div>
             </div>
 
-            <!-- How to Use -->
-            <div class="content-section" data-aos="fade-up">
+            <!-- How to Use the AI Chatbot -->
+            <div class="content-section" id="usage-steps" data-aos="fade-up">
                 <h2>How to Use the AI Chatbot</h2>
                 <div class="usage-steps">
                     <div class="usage-step">
@@ -283,104 +377,710 @@
                 </div>
             </div>
 
-            <!-- Sample Conversations -->
-            <div class="content-section" data-aos="fade-up">
-                <h2>Sample Conversations</h2>
-                <div class="sample-chats">
-                    <div class="chat-example">
-                        <h3>Property Dispute Query</h3>
-                        <div class="chat-messages">
-                            <div class="message user-msg">
-                                <strong>User:</strong> "My neighbor is claiming part of my property. What should I do?"
+            <!-- Enhanced Sample Conversations -->
+            <div class="content-section sample-section" data-aos="fade-up">
+                <div class="section-heading centered">
+                    <h2>Interactive Examples</h2>
+                    <p>See how NyayaBot can help with various legal situations</p>
+                </div>
+                
+                <div class="interactive-samples">
+                    <div class="samples-tabs">
+                        <button class="sample-tab active" data-category="property">Property Law</button>
+                        <button class="sample-tab" data-category="employment">Employment</button>
+                        <button class="sample-tab" data-category="family">Family Law</button>
+                        <button class="sample-tab" data-category="criminal">Criminal Law</button>
+                    </div>
+                    
+                    <div class="sample-content">
+                        <div class="chat-window" id="sample-chat">
+                            <div class="chat-messages" id="property-chat">
+                                <div class="message user-msg">
+                                    <div class="message-header">
+                                        <span class="user-icon"><i class="fas fa-user"></i></span>
+                                        <span class="message-time">Just now</span>
+                                    </div>
+                                    <div class="message-body">
+                                        My neighbor is claiming part of my property. What should I do?
+                                    </div>
+                                </div>
+                                <div class="message bot-msg">
+                                    <div class="message-header">
+                                        <span class="bot-icon"><img src="nyaya_mitra_logo.jpg" alt="NyayaBot"></span>
+                                        <span class="message-time">Just now</span>
+                                    </div>
+                                    <div class="message-body">
+                                        I understand your concern about a property boundary dispute. Here's what you should do:
+                                        <ol>
+                                            <li>Gather all property documents (sale deed, survey records, etc.)</li>
+                                            <li>Get a survey done by a licensed surveyor</li>
+                                            <li>Try mediation first</li>
+                                            <li>If needed, file a civil suit for declaration of title</li>
+                                        </ol>
+                                        Would you like more details about any of these steps?
+                                    </div>
+                                </div>
+                                <div class="message user-msg">
+                                    <div class="message-header">
+                                        <span class="user-icon"><i class="fas fa-user"></i></span>
+                                        <span class="message-time">Just now</span>
+                                    </div>
+                                    <div class="message-body">
+                                        Yes, can you tell me more about the mediation process?
+                                    </div>
+                                </div>
+                                <div class="message bot-msg">
+                                    <div class="message-header">
+                                        <span class="bot-icon"><img src="nyaya_mitra_logo.jpg" alt="NyayaBot"></span>
+                                        <span class="message-time">Just now</span>
+                                    </div>
+                                    <div class="message-body">
+                                        <p>Mediation for property disputes works as follows:</p>
+                                        <p><strong>1. Finding a mediator:</strong> You can approach:</p>
+                                        <ul>
+                                            <li>Local court-annexed mediation centers</li>
+                                            <li>Lok Adalats</li>
+                                            <li>Private mediators specializing in property disputes</li>
+                                        </ul>
+                                        <p><strong>2. The process:</strong></p>
+                                        <ul>
+                                            <li>Both parties present their side with documents</li>
+                                            <li>Mediator facilitates discussion toward compromise</li>
+                                            <li>If successful, a legally binding settlement agreement is drafted</li>
+                                        </ul>
+                                        <p><strong>3. Benefits:</strong></p>
+                                        <ul>
+                                            <li>Faster than court proceedings (days/weeks vs years)</li>
+                                            <li>Lower cost than litigation</li>
+                                            <li>Preserves neighbor relations</li>
+                                            <li>Confidential process</li>
+                                        </ul>
+                                        <p>Would you like me to help you draft a mediation invitation letter to your neighbor?</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="message bot-msg">
-                                <strong>Nyaya Mitra:</strong> "I understand your concern about a property boundary dispute. Here's what you should do: 1) Gather all property documents (sale deed, survey records, etc.) 2) Get a survey done by a licensed surveyor 3) Try mediation first 4) If needed, file a civil suit for declaration of title. Would you like more details about any of these steps?"
+                            
+                            <div class="chat-messages hidden" id="employment-chat">
+                                <div class="message user-msg">
+                                    <div class="message-header">
+                                        <span class="user-icon"><i class="fas fa-user"></i></span>
+                                        <span class="message-time">Just now</span>
+                                    </div>
+                                    <div class="message-body">
+                                        मुझे बिना notice के job से निकाल दिया गया है। क्या करूं?
+                                    </div>
+                                </div>
+                                <div class="message bot-msg">
+                                    <div class="message-header">
+                                        <span class="bot-icon"><img src="nyaya_mitra_logo.jpg" alt="NyayaBot"></span>
+                                        <span class="message-time">Just now</span>
+                                    </div>
+                                    <div class="message-body">
+                                        अगर आपको बिना proper notice के terminate किया गया है, तो यह labor law का violation हो सकता है। आप:
+                                        <ol>
+                                            <li>Labor Commissioner के पास complaint file कर सकते हैं</li>
+                                            <li>Employment tribunal में case ले जा सकते हैं</li>
+                                            <li>Notice period की salary और compensation का claim कर सकते हैं</li>
+                                        </ol>
+                                        आपका employment contract कैसा था?
+                                    </div>
+                                </div>
+                                <div class="message user-msg">
+                                    <div class="message-header">
+                                        <span class="user-icon"><i class="fas fa-user"></i></span>
+                                        <span class="message-time">Just now</span>
+                                    </div>
+                                    <div class="message-body">
+                                        मेरा 2 साल का contract था और अभी 1 साल ही हुआ है।
+                                    </div>
+                                </div>
+                                <div class="message bot-msg">
+                                    <div class="message-header">
+                                        <span class="bot-icon"><img src="nyaya_mitra_logo.jpg" alt="NyayaBot"></span>
+                                        <span class="message-time">Just now</span>
+                                    </div>
+                                    <div class="message-body">
+                                        <p>इस स्थिति में आपके पास मज़बूत केस है। आप निम्न कदम उठा सकते हैं:</p>
+                                        <ol>
+                                            <li><strong>सबूत इकट्ठा करें:</strong> अपना employment contract, पिछली salary slips, कोई भी communication जो termination से related है</li>
+                                            <li><strong>एक औपचारिक पत्र लिखें:</strong> अपने employer को एक legal notice भेजें जिसमें contract violation का उल्लेख हो</li>
+                                            <li><strong>Labor Commissioner से संपर्क करें:</strong> अपने क्षेत्र के Labor Commissioner के office में complaint दर्ज करें</li>
+                                        </ol>
+                                        <p>क्या आप चाहेंगे कि मैं आपको legal notice का एक sample draft प्रदान करूँ?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="chat-messages hidden" id="family-chat">
+                                <div class="message user-msg">
+                                    <div class="message-header">
+                                        <span class="user-icon"><i class="fas fa-user"></i></span>
+                                        <span class="message-time">Just now</span>
+                                    </div>
+                                    <div class="message-body">
+                                        I want to apply for child custody. What's the process?
+                                    </div>
+                                </div>
+                                <div class="message bot-msg">
+                                    <div class="message-header">
+                                        <span class="bot-icon"><img src="nyaya_mitra_logo.jpg" alt="NyayaBot"></span>
+                                        <span class="message-time">Just now</span>
+                                    </div>
+                                    <div class="message-body">
+                                        <p>Child custody applications involve several steps:</p>
+                                        <ol>
+                                            <li><strong>File a petition:</strong> Submit a custody petition to the Family Court in your district</li>
+                                            <li><strong>Required documents:</strong> Birth certificate, marriage/divorce papers, income proof, address proof</li>
+                                            <li><strong>Court process:</strong> Attend hearings where the court evaluates what's best for the child</li>
+                                            <li><strong>Types of custody:</strong> You can apply for physical custody, legal custody, or both</li>
+                                        </ol>
+                                        <p>The court primarily considers the child's welfare in its decision. Is this part of a divorce proceeding or a separate application?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="chat-messages hidden" id="criminal-chat">
+                                <div class="message user-msg">
+                                    <div class="message-header">
+                                        <span class="user-icon"><i class="fas fa-user"></i></span>
+                                        <span class="message-time">Just now</span>
+                                    </div>
+                                    <div class="message-body">
+                                        How do I file an FIR? What information is needed?
+                                    </div>
+                                </div>
+                                <div class="message bot-msg">
+                                    <div class="message-header">
+                                        <span class="bot-icon"><img src="nyaya_mitra_logo.jpg" alt="NyayaBot"></span>
+                                        <span class="message-time">Just now</span>
+                                    </div>
+                                    <div class="message-body">
+                                        <p>Filing an FIR (First Information Report) is the first step to report a cognizable offense. Here's the process:</p>
+                                        <ol>
+                                            <li><strong>Visit the police station:</strong> Go to the police station with jurisdiction where the crime occurred</li>
+                                            <li><strong>Provide details:</strong> Include the following information:
+                                                <ul>
+                                                    <li>Your personal details (name, address, contact information)</li>
+                                                    <li>Date, time, and location of the incident</li>
+                                                    <li>Detailed description of what happened</li>
+                                                    <li>Names and descriptions of suspects (if known)</li>
+                                                    <li>Names of witnesses (if any)</li>
+                                                    <li>Details of any evidence or stolen property</li>
+                                                </ul>
+                                            </li>
+                                            <li><strong>Review and sign:</strong> Read the written FIR before signing it</li>
+                                            <li><strong>Get a copy:</strong> You're entitled to a free copy of the FIR</li>
+                                        </ol>
+                                        <p>If the police refuse to file your FIR, you can approach the Superintendent of Police or file a complaint directly to the magistrate under Section 156(3) CrPC.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="chat-question">
+                                <p>Want to ask about a similar situation? Try it now:</p>
+                                <div class="sample-questions">
+                                    <button class="sample-question-btn" data-category="property">How can I verify my property boundaries?</button>
+                                    <button class="sample-question-btn" data-category="employment">What compensation am I entitled to if fired?</button>
+                                    <button class="sample-question-btn" data-category="family">What factors affect child custody decisions?</button>
+                                    <button class="sample-question-btn" data-category="criminal">What happens after an FIR is filed?</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials Section -->
+            <div class="content-section testimonials-section" data-aos="fade-up">
+                <div class="section-heading centered">
+                    <h2>User Testimonials</h2>
+                    <p>See what others are saying about their experience with NyayaBot</p>
+                </div>
+                
+                <div class="testimonials-slider">
+                    <div class="testimonials-container" id="testimonialsContainer">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="testimonial-text">
+                                <p>"NyayaBot helped me understand my rights after a car accident. The guidance was clear and practical, saving me thousands in legal consultation fees."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Ravi Sharma" class="author-image">
+                                <div class="author-info">
+                                    <h4>Ravi Sharma</h4>
+                                    <p>Delhi</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="testimonial-text">
+                                <p>"As a small business owner, I had questions about labor compliance. NyayaBot provided detailed information about relevant laws and even helped me draft an employment contract template."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya Patel" class="author-image">
+                                <div class="author-info">
+                                    <h4>Priya Patel</h4>
+                                    <p>Mumbai</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="testimonial-text">
+                                <p>"I asked NyayaBot about the process for filing an RTI application. Not only did I get step-by-step instructions, but it also provided templates and examples. Extremely helpful!"</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Vikram Singh" class="author-image">
+                                <div class="author-info">
+                                    <h4>Vikram Singh</h4>
+                                    <p>Jaipur</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="testimonial-text">
+                                <p>"The multilingual support is fantastic! I could ask questions in Tamil and get responses in the same language. This made complex legal concepts much easier to understand."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Lakshmi Narayanan" class="author-image">
+                                <div class="author-info">
+                                    <h4>Lakshmi Narayanan</h4>
+                                    <p>Chennai</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="chat-example">
-                        <h3>Employment Law Query</h3>
-                        <div class="chat-messages">
-                            <div class="message user-msg">
-                                <strong>User:</strong> "मुझे बिना notice के job से निकाल दिया गया है। क्या करूं?"
-                            </div>
-                            <div class="message bot-msg">
-                                <strong>Nyaya Mitra:</strong> "अगर आपको बिना proper notice के terminate किया गया है, तो यह labor law का violation हो सकता है। आप: 1) Labor Commissioner के पास complaint file कर सकते हैं 2) Employment tribunal में case ले जा सकते हैं 3) Notice period की salary और compensation का claim कर सकते हैं। आपका employment contract कैसा था?"
-                            </div>
+                    <div class="slider-controls">
+                        <button class="slider-control" id="prevTestimonial">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="slider-dots">
+                            <span class="slider-dot active"></span>
+                            <span class="slider-dot"></span>
+                            <span class="slider-dot"></span>
+                            <span class="slider-dot"></span>
+                        </div>
+                        <button class="slider-control" id="nextTestimonial">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" data-aos="fade-up">
+        <div class="container">
+            <div class="section-heading centered">
+                <h2>Frequently Asked Questions</h2>
+                <p>Get answers to common questions about our AI legal assistant</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is NyayaBot's legal advice legally binding?</h3>
+                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, NyayaBot provides general legal information and guidance but not formal legal advice. It's designed to help you understand legal concepts and procedures, but for specific cases, we recommend consulting a licensed attorney who can provide legally binding advice tailored to your situation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How accurate is the information provided?</h3>
+                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>NyayaBot is trained on comprehensive legal databases that are regularly updated to reflect current laws. While we strive for accuracy, laws and regulations can change. Always verify critical information with official sources or legal professionals, especially for time-sensitive matters.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is my conversation with NyayaBot confidential?</h3>
+                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, all conversations with NyayaBot are end-to-end encrypted and confidential. We do not share your specific queries or personal information with third parties. However, anonymized data may be used to improve the system's responses and accuracy over time.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I download a transcript of my conversation?</h3>
+                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, you can download or email a transcript of your conversation with NyayaBot. At the end of your chat session, click on the "Save Conversation" button in the toolbar. You can choose to receive it as a PDF document or have it emailed to you for future reference.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What languages does NyayaBot support?</h3>
+                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>NyayaBot currently supports Hindi, English, Bengali, Tamil, Telugu, Marathi, Gujarati, and Kannada. We're continuously working to add more Indian languages to make legal assistance accessible to more people across the country.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How does NyayaBot stay updated with legal changes?</h3>
+                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our team of legal experts and engineers regularly updates NyayaBot's knowledge base with the latest legal changes, amendments, and precedents. The system is refreshed with new legal information monthly, and critical updates are implemented immediately when significant legal changes occur.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can NyayaBot help with document preparation?</h3>
+                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, NyayaBot can provide templates and guidance for many common legal documents such as rental agreements, employment contracts, and legal notices. However, for complex documents like wills, trusts, or specialized contracts, we recommend professional legal assistance for final review.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is there a limit to how many questions I can ask?</h3>
+                            <span class="faq-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, there is no limit to the number of questions you can ask NyayaBot. Our service is designed to be accessible 24/7, and you can ask as many follow-up questions as you need to fully understand your legal situation. The service is completely free to use.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
+    
+    <!-- Legal Resource Library -->
+    <section class="resources-section" data-aos="fade-up">
         <div class="container">
-            <div class="cta-content">
-                <h2>Need Legal Help Right Now?</h2>
-                <p>Don't wait - get instant legal assistance from our AI-powered chatbot. Available 24/7 to answer your legal questions.</p>
-                <div class="cta-buttons">
-                    <a href="https://studio.pickaxeproject.com/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0" 
-                       target="_blank" class="btn btn-primary btn-large">
-                        <i class="fas fa-robot"></i> Start Chatting Now
-                    </a>
-                    <a href="home.html" class="btn btn-secondary">
-                        <i class="fas fa-home"></i> Explore Other Features
+            <div class="section-heading centered">
+                <h2>Legal Resource Library</h2>
+                <p>Access helpful legal documents, templates, and reference materials</p>
+            </div>
+            
+            <div class="resources-tabs">
+                <div class="resources-tab active" data-resource="templates">Document Templates</div>
+                <div class="resources-tab" data-resource="guides">Legal Guides</div>
+                <div class="resources-tab" data-resource="acts">Acts & Statutes</div>
+                <div class="resources-tab" data-resource="forms">Government Forms</div>
+                <div class="resources-tab" data-resource="articles">Legal Articles</div>
+            </div>
+            
+            <div class="resources-content active" id="templates-content">
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Rental Agreement</h3>
+                            <p>Standardized rental/lease agreement template with customizable terms for residential properties.</p>
+                            <a href="#" class="resource-link">Download Template <i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Employment Contract</h3>
+                            <p>Comprehensive employment agreement template compliant with Indian labor laws.</p>
+                            <a href="#" class="resource-link">Download Template <i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Legal Notice Format</h3>
+                            <p>Template for sending formal legal notices for various situations including debt recovery.</p>
+                            <a href="#" class="resource-link">Download Template <i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Affidavit Template</h3>
+                            <p>Standard affidavit format that can be customized for various legal purposes.</p>
+                            <a href="#" class="resource-link">Download Template <i class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="resources-content" id="guides-content">
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Consumer Rights Guide</h3>
+                            <p>Comprehensive guide to your rights under the Consumer Protection Act, 2019.</p>
+                            <a href="#" class="resource-link">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Property Purchase Guide</h3>
+                            <p>Step-by-step guide to property purchase, registration, and documentation in India.</p>
+                            <a href="#" class="resource-link">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h3>Court Procedure Guide</h3>
+                            <p>Essential guide to civil and criminal court procedures for first-time litigants.</p>
+                            <a href="#" class="resource-link">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <div class="resource-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h3>RTI Filing Guide</h3>
+                            <p>Complete guide to filing Right to Information (RTI) applications effectively.</p>
+                            <a href="#" class="resource-link">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-history-button">
+                <a href="#" class="btn btn-secondary">
+                    <i class="fas fa-folder-open"></i> View All Resources
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat History Section -->
+    <section class="history-section" data-aos="fade-up">
+        <div class="container">
+            <div class="section-heading centered">
+                <h2>Your Conversation History</h2>
+                <p>Access and continue your previous legal consultations</p>
+            </div>
+            
+            <div class="chat-history-container">
+                <div class="history-filter">
+                    <div class="filter-options">
+                        <div class="filter-option active">All</div>
+                        <div class="filter-option">Property</div>
+                        <div class="filter-option">Family</div>
+                        <div class="filter-option">Criminal</div>
+                        <div class="filter-option">Labor</div>
+                    </div>
+                    
+                    <div class="search-history">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search conversations...">
+                    </div>
+                </div>
+                
+                <div class="history-cards">
+                    <div class="history-card">
+                        <div class="history-header">
+                            <div class="history-date">
+                                <i class="far fa-calendar"></i> September 25, 2025
+                            </div>
+                            <div class="history-topic">Property Boundary Dispute</div>
+                        </div>
+                        <div class="history-preview">
+                            I understand your concern about a property boundary dispute. Here's what you should do: 1) Gather all property documents (sale deed, survey records, etc.) 2) Get a survey done by a licensed surveyor 3) Try mediation first 4) If needed, file a civil suit for declaration of title.
+                        </div>
+                        <div class="history-footer">
+                            <span class="history-category">Property Law</span>
+                            <div class="history-actions">
+                                <span class="history-action" title="Continue Conversation"><i class="fas fa-reply"></i></span>
+                                <span class="history-action" title="Share Conversation"><i class="fas fa-share-alt"></i></span>
+                                <span class="history-action" title="Delete"><i class="fas fa-trash-alt"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="history-card">
+                        <div class="history-header">
+                            <div class="history-date">
+                                <i class="far fa-calendar"></i> September 20, 2025
+                            </div>
+                            <div class="history-topic">Employment Termination Issue</div>
+                        </div>
+                        <div class="history-preview">
+                            अगर आपको बिना proper notice के terminate किया गया है, तो यह labor law का violation हो सकता है। आप: 1) Labor Commissioner के पास complaint file कर सकते हैं 2) Employment tribunal में case ले जा सकते हैं 3) Notice period की salary और compensation का claim कर सकते हैं।
+                        </div>
+                        <div class="history-footer">
+                            <span class="history-category">Labor Law</span>
+                            <div class="history-actions">
+                                <span class="history-action" title="Continue Conversation"><i class="fas fa-reply"></i></span>
+                                <span class="history-action" title="Share Conversation"><i class="fas fa-share-alt"></i></span>
+                                <span class="history-action" title="Delete"><i class="fas fa-trash-alt"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="history-card">
+                        <div class="history-header">
+                            <div class="history-date">
+                                <i class="far fa-calendar"></i> September 18, 2025
+                            </div>
+                            <div class="history-topic">Motor Vehicle Accident Claim</div>
+                        </div>
+                        <div class="history-preview">
+                            For a motor vehicle accident claim, you'll need to file Form 54 (Accident Information Report) with the police and submit a claim petition to the Motor Accident Claims Tribunal (MACT). Be sure to collect evidence including medical reports, accident photos, and witness statements.
+                        </div>
+                        <div class="history-footer">
+                            <span class="history-category">Civil Law</span>
+                            <div class="history-actions">
+                                <span class="history-action" title="Continue Conversation"><i class="fas fa-reply"></i></span>
+                                <span class="history-action" title="Share Conversation"><i class="fas fa-share-alt"></i></span>
+                                <span class="history-action" title="Delete"><i class="fas fa-trash-alt"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-history-button">
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-history"></i> View All Conversations
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Enhanced CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Nyaya Mitra</h4>
-                    <p>AI-powered legal assistance for everyone. Get instant answers to your legal questions in your preferred language.</p>
-                    <div class="social-links">
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
+            <div class="cta-content" data-aos="fade-up">
+                <div class="cta-badge">
+                    <span><i class="fas fa-bolt"></i> 24/7 Available</span>
                 </div>
-                <div class="footer-section">
-                    <h4>Legal Topics</h4>
-                    <ul>
-                        <li><a href="#civil-law">Civil Law</a></li>
-                        <li><a href="#criminal-law">Criminal Law</a></li>
-                        <li><a href="#family-law">Family Law</a></li>
-                        <li><a href="#property-law">Property Law</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Languages</h4>
-                    <ul>
-                        <li><a href="#hindi">Hindi</a></li>
-                        <li><a href="#english">English</a></li>
-                        <li><a href="#regional">Regional Languages</a></li>
-                        <li><a href="#support">Language Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Get Started</h4>
-                    <p>Start chatting with our AI assistant</p>
-                    <a href="https://studio.pickaxeproject.com/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0"
-                       target="_blank" class="btn btn-outline">
-                        <i class="fas fa-robot"></i> Launch Chatbot
+                <h2>Need Legal Help Right Now?</h2>
+                <p>Don't wait - get instant legal assistance from our AI-powered chatbot. Available 24/7 to answer your legal questions in multiple languages.</p>
+                <div class="cta-buttons">
+                    <a href="https://studio.pickaxeproject.com/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0" 
+                       target="_blank" class="btn btn-primary btn-large pulse-animation">
+                        <i class="fas fa-robot"></i> Start Chatting Now
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        <i class="fas fa-user-tie"></i> Contact a Human Expert
                     </a>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Nyaya Mitra - AI-Powered Legal Tech. All rights reserved.</p>
-                <p>Disclaimer: This AI provides general legal information only and does not constitute legal advice.</p>
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <i class="fas fa-check-circle"></i> Free to Use
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-check-circle"></i> No Registration Required
+                    </div>
+                    <div class="cta-feature">
+                        <i class="fas fa-check-circle"></i> Private & Secure
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- Standard footer will be inserted by script.js -->
+    <footer class="modern-footer"></footer>
+
+    <!-- Voice Chat Interface -->
+    <div class="voice-interface" id="voice-interface">
+        <button class="close-voice-interface">×</button>
+        <h3>Voice Chat Mode</h3>
+        <p>Speak your legal question clearly</p>
+        <div class="voice-chat">
+            <button class="voice-button" id="voice-button">
+                <i class="fas fa-microphone"></i>
+            </button>
+            <div class="voice-status">Tap to speak</div>
+        </div>
+        <div class="voice-transcript">
+            <p class="transcript-label">Your Question:</p>
+            <div class="transcript-text"></div>
+        </div>
+    </div>
+
+    <!-- Feedback Widget -->
+    <div class="feedback-widget" id="feedback-widget">
+        <div class="feedback-header">
+            <h3>How was your experience?</h3>
+            <button class="feedback-close">&times;</button>
+        </div>
+        <div class="feedback-body">
+            <div class="feedback-question">Was NyayaBot helpful?</div>
+            <div class="feedback-options">
+                <div class="feedback-option" data-value="1">Not at all</div>
+                <div class="feedback-option" data-value="2">Somewhat</div>
+                <div class="feedback-option" data-value="3">Very helpful</div>
+            </div>
+            <div class="feedback-question">Any additional comments?</div>
+            <textarea class="feedback-textarea" placeholder="Share your thoughts..."></textarea>
+            <button class="feedback-submit">Submit Feedback</button>
+        </div>
+    </div>
 
     <!-- Floating Chatbot -->
     <div class="floating-chatbot">
@@ -389,16 +1089,701 @@
             <i class="fas fa-robot"></i>
         </a>
         <div class="chatbot-tooltip">Ask Nyaya Mitra</div>
+        <div class="chatbot-options">
+            <button class="chatbot-option" id="show-feedback">
+                <i class="fas fa-star"></i>
+            </button>
+            <button class="chatbot-option" id="show-voice">
+                <i class="fas fa-microphone"></i>
+            </button>
+        </div>
     </div>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/chatbot-enhancements.js"></script>
     <script>
+        // Initialize AOS (Animate On Scroll)
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out',
+                once: true
+            });
+            
+            // Stats Counter Animation
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+            
+            function animateCounters() {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const increment = Math.max(1, Math.floor(target / speed));
+                    
+                    if (count < target) {
+                        counter.innerText = count + increment;
+                        setTimeout(animateCounters, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                });
+            }
+            
+            // Trigger counter animation when the section is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            if (document.querySelector('.hero-stats')) {
+                observer.observe(document.querySelector('.hero-stats'));
+            }
+            
+            // Tutorial Navigation
+            const tutorialSteps = document.querySelectorAll('.usage-step');
+            const stepDots = document.querySelectorAll('.step-dot');
+            const prevBtn = document.getElementById('prev-step');
+            const nextBtn = document.getElementById('next-step');
+            let currentStep = 0;
+            
+            function showStep(index) {
+                tutorialSteps.forEach((step, i) => {
+                    step.classList.toggle('active', i === index);
+                });
+                
+                stepDots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+                
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === tutorialSteps.length - 1;
+                currentStep = index;
+            }
+            
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', () => {
+                    if (currentStep > 0) {
+                        showStep(currentStep - 1);
+                    }
+                });
+                
+                nextBtn.addEventListener('click', () => {
+                    if (currentStep < tutorialSteps.length - 1) {
+                        showStep(currentStep + 1);
+                    }
+                });
+                
+                stepDots.forEach((dot, i) => {
+                    dot.addEventListener('click', () => {
+                        showStep(i);
+                    });
+                });
+            }
+            
+            // Sample Tabs Navigation
+            const sampleTabs = document.querySelectorAll('.sample-tab');
+            const chatMessages = document.querySelectorAll('.chat-messages');
+            
+            if (sampleTabs.length > 0) {
+                sampleTabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        const category = tab.getAttribute('data-category');
+                        
+                        // Update active tab
+                        sampleTabs.forEach(t => t.classList.remove('active'));
+                        tab.classList.add('active');
+                        
+                        // Update chat content
+                        chatMessages.forEach(chat => {
+                            chat.classList.add('hidden');
+                        });
+                        
+                        document.getElementById(category + '-chat')?.classList.remove('hidden');
+                    });
+                });
+            }
+            
+            // Testimonials Slider
+            const testimonialsContainer = document.getElementById('testimonialsContainer');
+            const sliderDots = document.querySelectorAll('.slider-dot');
+            const prevBtn2 = document.getElementById('prevTestimonial');
+            const nextBtn2 = document.getElementById('nextTestimonial');
+            let currentSlide = 0;
+            
+            if (testimonialsContainer && prevBtn2 && nextBtn2) {
+                const testimonials = testimonialsContainer.querySelectorAll('.testimonial-card');
+                const totalSlides = testimonials.length;
+                
+                function showSlide(index) {
+                    if (testimonialsContainer) {
+                        testimonialsContainer.style.transform = `translateX(-${index * 100}%)`;
+                        
+                        sliderDots.forEach((dot, i) => {
+                            dot.classList.toggle('active', i === index);
+                        });
+                        
+                        currentSlide = index;
+                    }
+                }
+                
+                prevBtn2.addEventListener('click', () => {
+                    let newIndex = currentSlide - 1;
+                    if (newIndex < 0) newIndex = totalSlides - 1;
+                    showSlide(newIndex);
+                });
+                
+                nextBtn2.addEventListener('click', () => {
+                    let newIndex = currentSlide + 1;
+                    if (newIndex >= totalSlides) newIndex = 0;
+                    showSlide(newIndex);
+                });
+                
+                sliderDots.forEach((dot, i) => {
+                    dot.addEventListener('click', () => {
+                        showSlide(i);
+                    });
+                });
+                
+                // Auto-advance slides every 5 seconds
+                setInterval(() => {
+                    let newIndex = currentSlide + 1;
+                    if (newIndex >= totalSlides) newIndex = 0;
+                    showSlide(newIndex);
+                }, 5000);
+            }
+            
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.faq-icon');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').style.maxHeight = '0px';
+                            otherItem.querySelector('.faq-icon').innerHTML = '<i class="fas fa-plus"></i>';
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                    
+                    if (item.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.innerHTML = '<i class="fas fa-minus"></i>';
+                    } else {
+                        answer.style.maxHeight = '0px';
+                        icon.innerHTML = '<i class="fas fa-plus"></i>';
+                    }
+                });
+            });
+            
+            // Play Tutorial Video
+            const playBtn = document.getElementById('play-tutorial');
+            const tutorialPlaceholder = document.querySelector('.tutorial-placeholder');
+            
+            if (playBtn && tutorialPlaceholder) {
+                playBtn.addEventListener('click', () => {
+                    const videoContainer = document.querySelector('.video-container');
+                    if (videoContainer) {
+                        // Replace placeholder with actual video
+                        videoContainer.innerHTML = `
+                            <iframe width="100%" height="315" 
+                                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
+                                title="NyayaBot Tutorial" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        `;
+                    }
+                });
+            }
+            
+            // Share Chatbot
+            const shareBtn = document.getElementById('share-chatbot');
+            if (shareBtn) {
+                shareBtn.addEventListener('click', () => {
+                    if (navigator.share) {
+                        navigator.share({
+                            title: 'NyayaBot - AI Legal Assistant',
+                            text: 'Check out this AI legal assistant that provides instant legal guidance and information!',
+                            url: window.location.href
+                        })
+                        .then(() => console.log('Successful share'))
+                        .catch((error) => console.log('Error sharing:', error));
+                    } else {
+                        // Fallback for browsers that don't support Web Share API
+                        alert('Copy this link to share: ' + window.location.href);
+                    }
+                });
+            }
+            
+            // Sample Question Click
+            const sampleQuestions = document.querySelectorAll('.sample-question-btn');
+            
+            sampleQuestions.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const category = btn.getAttribute('data-category');
+                    const chatWindow = document.getElementById('chatbot-embed');
+                    
+                    // Scroll to chatbot
+                    chatWindow.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Display notification
+                    showNotification(`Try asking: "${btn.textContent}"`, 'info');
+                });
+            });
+            
+            // Resources Tabs
+            const resourceTabs = document.querySelectorAll('.resources-tab');
+            const resourceContents = document.querySelectorAll('.resources-content');
+            
+            resourceTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const resource = tab.getAttribute('data-resource');
+                    
+                    // Update active tab
+                    resourceTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Update content
+                    resourceContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    document.getElementById(resource + '-content')?.classList.add('active');
+                });
+            });
+            
+            // History Filter
+            const filterOptions = document.querySelectorAll('.filter-option');
+            
+            filterOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    filterOptions.forEach(o => o.classList.remove('active'));
+                    option.classList.add('active');
+                    
+                    // Here you would normally filter the history cards
+                    // For demo purposes, we'll just show the notification
+                    showNotification(`Filtered by: ${option.textContent}`, 'info');
+                });
+            });
+            
+            // Feedback Widget
+            const showFeedbackBtn = document.getElementById('show-feedback');
+            const feedbackWidget = document.getElementById('feedback-widget');
+            const feedbackClose = document.querySelector('.feedback-close');
+            const feedbackOptions = document.querySelectorAll('.feedback-option');
+            const feedbackSubmit = document.querySelector('.feedback-submit');
+            
+            if (showFeedbackBtn && feedbackWidget) {
+                showFeedbackBtn.addEventListener('click', () => {
+                    feedbackWidget.classList.add('show');
+                });
+                
+                feedbackClose?.addEventListener('click', () => {
+                    feedbackWidget.classList.remove('show');
+                });
+                
+                feedbackOptions.forEach(option => {
+                    option.addEventListener('click', () => {
+                        feedbackOptions.forEach(o => o.classList.remove('selected'));
+                        option.classList.add('selected');
+                    });
+                });
+                
+                feedbackSubmit?.addEventListener('click', () => {
+                    const selectedOption = document.querySelector('.feedback-option.selected');
+                    const feedbackText = document.querySelector('.feedback-textarea').value;
+                    
+                    if (selectedOption) {
+                        // Here you would normally send the feedback to the server
+                        // For demo purposes, we'll just show a success notification
+                        showNotification('Thank you for your feedback!', 'success');
+                        feedbackWidget.classList.remove('show');
+                        
+                        // Reset the form
+                        feedbackOptions.forEach(o => o.classList.remove('selected'));
+                        document.querySelector('.feedback-textarea').value = '';
+                    } else {
+                        showNotification('Please select a rating', 'error');
+                    }
+                });
+            }
+            
+            // Voice Interface
+            const showVoiceBtn = document.getElementById('show-voice');
+            const voiceInterface = document.getElementById('voice-interface');
+            const closeVoiceBtn = document.querySelector('.close-voice-interface');
+            const voiceButton = document.getElementById('voice-button');
+            const voiceStatus = document.querySelector('.voice-status');
+            const transcriptText = document.querySelector('.transcript-text');
+            
+            if (showVoiceBtn && voiceInterface) {
+                showVoiceBtn.addEventListener('click', () => {
+                    voiceInterface.style.display = 'block';
+                    setTimeout(() => {
+                        voiceInterface.style.opacity = '1';
+                        voiceInterface.style.transform = 'translateY(0)';
+                    }, 50);
+                });
+                
+                closeVoiceBtn?.addEventListener('click', () => {
+                    voiceInterface.style.opacity = '0';
+                    voiceInterface.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        voiceInterface.style.display = 'none';
+                    }, 300);
+                });
+                
+                if (voiceButton) {
+                    let isRecording = false;
+                    
+                    // Check for SpeechRecognition API
+                    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                    
+                    if (SpeechRecognition) {
+                        const recognition = new SpeechRecognition();
+                        recognition.continuous = false;
+                        recognition.lang = 'en-US';
+                        
+                        voiceButton.addEventListener('click', () => {
+                            if (!isRecording) {
+                                // Start recording
+                                recognition.start();
+                                voiceButton.classList.add('recording');
+                                voiceStatus.textContent = 'Listening...';
+                                isRecording = true;
+                            } else {
+                                // Stop recording
+                                recognition.stop();
+                                voiceButton.classList.remove('recording');
+                                voiceStatus.textContent = 'Tap to speak';
+                                isRecording = false;
+                            }
+                        });
+                        
+                        recognition.onresult = (event) => {
+                            const transcript = event.results[0][0].transcript;
+                            transcriptText.textContent = transcript;
+                            
+                            // Automatically stop recording
+                            recognition.stop();
+                            voiceButton.classList.remove('recording');
+                            voiceStatus.textContent = 'Processing...';
+                            isRecording = false;
+                            
+                            // Simulate processing and redirect to chatbot
+                            setTimeout(() => {
+                                voiceStatus.textContent = 'Tap to speak';
+                                showNotification('Voice question processed! Redirecting to chatbot...', 'success');
+                                
+                                setTimeout(() => {
+                                    // Close voice interface
+                                    closeVoiceBtn.click();
+                                    
+                                    // Scroll to chatbot
+                                    document.getElementById('chatbot-embed')?.scrollIntoView({ behavior: 'smooth' });
+                                }, 1500);
+                            }, 2000);
+                        };
+                        
+                        recognition.onerror = (event) => {
+                            voiceStatus.textContent = `Error: ${event.error}`;
+                            voiceButton.classList.remove('recording');
+                            isRecording = false;
+                        };
+                        
+                    } else {
+                        voiceButton.disabled = true;
+                        voiceStatus.textContent = 'Voice recognition not supported in this browser';
+                        showNotification('Your browser does not support voice recognition', 'error');
+                    }
+                }
+            }
+            
+            // Add style for voice interface
+            const voiceInterfaceStyle = document.createElement('style');
+            voiceInterfaceStyle.textContent = `
+                .voice-interface {
+                    position: fixed;
+                    bottom: 100px;
+                    right: 20px;
+                    background: white;
+                    width: 320px;
+                    padding: 20px;
+                    border-radius: 15px;
+                    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+                    text-align: center;
+                    z-index: 1000;
+                    display: none;
+                    opacity: 0;
+                    transform: translateY(20px);
+                    transition: all 0.3s ease;
+                }
+                
+                .close-voice-interface {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background: none;
+                    border: none;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    color: #666;
+                }
+                
+                .voice-transcript {
+                    margin-top: 20px;
+                    background: #f8f9fa;
+                    padding: 15px;
+                    border-radius: 10px;
+                    text-align: left;
+                }
+                
+                .transcript-label {
+                    font-weight: 500;
+                    margin-bottom: 5px;
+                    font-size: 0.9rem;
+                    color: #666;
+                }
+                
+                .transcript-text {
+                    min-height: 60px;
+                    color: #171a1c;
+                    font-size: 1rem;
+                }
+                
+                .chatbot-options {
+                    position: absolute;
+                    top: 0;
+                    right: 60px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+                
+                .chatbot-option {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                    border: none;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    color: #666;
+                }
+                
+                .chatbot-option:hover {
+                    transform: scale(1.1);
+                    color: #d37827;
+                }
+                
+                @media (max-width: 576px) {
+                    .voice-interface {
+                        width: calc(100% - 40px);
+                        bottom: 70px;
+                    }
+                }
+            `;
+            document.head.appendChild(voiceInterfaceStyle);
+            
+            // Show feedback widget after 5 minutes
+            setTimeout(() => {
+                if (feedbackWidget && !sessionStorage.getItem('feedbackShown')) {
+                    feedbackWidget.classList.add('show');
+                    sessionStorage.setItem('feedbackShown', 'true');
+                }
+            }, 300000); // 5 minutes
+            
+            // Add chat history button styling
+            const chatHistoryButtonStyle = document.createElement('style');
+            chatHistoryButtonStyle.textContent = `
+                .chat-history-button {
+                    text-align: center;
+                    margin-top: 40px;
+                }
+            `;
+            document.head.appendChild(chatHistoryButtonStyle);
+        });
+
         // Add specific styles for chatbot page
         const chatbotPageStyles = document.createElement('style');
         chatbotPageStyles.textContent = `
+            /* Enhanced Hero Styles */
+            .chatbot-hero {
+                background: linear-gradient(135deg, #171a1c 0%, #2c3e50 100%);
+                padding: 120px 0 100px;
+                color: white;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .chatbot-hero .container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 60px;
+            }
+            
+            .hero-content {
+                text-align: left;
+                flex: 1;
+            }
+            
+            .hero-image {
+                flex: 1;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .hero-image img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 20px;
+                box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+                z-index: 2;
+            }
+            
+            .ai-circles {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 1;
+            }
+            
+            .circle {
+                position: absolute;
+                border-radius: 50%;
+                opacity: 0.2;
+                filter: blur(20px);
+            }
+            
+            .c1 {
+                width: 200px;
+                height: 200px;
+                background: #d37827;
+                top: -30px;
+                left: -60px;
+            }
+            
+            .c2 {
+                width: 150px;
+                height: 150px;
+                background: #f39c12;
+                bottom: 30px;
+                right: 20px;
+            }
+            
+            .c3 {
+                width: 100px;
+                height: 100px;
+                background: #5a88ff;
+                top: 50%;
+                right: -20px;
+            }
+            
+            .hero-badge {
+                display: flex;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .hero-badge span {
+                background: rgba(255,255,255,0.1);
+                padding: 8px 16px;
+                border-radius: 30px;
+                font-size: 0.9rem;
+                backdrop-filter: blur(5px);
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .hero-badge i {
+                color: #f39c12;
+            }
+            
+            .hero-tagline {
+                font-size: 1.2rem;
+                line-height: 1.6;
+                margin-bottom: 30px;
+                color: rgba(255,255,255,0.8);
+            }
+            
+            .hero-cta {
+                display: flex;
+                gap: 20px;
+                margin-bottom: 40px;
+                flex-wrap: wrap;
+            }
+            
+            .hero-stats {
+                display: flex;
+                gap: 40px;
+            }
+            
+            .stat-item {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #f39c12;
+            }
+            
+            .stat-label {
+                font-size: 0.9rem;
+                color: rgba(255,255,255,0.6);
+            }
+            
+            /* Enhanced Chatbot Section */
             .chatbot-embed-section {
                 padding: 80px 0;
                 background: #f8f9fa;
+                position: relative;
+            }
+            
+            .section-heading {
+                margin-bottom: 40px;
+            }
+            
+            .section-heading.centered {
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 15px;
+                position: relative;
+                display: inline-block;
+            }
+            
+            .section-subtitle {
+                font-size: 1.2rem;
+                color: #666;
             }
             
             .chatbot-main {
@@ -408,6 +1793,7 @@
                 border-radius: 20px;
                 overflow: hidden;
                 box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+                border: 1px solid rgba(0,0,0,0.05);
             }
             
             .chatbot-header {
@@ -459,8 +1845,77 @@
                 animation: pulse 2s infinite;
             }
             
+            .chatbot-toolbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 30px;
+                background: #f8f9fa;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .toolbar-actions {
+                display: flex;
+                gap: 15px;
+            }
+            
+            .toolbar-btn {
+                background: none;
+                border: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                color: #666;
+            }
+            
+            .toolbar-btn:hover {
+                background: rgba(0,0,0,0.05);
+                color: #d37827;
+            }
+            
+            .encryption-badge {
+                background: rgba(76, 175, 80, 0.1);
+                color: #4CAF50;
+                padding: 6px 12px;
+                border-radius: 30px;
+                font-size: 0.8rem;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+            }
+            
             .chatbot-container {
                 min-height: 600px;
+            }
+            
+            .chatbot-features {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 20px 30px;
+                background: #f8f9fa;
+                border-top: 1px solid #eee;
+            }
+            
+            .feature-tag {
+                background: white;
+                color: #666;
+                font-size: 0.9rem;
+                padding: 8px 16px;
+                border-radius: 30px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            }
+            
+            .feature-tag i {
+                color: #d37827;
             }
             
             .chatbot-cta {
@@ -468,107 +1923,129 @@
                 text-align: center;
                 background: #f8f9fa;
                 border-top: 1px solid #eee;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                flex-wrap: wrap;
             }
             
-            .language-grid {
+            .chatbot-tips {
+                margin-top: 60px;
+                background: white;
+                border-radius: 20px;
+                padding: 30px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            
+            .chatbot-tips h3 {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                color: #171a1c;
+                margin-bottom: 25px;
+            }
+            
+            .chatbot-tips h3 i {
+                color: #f39c12;
+            }
+            
+            .tips-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 30px;
-                margin-top: 40px;
+                gap: 20px;
             }
             
-            .language-card {
-                background: white;
-                padding: 30px;
-                border-radius: 15px;
-                text-align: center;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-                transition: transform 0.3s ease;
-                border: 1px solid #f0f0f0;
+            .tip-card {
+                background: #f8f9fa;
+                padding: 20px;
+                border-radius: 10px;
+                position: relative;
+                border-top: 3px solid #d37827;
             }
             
-            .language-card:hover {
-                transform: translateY(-5px);
-                border-color: #d37827;
-            }
-            
-            .language-flag {
-                font-size: 3rem;
-                margin-bottom: 15px;
-            }
-            
-            .language-card h3 {
-                color: #171a1c;
-                margin-bottom: 10px;
-            }
-            
-            .language-card p {
-                color: #666;
-                font-style: italic;
-            }
-            
-            .faq-categories {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 30px;
-                margin-top: 40px;
-            }
-            
-            .category-card {
-                background: white;
-                padding: 30px;
-                border-radius: 15px;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-                border-left: 4px solid #d37827;
-            }
-            
-            .category-icon {
-                width: 60px;
-                height: 60px;
-                background: linear-gradient(135deg, #d37827, #f39c12);
+            .tip-number {
+                position: absolute;
+                top: -15px;
+                left: 20px;
+                background: #d37827;
+                color: white;
+                width: 30px;
+                height: 30px;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin-bottom: 20px;
+                font-weight: 700;
+                font-size: 0.8rem;
             }
             
-            .category-icon i {
-                font-size: 1.8rem;
-                color: white;
+            /* Tutorial Section Styles */
+            .tutorial-section {
+                background: white;
+                padding: 80px 0;
             }
             
-            .category-card h3 {
-                color: #171a1c;
-                margin-bottom: 15px;
+            .tutorial-container {
+                display: flex;
+                flex-direction: column;
+                max-width: 900px;
+                margin: 0 auto;
             }
             
-            .category-card ul {
-                list-style: none;
-                padding: 0;
+            .tutorial-video {
+                margin-bottom: 40px;
+                text-align: center;
             }
             
-            .category-card li {
-                padding: 8px 0;
-                color: #666;
-                border-bottom: 1px solid #f0f0f0;
+            .video-container {
                 position: relative;
-                padding-left: 20px;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+                margin-bottom: 20px;
+                aspect-ratio: 16/9;
             }
             
-            .category-card li:before {
-                content: "→";
+            .tutorial-placeholder {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: brightness(0.7);
+            }
+            
+            .play-button {
                 position: absolute;
-                left: 0;
-                color: #d37827;
-                font-weight: bold;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80px;
+                height: 80px;
+                background: rgba(211, 120, 39, 0.9);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                color: white;
+                font-size: 2rem;
             }
             
-            .usage-steps {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 30px;
-                margin-top: 40px;
+            .play-button:hover {
+                transform: translate(-50%, -50%) scale(1.1);
+                background: #d37827;
+            }
+            
+            .video-caption {
+                font-size: 0.9rem;
+                color: #666;
+                margin-top: 15px;
+            }
+            
+            .tutorial-steps {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
             }
             
             .usage-step {
@@ -578,56 +2055,458 @@
                 padding: 30px;
                 background: white;
                 border-radius: 15px;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+                border: 1px solid #eee;
+                opacity: 0.5;
+                transition: all 0.3s ease;
+                transform: translateY(20px);
             }
             
-            .sample-chats {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-                gap: 30px;
-                margin-top: 40px;
+            .usage-step.active {
+                opacity: 1;
+                transform: translateY(0);
+                border-color: #d37827;
             }
             
-            .chat-example {
-                background: white;
-                border-radius: 15px;
-                padding: 30px;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            .step-number {
+                background: #d37827;
+                color: white;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                font-size: 1.2rem;
+                flex-shrink: 0;
             }
             
-            .chat-example h3 {
+            .step-content {
+                flex: 1;
+            }
+            
+            .step-content h3 {
+                margin-bottom: 10px;
                 color: #171a1c;
-                margin-bottom: 20px;
-                padding-bottom: 10px;
-                border-bottom: 2px solid #d37827;
             }
             
-            .chat-messages {
+            .step-example {
                 margin-top: 20px;
+                background: #f8f9fa;
+                border-radius: 10px;
+                padding: 15px;
             }
             
-            .message {
-                margin-bottom: 15px;
+            .example-message {
+                background: #e3f2fd;
                 padding: 15px;
                 border-radius: 10px;
-                line-height: 1.6;
+                font-size: 0.9rem;
+                margin-bottom: 10px;
             }
             
-            .user-msg {
-                background: #e3f2fd;
-                margin-left: 20px;
-            }
-            
-            .bot-msg {
+            .example-message.bot-message {
                 background: rgba(211, 120, 39, 0.1);
                 border-left: 3px solid #d37827;
             }
             
+            .tutorial-navigation {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 40px;
+                padding-top: 20px;
+                border-top: 1px solid #eee;
+            }
+            
+            .nav-btn {
+                background: white;
+                border: 1px solid #ddd;
+                padding: 10px 20px;
+                border-radius: 8px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-btn:hover:not(:disabled) {
+                border-color: #d37827;
+                color: #d37827;
+            }
+            
+            .nav-btn:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+            
+            .step-indicators {
+                display: flex;
+                gap: 10px;
+            }
+            
+            .step-dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #ddd;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .step-dot.active {
+                background: #d37827;
+                transform: scale(1.2);
+            }
+            
+            /* Sample Conversations Styles */
+            .sample-section {
+                padding: 80px 0;
+                background: #f8f9fa;
+            }
+            
+            .samples-tabs {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 30px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .sample-tab {
+                padding: 12px 20px;
+                background: white;
+                border: 1px solid #eee;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: 500;
+                transition: all 0.3s ease;
+            }
+            
+            .sample-tab.active {
+                background: #d37827;
+                color: white;
+                border-color: #d37827;
+            }
+            
+            .chat-window {
+                background: white;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+                max-width: 900px;
+                margin: 0 auto;
+                border: 1px solid #eee;
+            }
+            
+            .chat-messages {
+                padding: 30px;
+                max-height: 500px;
+                overflow-y: auto;
+            }
+            
+            .chat-messages.hidden {
+                display: none;
+            }
+            
+            .message {
+                margin-bottom: 20px;
+            }
+            
+            .message-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 8px;
+            }
+            
+            .user-icon, .bot-icon {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                background: #e3f2fd;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #2196F3;
+            }
+            
+            .bot-icon {
+                background: #f8f0e3;
+            }
+            
+            .bot-icon img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            
+            .message-time {
+                font-size: 0.8rem;
+                color: #999;
+            }
+            
+            .user-msg .message-body {
+                background: #e3f2fd;
+                padding: 15px;
+                border-radius: 15px 15px 0 15px;
+                line-height: 1.6;
+                margin-left: 40px;
+            }
+            
+            .bot-msg .message-body {
+                background: rgba(211, 120, 39, 0.1);
+                padding: 15px;
+                border-radius: 15px 15px 15px 0;
+                line-height: 1.6;
+                margin-left: 40px;
+                border-left: 3px solid #d37827;
+            }
+            
+            .message-body ol, .message-body ul {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding-left: 25px;
+            }
+            
+            .message-body li {
+                margin-bottom: 5px;
+            }
+            
+            .message-body p {
+                margin-bottom: 10px;
+            }
+            
+            .message-body p:last-child {
+                margin-bottom: 0;
+            }
+            
+            .chat-question {
+                padding: 20px 30px;
+                background: #f8f9fa;
+                border-top: 1px solid #eee;
+                text-align: center;
+            }
+            
+            .sample-questions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-top: 15px;
+                justify-content: center;
+            }
+            
+            .sample-question-btn {
+                background: white;
+                border: 1px solid #ddd;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .sample-question-btn:hover {
+                background: #d37827;
+                color: white;
+                border-color: #d37827;
+            }
+            
+            /* Testimonials Styles */
+            .testimonials-section {
+                padding: 80px 0;
+            }
+            
+            .testimonials-slider {
+                max-width: 900px;
+                margin: 0 auto;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .testimonials-container {
+                display: flex;
+                transition: transform 0.5s ease;
+            }
+            
+            .testimonial-card {
+                min-width: 100%;
+                padding: 40px;
+                background: white;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            
+            .testimonial-rating {
+                color: #f39c12;
+                margin-bottom: 20px;
+            }
+            
+            .testimonial-text {
+                font-size: 1.1rem;
+                line-height: 1.7;
+                margin-bottom: 30px;
+                font-style: italic;
+                color: #555;
+            }
+            
+            .testimonial-author {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .author-image {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+            
+            .author-info h4 {
+                font-size: 1.1rem;
+                margin-bottom: 5px;
+                color: #171a1c;
+            }
+            
+            .author-info p {
+                color: #666;
+                font-size: 0.9rem;
+            }
+            
+            .slider-controls {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 30px;
+                gap: 20px;
+            }
+            
+            .slider-control {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: white;
+                border: 1px solid #ddd;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .slider-control:hover {
+                background: #d37827;
+                color: white;
+                border-color: #d37827;
+            }
+            
+            .slider-dots {
+                display: flex;
+                gap: 8px;
+            }
+            
+            .slider-dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: #ddd;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .slider-dot.active {
+                background: #d37827;
+                transform: scale(1.2);
+            }
+            
+            /* FAQ Section */
+            .faq-section {
+                background: white;
+                padding: 80px 0;
+                position: relative;
+            }
+            
+            .faq-container {
+                max-width: 900px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+            
+            .faq-item {
+                background: #f8f9fa;
+                border-radius: 10px;
+                overflow: hidden;
+                margin-bottom: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            }
+            
+            .faq-question {
+                padding: 20px;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: white;
+            }
+            
+            .faq-question h3 {
+                font-size: 1.1rem;
+                margin: 0;
+                font-weight: 600;
+                color: #171a1c;
+            }
+            
+            .faq-icon {
+                color: #d37827;
+                font-size: 1.2rem;
+                transition: transform 0.3s ease;
+            }
+            
+            .faq-item.active .faq-icon {
+                transform: rotate(45deg);
+            }
+            
+            .faq-answer {
+                padding: 0 20px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease, padding 0.3s ease;
+            }
+            
+            .faq-answer p {
+                line-height: 1.6;
+                color: #666;
+                margin-bottom: 20px;
+            }
+            
+            /* Enhanced CTA Section */
             .cta-section {
                 background: linear-gradient(135deg, #171a1c 0%, #2c3e50 100%);
                 color: white;
                 padding: 80px 0;
                 text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .cta-badge {
+                display: inline-block;
+                background: rgba(211, 120, 39, 0.2);
+                color: #f39c12;
+                padding: 8px 16px;
+                border-radius: 30px;
+                margin-bottom: 20px;
+                font-size: 0.9rem;
+            }
+            
+            .cta-badge i {
+                margin-right: 5px;
             }
             
             .cta-content h2 {
@@ -641,7 +2520,85 @@
                 gap: 20px;
                 justify-content: center;
                 flex-wrap: wrap;
-                margin-top: 40px;
+                margin: 40px 0;
+            }
+            
+            .cta-features {
+                display: flex;
+                gap: 30px;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 30px;
+            }
+            
+            .cta-feature {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                color: rgba(255,255,255,0.8);
+            }
+            
+            .cta-feature i {
+                color: #4CAF50;
+            }
+            
+            /* Animations */
+            @keyframes pulse {
+                0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+                70% { box-shadow: 0 0 0 10px rgba(76, 175, 80, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+            }
+            
+            .pulse-animation {
+                animation: pulse-btn 2s infinite;
+            }
+            
+            @keyframes pulse-btn {
+                0% { box-shadow: 0 0 0 0 rgba(211, 120, 39, 0.7); }
+                70% { box-shadow: 0 0 0 15px rgba(211, 120, 39, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(211, 120, 39, 0); }
+            }
+            
+            .floating-animation {
+                animation: float 6s ease-in-out infinite;
+            }
+            
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-20px); }
+                100% { transform: translateY(0px); }
+            }
+            
+            /* Responsive Styles */
+            @media (max-width: 992px) {
+                .chatbot-hero .container {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                
+                .hero-content {
+                    text-align: center;
+                }
+                
+                .hero-badge {
+                    justify-content: center;
+                }
+                
+                .hero-cta {
+                    justify-content: center;
+                }
+                
+                .hero-stats {
+                    justify-content: center;
+                }
+                
+                .hero-image {
+                    margin-top: 40px;
+                }
+                
+                .faq-container {
+                    grid-template-columns: 1fr;
+                }
             }
             
             @media (max-width: 768px) {
@@ -651,25 +2608,45 @@
                     text-align: center;
                 }
                 
-                .language-grid {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-                
-                .faq-categories {
-                    grid-template-columns: 1fr;
-                }
-                
-                .sample-chats {
-                    grid-template-columns: 1fr;
-                }
-                
-                .usage-steps {
+                .tips-grid {
                     grid-template-columns: 1fr;
                 }
                 
                 .usage-step {
                     flex-direction: column;
+                    align-items: center;
                     text-align: center;
+                }
+                
+                .testimonial-card {
+                    padding: 30px 20px;
+                }
+                
+                .chatbot-toolbar {
+                    padding: 10px;
+                }
+                
+                .toolbar-actions {
+                    gap: 5px;
+                }
+                
+                .toolbar-btn {
+                    width: 35px;
+                    height: 35px;
+                }
+                
+                .encryption-badge {
+                    font-size: 0.7rem;
+                    padding: 4px 8px;
+                }
+                
+                .feature-tag {
+                    font-size: 0.8rem;
+                    padding: 6px 12px;
+                }
+                
+                .sample-questions {
+                    flex-direction: column;
                 }
             }
         `;

@@ -7,173 +7,1217 @@
     <link rel="icon" type="image/jpeg" href="nyaya_mitra_logo.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="modern-index.css">
+    <link rel="stylesheet" href="nav-dropdown.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/modern-footer.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-brand">
-                <img src="nyaya_mitra_logo.jpg" alt="Nyaya Mitra">
-                <h1>Nyaya Mitra</h1>
-            </a>
-            <div class="nav-center">
-                <a href="index.html">Home</a>
-                <a href="about.html" class="active">About Us</a>
-                <a href="sos-alerts.html">SOS Alerts</a>
-                <a href="document-analyzer.html">Document Analyzer</a>
-                <a href="civic-feedback.html">Civic Feedback</a>
-                <a href="whistleblower.html">Whistleblower</a>
-            </div>
-            <div class="nav-actions">
-                <a href="about.html" class="btn btn-secondary">Learn More</a>
-                <a href="contact.html" class="btn btn-primary">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <!-- Standard header will be inserted by script.js -->
+    <header class="header"></header>
 
-    <!-- Hero -->
-    <section class="page-hero">
+    <!-- Enhanced Hero Section -->
+    <section class="page-hero about-hero">
         <div class="container">
-            <h1>About Nyaya Mitra</h1>
-            <p>Your trusted legal assistance partner</p>
-            <p>Empowering citizens through accessible legal technology and innovation.</p>
+            <div class="hero-content" data-aos="fade-up">
+                <div class="hero-badge">
+                    <span><i class="fas fa-star"></i> Student Project</span>
+                    <span><i class="fas fa-trophy"></i> BCA Mini Project</span>
+                </div>
+                <h1>About Nyaya Mitra</h1>
+                <p class="hero-tagline">Your trusted legal assistance partner, empowering citizens through accessible legal technology and innovation.</p>
+                <div class="hero-cta">
+                    <a href="#our-story" class="btn btn-primary btn-large">
+                        <i class="fas fa-book-open"></i> Our Story
+                    </a>
+                    <a href="#our-team" class="btn btn-secondary btn-large">
+                        <i class="fas fa-users"></i> Meet The Team
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+                <img src="images\team.jpg" alt="Nyaya Mitra Team" class="floating-animation">
+                <div class="ai-circles">
+                    <div class="circle c1"></div>
+                    <div class="circle c2"></div>
+                    <div class="circle c3"></div>
+                </div>
+            </div>
         </div>
     </section>
-
-    <!-- Team -->
-    <section class="content-section">
+    
+    <!-- Our Story Section -->
+    <section class="content-section" id="our-story">
         <div class="container">
-            <h2 class="section-title">Our Team</h2>
-            <div class="grid-3">
-                <div class="card animate-in">
-                    <div class="card-icon">
-                        <i class="fas fa-code"></i>
+            <h2 class="section-title" data-aos="fade-up">Our Story</h2>
+            <div class="story-content" data-aos="fade-up">
+                <div class="story-text">
+                    <p>Nyaya Mitra was born out of a simple yet powerful idea: legal assistance should be accessible to everyone, regardless of their background, education, or financial status.</p>
+                    
+                    <p>The project emerged during the TechTank2024 hackathon where our team focused on addressing UN SDG 16: Peace, Justice, and Strong Institutions. We witnessed firsthand how the digital divide and lack of legal awareness affected many communities. Legal processes in India can be complex and intimidating, leaving many citizens without the means to understand or exercise their rights.</p>
+                    
+                    <p>With a shared passion for technology and social impact, our team set out to create an accessible platform that bridges this gap. Starting as an innovative idea at the hackathon, Nyaya Mitra evolved into our BCA mini project and has now become a comprehensive legal tech solution with a mission to democratize access to justice.</p>
+                    
+                    <p>Today, we're proud to offer a suite of tools including AI-powered legal assistance, document analysis, and emergency support systems—all designed with simplicity and accessibility at their core.</p>
+                    
+                    <div class="story-links">
+                        <a href="https://www.linkedin.com/posts/thesachinyyadav_techtank2024-sdg16-innovation-activity-7240390407535091712-5QOi?utm_source=share&utm_medium=member_desktop" target="_blank" class="story-link">
+                            <i class="fab fa-linkedin"></i> View the original LinkedIn post
+                        </a>
+                        <a href="documents/nyayamitra-research-paper.pdf" target="_blank" class="story-link">
+                            <i class="fas fa-file-pdf"></i> Read our research paper
+                        </a>
                     </div>
-                    <img src="sachin.jpg" alt="Sachin Yadav" class="team-photo">
-                    <h3>Sachin Yadav</h3>
-                    <p class="role">Lead Developer</p>
-                    <p>Full-stack development and system architecture specialist with expertise in modern web technologies.</p>
                 </div>
-
-                <div class="card animate-in">
-                    <div class="card-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <img src="surya.jpg" alt="Surya" class="team-photo">
-                    <h3>Surya</h3>
-                    <p class="role">UI/UX Designer</p>
-                    <p>Creative designer focused on user experience and interface design for intuitive legal technology solutions.</p>
-                </div>
-
-                <div class="card animate-in">
-                    <div class="card-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <img src="hema.jpg" alt="Hema" class="team-photo">
-                    <h3>Hema</h3>
-                    <p class="role">Legal Researcher</p>
-                    <p>Legal research specialist ensuring accuracy and compliance in all legal content and documentation.</p>
+                <div class="story-image">
+                    <img src="images\team.jpg" alt="Nyaya Mitra Team at TechTank2024">
+                    <div class="image-caption">Our team at TechTank2024 where Nyaya Mitra was born</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission -->
-    <section class="section" style="background: #f8fafb;">
+    <!-- Enhanced Team Section -->
+    <section class="content-section team-section" id="our-team">
         <div class="container">
-            <h2 class="section-title">Our Mission</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <div class="card-icon">
+            <h2 class="section-title" data-aos="fade-up">Meet Our Team</h2>
+            <p class="section-subtitle" data-aos="fade-up">The passionate minds behind Nyaya Mitra</p>
+            
+            <div class="team-grid">
+                <div class="team-member" data-aos="fade-up">
+                    <div class="member-header">
+                        <img src="sachin.jpg" alt="Sachin Yadav" class="team-photo">
+                        <div class="member-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="member-content">
+                        <h3>Sachin Yadav</h3>
+                        <p class="member-role">Lead Developer</p>
+                        <p class="member-bio">Full-stack development and system architecture specialist with expertise in modern web technologies. Passionate about using technology for social impact.</p>
+                        <div class="member-skills">
+                            <span>Web Development</span>
+                            <span>AI Integration</span>
+                            <span>System Architecture</span>
+                        </div>
+                        <div class="member-social">
+                            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:sachin@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member-header">
+                        <img src="surya.jpg" alt="Surya" class="team-photo">
+                        <div class="member-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                    </div>
+                    <div class="member-content">
+                        <h3>Surya</h3>
+                        <p class="member-role">UI/UX Designer</p>
+                        <p class="member-bio">Creative designer focused on user experience and interface design for intuitive legal technology solutions. Dedicated to making complex legal processes accessible through design.</p>
+                        <div class="member-skills">
+                            <span>User Experience</span>
+                            <span>Interface Design</span>
+                            <span>Visual Communication</span>
+                        </div>
+                        <div class="member-social">
+                            <a href="#" title="Behance"><i class="fab fa-behance"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:surya@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member-header">
+                        <img src="hema.jpg" alt="Hema" class="team-photo">
+                        <div class="member-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                    </div>
+                    <div class="member-content">
+                        <h3>Hema</h3>
+                        <p class="member-role">Legal Researcher</p>
+                        <p class="member-bio">Legal research specialist ensuring accuracy and compliance in all legal content and documentation. Committed to making legal knowledge accessible to all citizens.</p>
+                        <div class="member-skills">
+                            <span>Legal Research</span>
+                            <span>Content Development</span>
+                            <span>Compliance</span>
+                        </div>
+                        <div class="member-social">
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="mailto:hema@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Mission Section -->
+    <section class="mission-section" id="our-mission">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Mission & Values</h2>
+            <p class="section-subtitle" data-aos="fade-up">The principles that drive our innovation and impact</p>
+            
+            <div class="mission-grid">
+                <div class="mission-card" data-aos="fade-up">
+                    <div class="mission-icon">
                         <i class="fas fa-bullseye"></i>
                     </div>
                     <h3>Empower Citizens</h3>
-                    <p>Make legal services accessible to everyone through innovative technology and user-friendly platforms.</p>
+                    <p>Make legal services accessible to everyone through innovative technology and user-friendly platforms, ensuring that legal knowledge is no longer a privilege but a right for all citizens.</p>
+                    <div class="mission-action">
+                        <span class="action-label">Our Approach:</span> Simplified interfaces, multilingual support, and free access to basic legal information.
+                    </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-icon">
+                <div class="mission-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mission-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Ensure Justice</h3>
-                    <p>Promote transparency, accountability, and fair legal processes for all citizens of India.</p>
+                    <p>Promote transparency, accountability, and fair legal processes for all citizens of India, with special focus on underserved communities who face barriers to legal resources.</p>
+                    <div class="mission-action">
+                        <span class="action-label">Our Approach:</span> Whistleblower protection, rights awareness, and emergency legal support systems.
+                    </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-icon">
+                <div class="mission-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mission-icon">
                         <i class="fas fa-robot"></i>
                     </div>
                     <h3>Leverage Technology</h3>
-                    <p>Utilize cutting-edge AI and machine learning to streamline legal processes and improve efficiency.</p>
+                    <p>Utilize cutting-edge AI and machine learning to streamline legal processes and improve efficiency, making legal assistance more affordable, faster, and more accurate.</p>
+                    <div class="mission-action">
+                        <span class="action-label">Our Approach:</span> AI-powered legal chatbot, document analysis tools, and case tracking systems.
+                    </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-icon">
+                <div class="mission-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mission-icon">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>Build Community</h3>
-                    <p>Create a supportive community of legal professionals, citizens, and technology experts.</p>
+                    <p>Create a supportive community of legal professionals, citizens, and technology experts working together to improve legal accessibility and drive positive social change.</p>
+                    <div class="mission-action">
+                        <span class="action-label">Our Approach:</span> Open collaboration, knowledge sharing, and partnerships with legal organizations.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Research Paper Highlight -->
+    <section class="content-section" id="research">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Research</h2>
+            <p class="section-subtitle" data-aos="fade-up">Academic foundation behind Nyaya Mitra</p>
+            
+            <div class="research-content" data-aos="fade-up">
+                <div class="research-card">
+                    <div class="research-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="research-details">
+                        <h3>Legal Technology Access in Rural India: Bridging the Digital Divide</h3>
+                        <p class="research-authors">By Sachin Yadav and Team</p>
+                        <p class="research-abstract">This research paper explores innovative approaches to democratizing access to legal services in India through technology. It examines the challenges faced by rural and underserved populations and proposes AI-powered solutions that can overcome language, literacy, and accessibility barriers.</p>
+                        <div class="research-meta">
+                            <span><i class="fas fa-calendar"></i> Proposed: September 2025</span>
+                            <span><i class="fas fa-bookmark"></i> Legal Technology</span>
+                            <span><i class="fas fa-language"></i> English</span>
+                        </div>
+                        <a href="documents/nyayamitra-research-paper.pdf" class="btn btn-secondary" target="_blank">
+                            <i class="fas fa-download"></i> Download Paper
+                        </a>
+                    </div>
+                </div>
+                <div class="research-quote">
+                    <blockquote>
+                        "Our research revealed that 78% of rural citizens in India lack access to basic legal information and services. Technology can be the great equalizer if designed with inclusivity as a core principle."
+                        <cite>- Excerpt from research paper</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Core Values Section -->
+    <section class="values-section">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Nyaya Mitra</h4>
-                    <p>Empowering citizens with accessible legal services through advanced technology and innovation. Your trusted partner in legal assistance and civic engagement.</p>
-                    <div class="social-links">
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <div class="values-content" data-aos="fade-up">
+                <div class="values-text">
+                    <h2>Core Values</h2>
+                    <p>At Nyaya Mitra, our work is guided by these fundamental principles:</p>
+                    
+                    <div class="values-list">
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-balance-scale"></i></div>
+                            <div class="value-detail">
+                                <h3>Accessibility</h3>
+                                <p>Legal services should be available to all, regardless of financial status, education, or background.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-lock"></i></div>
+                            <div class="value-detail">
+                                <h3>Privacy & Security</h3>
+                                <p>Protecting user data and confidentiality is paramount in all our systems and services.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-universal-access"></i></div>
+                            <div class="value-detail">
+                                <h3>Inclusivity</h3>
+                                <p>Our solutions are designed with consideration for diverse needs, languages, and abilities.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="value-detail">
+                                <h3>Integrity</h3>
+                                <p>We maintain the highest ethical standards in all our operations and partnerships.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                            <div class="value-detail">
+                                <h3>Innovation</h3>
+                                <p>We continuously seek creative solutions to complex legal accessibility challenges.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="sos-alerts.html">Emergency SOS</a></li>
-                        <li><a href="document-analyzer.html">Document Analyzer</a></li>
-                        <li><a href="whistleblower.html">Whistleblower Portal</a></li>
-                        <li><a href="civic-feedback.html">Civic Feedback</a></li>
-                        <li><a href="case-tracker.html">Case Tracker</a></li>
-                    </ul>
+                
+                <div class="values-quote">
+                    <blockquote>
+                        "Equal access to justice is not merely a legal principle—it is the cornerstone of a fair and equitable society."
+                        <cite>- Nyaya Mitra Team</cite>
+                    </blockquote>
                 </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="chatbot.html">Legal Chatbot</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <span>info@nyayamitra.com</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-phone"></i>
-                        <span>+91 9999999999</span>
-                    </div>
-                    <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>New Delhi, India</span>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Nyaya Mitra. All rights reserved. | Made with ❤️ for legal empowerment</p>
             </div>
         </div>
-    </footer>
+    </section>
 
+    <!-- Achievements Section -->
+    <section class="achievements-section" id="achievements">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Achievements</h2>
+            <p class="section-subtitle" data-aos="fade-up">Milestones in our journey to improve legal accessibility</p>
+            
+            <div class="timeline" data-aos="fade-up">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="marker-date">April 2024</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>TechTank2024 Hackathon</h3>
+                        <p>The idea for Nyaya Mitra was born during the TechTank2024 hackathon focusing on UN SDG 16: Peace, Justice, and Strong Institutions</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-icon"><i class="fas fa-rocket"></i></div>
+                        <div class="marker-date">January 2025</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Project Inception</h3>
+                        <p>Formalized as a BCA mini project with the vision to create a legal assistance platform for citizens</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-icon"><i class="fas fa-robot"></i></div>
+                        <div class="marker-date">March 2025</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>AI Chatbot Launch</h3>
+                        <p>Released our first AI-powered legal assistant with support for 2 languages and 50+ legal topics</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-icon"><i class="fas fa-file-alt"></i></div>
+                        <div class="marker-date">May 2025</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Document Analyzer</h3>
+                        <p>Developed ML-based document analysis tools to help citizens understand legal documents</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-icon"><i class="fas fa-award"></i></div>
+                        <div class="marker-date">July 2025</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>University Innovation Award</h3>
+                        <p>Recognized as the most innovative student project with social impact potential</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-icon"><i class="fas fa-language"></i></div>
+                        <div class="marker-date">August 2025</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Multilingual Support</h3>
+                        <p>Expanded language support to 8 Indian languages, making legal assistance accessible to millions more citizens</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="marker-icon"><i class="fas fa-users"></i></div>
+                        <div class="marker-date">September 2025</div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>10,000+ Users</h3>
+                        <p>Reached our first milestone of helping over ten thousand citizens with their legal questions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Join Our Mission</h2>
+                <p>Be part of our journey to make legal assistance accessible to all citizens across India</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-envelope"></i> Get in Touch
+                    </a>
+                    <a href="https://studio.pickaxeproject.com/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0" target="_blank" class="btn btn-secondary btn-large">
+                        <i class="fas fa-robot"></i> Try Our AI Assistant
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standard footer will be inserted by script.js -->
+    <footer class="modern-footer"></footer>
+
+    <!-- Floating Chatbot -->
+    <div class="floating-chatbot">
+        <a href="https://studio.pickaxeproject.com/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0" 
+           target="_blank" class="chatbot-float-btn">
+            <i class="fas fa-robot"></i>
+        </a>
+        <div class="chatbot-tooltip">Ask Nyaya Mitra</div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS (Animate On Scroll)
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out',
+                once: true
+            });
+        });
+    </script>
+    
+    <!-- Add page-specific styles -->
+    <style>
+        /* Hero Section Styles */
+        .about-hero {
+            background: linear-gradient(135deg, #171a1c 0%, #2c3e50 100%);
+            padding: 120px 0 100px;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .about-hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+        
+        .hero-content {
+            text-align: left;
+            flex: 1;
+        }
+        
+        .hero-image {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            z-index: 2;
+        }
+        
+        .ai-circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.2;
+            filter: blur(20px);
+        }
+        
+        .c1 {
+            width: 200px;
+            height: 200px;
+            background: #d37827;
+            top: -30px;
+            left: -60px;
+        }
+        
+        .c2 {
+            width: 150px;
+            height: 150px;
+            background: #f39c12;
+            bottom: 30px;
+            right: 20px;
+        }
+        
+        .c3 {
+            width: 100px;
+            height: 100px;
+            background: #5a88ff;
+            top: 50%;
+            right: -20px;
+        }
+        
+        .hero-badge {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-badge span {
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .hero-badge i {
+            color: #f39c12;
+        }
+        
+        .hero-tagline {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        /* Our Story Section */
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #171a1c;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+        
+        .story-content {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 50px;
+        }
+        
+        .story-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #444;
+        }
+        
+        .story-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .story-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #171a1c;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .story-link:hover {
+            background: #d37827;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .story-link i {
+            font-size: 1.2rem;
+            color: #d37827;
+        }
+        
+        .story-link:hover i {
+            color: white;
+        }
+        
+        .story-image {
+            position: relative;
+        }
+        
+        .story-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .image-caption {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            white-space: nowrap;
+        }
+        
+        /* Team Section Styles */
+        .team-section {
+            background: #f8f9fa;
+            padding: 100px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .member-header {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .team-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .team-photo {
+            transform: scale(1.05);
+        }
+        
+        .member-icon {
+            position: absolute;
+            bottom: -25px;
+            right: 25px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d37827, #f39c12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+        
+        .member-content {
+            padding: 30px;
+        }
+        
+        .member-content h3 {
+            margin-bottom: 10px;
+            color: #171a1c;
+            font-size: 1.4rem;
+        }
+        
+        .member-role {
+            color: #d37827;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .member-bio {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .member-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .member-skills span {
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        .member-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .member-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .member-social a:hover {
+            background: #d37827;
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        /* Mission Section Styles */
+        .mission-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .mission-card {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: transform 0.3s ease;
+            position: relative;
+            border-top: 4px solid #d37827;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .mission-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #d37827, #f39c12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .mission-card h3 {
+            color: #171a1c;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .mission-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .mission-action {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .action-label {
+            color: #d37827;
+            font-weight: 600;
+        }
+        
+        /* Research Paper Section */
+        #research {
+            background: #fff;
+            padding: 100px 0;
+        }
+        
+        .research-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .research-card {
+            display: flex;
+            gap: 30px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            border-left: 4px solid #d37827;
+        }
+        
+        .research-icon {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            background: linear-gradient(135deg, #d37827, #f39c12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .research-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #171a1c;
+        }
+        
+        .research-authors {
+            color: #d37827;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .research-abstract {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        
+        .research-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .research-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .research-meta i {
+            color: #d37827;
+        }
+        
+        .research-quote {
+            background: linear-gradient(135deg, #171a1c, #2c3e50);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            height: fit-content;
+        }
+        
+        .research-quote blockquote {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+            margin: 0;
+        }
+        
+        .research-quote cite {
+            display: block;
+            margin-top: 20px;
+            font-style: normal;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 992px) {
+            .research-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .research-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .research-meta {
+                justify-content: center;
+            }
+        }
+        
+        /* Values Section */
+        .values-section {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .values-content {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .values-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #171a1c;
+        }
+        
+        .values-text > p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #666;
+        }
+        
+        .values-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+        }
+        
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #d37827;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+        
+        .value-detail h3 {
+            margin-bottom: 10px;
+            color: #171a1c;
+            font-size: 1.2rem;
+        }
+        
+        .value-detail p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .values-quote {
+            background: linear-gradient(135deg, #171a1c, #2c3e50);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            position: relative;
+        }
+        
+        .values-quote blockquote {
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            position: relative;
+            padding-left: 30px;
+            margin: 0;
+        }
+        
+        .values-quote blockquote:before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 5rem;
+            color: rgba(255,255,255,0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .values-quote cite {
+            display: block;
+            margin-top: 20px;
+            font-style: normal;
+            opacity: 0.7;
+            font-size: 0.9rem;
+            text-align: right;
+        }
+        
+        /* Timeline Section */
+        .achievements-section {
+            padding: 100px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto 0;
+            padding: 20px 0;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50px;
+            width: 2px;
+            background: #ddd;
+            z-index: 1;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 120px;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .marker-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d37827, #f39c12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            z-index: 2;
+        }
+        
+        .marker-date {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            background: #f8f9fa;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #666;
+        }
+        
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid #d37827;
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 15px;
+            color: #171a1c;
+        }
+        
+        .timeline-content p {
+            color: #666;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #171a1c 0%, #2c3e50 100%);
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #d37827;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Floating Animation */
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-hero .container {
+                flex-direction: column;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .hero-badge,
+            .hero-cta {
+                justify-content: center;
+            }
+            
+            .story-content,
+            .values-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .values-quote {
+                margin-top: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .value-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .timeline-item {
+                padding-left: 90px;
+            }
+            
+            .marker-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </body>
 </html>

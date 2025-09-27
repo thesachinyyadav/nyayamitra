@@ -1,19 +1,208 @@
-// Navigation Toggle (removed - new navbar doesn't use toggle)
-// const navToggle = document.getElementById('nav-toggle');
-// const navMenu = document.getElementById('nav-menu');
+// Nyaya Mitra - Main JavaScript File
+// This file integrates the standardized components and provides shared functionality
+// across all pages in the Nyaya Mitra website
 
-// if (navToggle) {
-//     navToggle.addEventListener('click', () => {
-//         navMenu.classList.toggle('active');
-//     });
-// }
+// Import navigation and footer components on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Import and initialize navigation component
+    const navScript = document.createElement('script');
+    navScript.src = 'components/navigation.js';
+    navScript.onload = function() {
+        // Insert navigation with current page context
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        if (typeof insertNavigation === 'function') {
+            insertNavigation(currentPage);
+        }
+    };
+    document.head.appendChild(navScript);
+    
+    // Import and initialize footer component
+    const footerScript = document.createElement('script');
+    footerScript.src = 'components/footer.js';
+    footerScript.onload = function() {
+        // Insert standardized footer
+        if (typeof insertFooter === 'function') {
+            insertFooter();
+        }
+    };
+    document.head.appendChild(footerScript);
+    
+    // Connect to database for dynamic content
+    initDatabaseConnection();
+});
 
-// Close menu when clicking on a link (removed - new navbar doesn't use dropdown)
-// document.querySelectorAll('.nav-link').forEach(link => {
-//     link.addEventListener('click', () => {
-//         navMenu.classList.remove('active');
-//     });
-// });
+// Initialize database connection and fetch required data
+function initDatabaseConnection() {
+    // Import the database connector
+    const dbScript = document.createElement('script');
+    dbScript.src = 'js/db-connector.js';
+    dbScript.onload = function() {
+        // Connect to the database using the connector
+        if (typeof connectToDatabase === 'function') {
+            connectToDatabase().then(isConnected => {
+                if (isConnected) {
+                    // Fetch any initial data required for the page
+                    fetchPageData();
+                    
+                    // Check if user is logged in
+                    checkUserAuth();
+                }
+            });
+        }
+    };
+    document.head.appendChild(dbScript);
+}
+
+// Check user authentication status
+function checkUserAuth() {
+    if (typeof getCurrentUser === 'function') {
+        getCurrentUser().then(user => {
+            if (user) {
+                console.log('User is logged in:', user.firstName);
+                updateUIForLoggedInUser(user);
+            } else {
+                updateUIForLoggedOutUser();
+            }
+        });
+    }
+}
+
+// Update UI elements for logged in user
+function updateUIForLoggedInUser(user) {
+    // Find login/signup buttons in navigation
+    const navCta = document.querySelector('.nav-cta');
+    if (navCta) {
+        // Replace login/signup buttons with user profile button
+        const loginBtn = navCta.querySelector('a[href="login.html"]');
+        const signupBtn = navCta.querySelector('a[href="signup.html"]');
+        
+        if (loginBtn && signupBtn) {
+            // Remove the buttons
+            loginBtn.remove();
+            signupBtn.remove();
+            
+            // Add user profile button
+            const userBtn = document.createElement('a');
+            userBtn.href = 'dashboard.html';
+            userBtn.className = 'btn btn-text user-btn';
+            userBtn.innerHTML = `
+                <i class="fas fa-user-circle"></i>
+                ${user.firstName}
+            `;
+            
+            // Insert at the beginning of nav-cta
+            navCta.insertBefore(userBtn, navCta.firstChild);
+        }
+    }
+}
+
+// Update UI elements for logged out user
+function updateUIForLoggedOutUser() {
+    // Nothing to do as the default state is logged out
+    console.log('User is not logged in');
+}
+
+// Fetch data specific to the current page
+function fetchPageData() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Based on current page, fetch specific data
+    switch(currentPage) {
+        case 'index.html':
+            // Fetch testimonials, statistics for homepage
+            fetchTestimonials();
+            break;
+        case 'case-tracker.html':
+            // Fetch active cases
+            fetchCases();
+            break;
+        case 'document-analyzer.html':
+            // No initial data needed
+            break;
+        case 'civic-feedback.html':
+            // Fetch feedback categories
+            fetchFeedbackCategories();
+            break;
+        // Add more cases as needed
+    }
+}
+
+// Example database fetch functions
+function fetchTestimonials() {
+    // Simulated data for testimonials
+    const testimonials = [
+        {
+            id: 1,
+            name: 'Arjun Ramesh',
+            location: 'Bangalore',
+            rating: 5,
+            message: "Nyaya Mitra's document analyzer saved me hours of reading complex legal documents. The AI summarized everything perfectly!"
+        },
+        {
+            id: 2,
+            name: 'Shubham Kundu',
+            location: 'Kolkata',
+            rating: 5,
+            message: "The SOS feature helped me get immediate assistance during an emergency situation. This app is truly a lifesaver!"
+        },
+        {
+            id: 3,
+            name: 'Mahi Shreedhar',
+            location: 'Hyderabad',
+            rating: 4.5,
+            message: "The civic feedback system has helped our community address several longstanding issues with local services. Excellent platform!"
+        }
+    ];
+    
+    // Update testimonials in the DOM if the slider exists
+    const testimonialTrack = document.getElementById('testimonialTrack');
+    if (testimonialTrack) {
+        testimonialTrack.innerHTML = testimonials.map(t => `
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p>${t.message}</p>
+                    <div class="testimonial-rating">
+                        ${generateRatingStars(t.rating)}
+                    </div>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <h4>${t.name}</h4>
+                        <p>${t.location}</p>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+}
+
+// Helper function to generate star ratings
+function generateRatingStars(rating) {
+    let stars = '';
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+    
+    // Full stars
+    for (let i = 0; i < fullStars; i++) {
+        stars += '<i class="fas fa-star"></i>';
+    }
+    
+    // Half star if needed
+    if (hasHalfStar) {
+        stars += '<i class="fas fa-star-half-alt"></i>';
+    }
+    
+    // Empty stars
+    const emptyStars = 5 - Math.ceil(rating);
+    for (let i = 0; i < emptyStars; i++) {
+        stars += '<i class="far fa-star"></i>';
+    }
+    
+    return stars;
+}
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

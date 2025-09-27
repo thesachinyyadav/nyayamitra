@@ -28,8 +28,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="modern-index.css">
-    <link rel="stylesheet" href="nav-enhanced.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="nav-dropdown.css">
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
@@ -38,200 +38,703 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <style>
+        /* Additional styles for enhanced index page */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #171a1c 0%, #2d3748 100%);
+            color: white;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+        
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .hero-text {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+        
+        .title-primary {
+            color: #d37827;
+            display: block;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .title-secondary {
+            color: white;
+            font-size: 2.2rem;
+            display: block;
+        }
+        
+        .hero-tagline {
+            color: #f39c12;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero-description {
+            color: #e2e8f0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-number {
+            color: #d37827;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .stat-label {
+            color: #e2e8f0;
+            font-size: 0.9rem;
+        }
+        
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .btn-lg {
+            padding: 14px 24px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .btn-subtitle {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+        
+        .hero-image {
+            animation: fadeInRight 0.8s ease-out;
+            position: relative;
+        }
+        
+        .hero-dashboard-preview {
+            position: relative;
+            max-width: 500px;
+            margin-left: auto;
+        }
+        
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .card-metrics {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .metric {
+            background: rgba(211, 120, 39, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+            flex: 1;
+        }
+        
+        .metric-value {
+            color: #d37827;
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            color: #e2e8f0;
+            font-size: 0.9rem;
+        }
+        
+        .floating-notifications {
+            position: absolute;
+            top: -30px;
+            right: -20px;
+            width: 260px;
+        }
+        
+        .notification-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: slideInRight 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .notification-item:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+        
+        .notification-item:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+        
+        .notification-item:nth-child(3) {
+            animation-delay: 0.9s;
+        }
+        
+        .notification-item i {
+            color: #d37827;
+        }
+        
+        .notification-item span {
+            color: #e2e8f0;
+            font-size: 0.9rem;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: #e2e8f0;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            z-index: 5;
+        }
+        
+        .scroll-arrow {
+            margin-bottom: 8px;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* Features Section */
+        .features-section-enhanced {
+            padding: 100px 0;
+            background-color: #f8fafb;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .section-line {
+            height: 4px;
+            width: 60px;
+            background: linear-gradient(135deg, #d37827, #f39c12);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .features-grid-enhanced {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card-enhanced {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .feature-card-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(to bottom, #d37827, #f39c12);
+            transition: height 0.3s ease;
+        }
+        
+        .feature-card-enhanced:hover::before {
+            height: 100%;
+        }
+        
+        .feature-card-enhanced:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #d37827, #f39c12);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card-enhanced:hover .feature-icon {
+            transform: rotateY(180deg);
+        }
+        
+        .feature-icon i {
+            font-size: 30px;
+            color: white;
+        }
+        
+        .feature-card-enhanced h3 {
+            font-size: 1.4rem;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card-enhanced p {
+            color: #64748b;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .feature-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-stats .stat {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .feature-link {
+            color: #d37827;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-link:hover {
+            color: #f39c12;
+            transform: translateX(5px);
+        }
+        
+        .emergency-card {
+            border-color: rgba(211, 120, 39, 0.3);
+            background: linear-gradient(to bottom right, rgba(211, 120, 39, 0.05), white);
+        }
+        
+        .emergency-link {
+            color: #e74c3c;
+        }
+        
+        .emergency-link:hover {
+            color: #c0392b;
+        }
+        
+        /* Technology Showcase */
+        .tech-showcase {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #171a1c 0%, #2d3748 100%);
+            color: white;
+            position: relative;
+        }
+        
+        .tech-showcase .section-title {
+            color: white;
+        }
+        
+        .tech-showcase .section-subtitle {
+            color: #e2e8f0;
+            opacity: 0.9;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .tech-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #d37827, #f39c12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .tech-icon i {
+            font-size: 32px;
+            color: white;
+        }
+        
+        .tech-item h4 {
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .tech-item p {
+            color: #e2e8f0;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #171a1c;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loading-content {
+            text-align: center;
+        }
+        
+        .loading-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(211, 120, 39, 0.3);
+            border-radius: 50%;
+            border-top-color: #d37827;
+            margin: 0 auto 20px;
+            animation: spin 1s linear infinite;
+        }
+        
+        .loading-content p {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #d37827;
+            color: white;
+            border-radius: 50%;
+            border: none;
+            box-shadow: 0 5px 15px rgba(211, 120, 39, 0.3);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 99;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: #f39c12;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(211, 120, 39, 0.4);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-image {
+                order: -1;
+                margin-bottom: 40px;
+            }
+            
+            .hero-dashboard-preview {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .hero-actions {
+                justify-content: center;
+            }
+            
+            .floating-notifications {
+                position: relative;
+                top: auto;
+                right: auto;
+                width: 100%;
+                margin-top: 30px;
+                margin-bottom: -80px;
+            }
+            
+            .title-primary {
+                font-size: 2.8rem;
+            }
+            
+            .title-secondary {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 100px 0 40px;
+            }
+            
+            .features-grid-enhanced {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .title-secondary {
+                font-size: 1.5rem;
+            }
+            
+            .scroll-indicator {
+                bottom: 20px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+            }
+            
+            .hero-actions a {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-    <!-- Enhanced Navigation Header -->
-    <header class="enhanced-header" id="mainHeader">
-        <nav class="enhanced-nav">
-            <!-- Logo -->
-            <a href="index-enhanced.html" class="enhanced-logo">
-                <img src="nyaya_mitra_logo.jpg" alt="Nyaya Mitra Logo">
-                <span>Nyaya Mitra</span>
-            </a>
-            
-            <!-- Main Navigation Menu -->
-            <ul class="nav-menu-enhanced" id="navMenu">
-                <!-- Home -->
-                <li class="nav-item-enhanced active">
-                    <a href="index-enhanced.html">
-                        <i class="fas fa-home"></i>
-                        Home
-                    </a>
-                </li>
-                
-                <!-- Legal Services Dropdown -->
-                <li class="nav-item-enhanced">
-                    <a href="#" class="dropdown-toggle">
-                        <i class="fas fa-gavel"></i>
-                        Legal Services
-                        <i class="fas fa-chevron-down dropdown-arrow"></i>
-                    </a>
-                    <div class="dropdown-menu-enhanced">
-                        <a href="document-analyzer.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-file-alt"></i>
-                            Document Analyzer
-                        </a>
-                        <a href="legal-consultation.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-user-tie"></i>
-                            Legal Consultation
-                        </a>
-                        <a href="case-tracker.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-clipboard-list"></i>
-                            Case Tracking
-                        </a>
-                        <a href="document-generator.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-file-contract"></i>
-                            Document Generator
-                        </a>
-                    </div>
-                </li>
-                
-                <!-- Emergency Dropdown -->
-                <li class="nav-item-enhanced">
-                    <a href="#" class="dropdown-toggle">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        Emergency
-                        <i class="fas fa-chevron-down dropdown-arrow"></i>
-                    </a>
-                    <div class="dropdown-menu-enhanced">
-                        <a href="sos-alerts.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-siren"></i>
-                            SOS Alerts
-                        </a>
-                        <a href="emergency-contacts.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-phone-alt"></i>
-                            Emergency Contacts
-                        </a>
-                        <a href="quick-legal-help.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-bolt"></i>
-                            Quick Legal Help
-                        </a>
-                        <a href="crisis-management.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-shield-alt"></i>
-                            Crisis Management
-                        </a>
-                    </div>
-                </li>
-                
-                <!-- Community Dropdown -->
-                <li class="nav-item-enhanced">
-                    <a href="#" class="dropdown-toggle">
-                        <i class="fas fa-users"></i>
-                        Community
-                        <i class="fas fa-chevron-down dropdown-arrow"></i>
-                    </a>
-                    <div class="dropdown-menu-enhanced">
-                        <a href="civic-feedback.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-comment-dots"></i>
-                            Civic Feedback
-                        </a>
-                        <a href="whistleblower.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-user-secret"></i>
-                            Whistleblower Protection
-                        </a>
-                        <a href="public-forums.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-comments"></i>
-                            Public Forums
-                        </a>
-                        <a href="legal-awareness.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-graduation-cap"></i>
-                            Legal Awareness
-                        </a>
-                    </div>
-                </li>
-                
-                <!-- Resources Dropdown -->
-                <li class="nav-item-enhanced">
-                    <a href="#" class="dropdown-toggle">
-                        <i class="fas fa-book"></i>
-                        Resources
-                        <i class="fas fa-chevron-down dropdown-arrow"></i>
-                    </a>
-                    <div class="dropdown-menu-enhanced">
-                        <a href="legal-library.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-library"></i>
-                            Legal Library
-                        </a>
-                        <a href="faq.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-question-circle"></i>
-                            FAQ Section
-                        </a>
-                        <a href="legal-forms.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-file-pdf"></i>
-                            Legal Forms
-                        </a>
-                        <a href="court-locator.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Court Locator
-                        </a>
-                    </div>
-                </li>
-                
-                <!-- Account Dropdown -->
-                <li class="nav-item-enhanced">
-                    <a href="#" class="dropdown-toggle">
-                        <i class="fas fa-user-circle"></i>
-                        Account
-                        <i class="fas fa-chevron-down dropdown-arrow"></i>
-                        <span class="notification-badge" id="notificationBadge">3</span>
-                    </a>
-                    <div class="dropdown-menu-enhanced">
-                        <a href="dashboard.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-tachometer-alt"></i>
-                            Dashboard
-                        </a>
-                        <a href="profile.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-user-edit"></i>
-                            Profile Settings
-                        </a>
-                        <a href="my-cases.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-briefcase"></i>
-                            My Cases
-                        </a>
-                        <a href="notifications.html" class="dropdown-item-enhanced">
-                            <i class="fas fa-bell"></i>
-                            Notifications
-                            <span class="notification-badge">3</span>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-            
-            <!-- Right Side Elements -->
-            <div class="nav-cta-enhanced">
-                <!-- Search Bar -->
-                <div class="nav-search">
-                    <input type="text" placeholder="Search legal resources..." id="navSearch">
-                    <i class="fas fa-search"></i>
-                </div>
-                
-                <!-- Theme Toggle -->
-                <div class="theme-toggle" id="themeToggle"></div>
-                
-                <!-- CTA Buttons -->
-                <a href="login.html" class="btn-enhanced btn-outline-enhanced">
-                    <i class="fas fa-sign-in-alt"></i>
-                    Login
-                </a>
-                <a href="register.html" class="btn-enhanced btn-primary-enhanced">
-                    <i class="fas fa-user-plus"></i>
-                    Get Started
-                </a>
-            </div>
-            
-            <!-- Mobile Menu Toggle -->
-            <div class="mobile-toggle-enhanced" id="mobileToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+    <!-- Standard header will be inserted by script.js -->
+    <header class="header"></header>
 
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section class="modern-hero" id="heroSection">
+        <section class="hero-section" id="heroSection">
             <div class="hero-background">
                 <div class="hero-pattern"></div>
                 <div class="hero-overlay"></div>
@@ -275,9 +778,9 @@
                                 Analyze Documents
                                 <span class="btn-subtitle">AI-Powered Analysis</span>
                             </a>
-                            <a href="legal-consultation.html" class="btn btn-secondary btn-lg">
+                            <a href="case-tracker.html" class="btn btn-secondary btn-lg">
                                 <i class="fas fa-user-tie"></i>
-                                Expert Consultation
+                                Case Tracking
                                 <span class="btn-subtitle">Professional Guidance</span>
                             </a>
                         </div>
@@ -304,15 +807,15 @@
                             
                             <div class="floating-notifications">
                                 <div class="notification-item">
-                                    <i class="fas fa-bell text-success"></i>
+                                    <i class="fas fa-bell"></i>
                                     <span>Case update received</span>
                                 </div>
                                 <div class="notification-item">
-                                    <i class="fas fa-file-alt text-primary"></i>
+                                    <i class="fas fa-file-alt"></i>
                                     <span>Document analysis complete</span>
                                 </div>
                                 <div class="notification-item">
-                                    <i class="fas fa-calendar text-warning"></i>
+                                    <i class="fas fa-calendar"></i>
                                     <span>Hearing scheduled</span>
                                 </div>
                             </div>
@@ -322,7 +825,7 @@
             </div>
             
             <!-- Scroll Indicator -->
-            <div class="scroll-indicator">
+            <div class="scroll-indicator" id="scrollIndicator">
                 <div class="scroll-arrow">
                     <i class="fas fa-chevron-down"></i>
                 </div>
@@ -344,7 +847,7 @@
                 
                 <div class="features-grid-enhanced">
                     <!-- AI Document Analysis -->
-                    <div class="feature-card-enhanced">
+                    <div class="feature-card-enhanced" data-aos="fade-up">
                         <div class="feature-icon">
                             <i class="fas fa-robot"></i>
                         </div>
@@ -360,7 +863,7 @@
                     </div>
                     
                     <!-- Real-time SOS -->
-                    <div class="feature-card-enhanced emergency-card">
+                    <div class="feature-card-enhanced emergency-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
@@ -376,7 +879,7 @@
                     </div>
                     
                     <!-- Expert Consultation -->
-                    <div class="feature-card-enhanced">
+                    <div class="feature-card-enhanced" data-aos="fade-up" data-aos-delay="200">
                         <div class="feature-icon">
                             <i class="fas fa-video"></i>
                         </div>
@@ -386,13 +889,13 @@
                             <span class="stat">500+ Experts</span>
                             <span class="stat">Multiple Languages</span>
                         </div>
-                        <a href="legal-consultation.html" class="feature-link">
+                        <a href="contact.html" class="feature-link">
                             Book Now <i class="fas fa-calendar-alt"></i>
                         </a>
                     </div>
                     
                     <!-- Case Management -->
-                    <div class="feature-card-enhanced">
+                    <div class="feature-card-enhanced" data-aos="fade-up" data-aos-delay="300">
                         <div class="feature-icon">
                             <i class="fas fa-clipboard-list"></i>
                         </div>
@@ -408,7 +911,7 @@
                     </div>
                     
                     <!-- Civic Engagement -->
-                    <div class="feature-card-enhanced">
+                    <div class="feature-card-enhanced" data-aos="fade-up" data-aos-delay="400">
                         <div class="feature-icon">
                             <i class="fas fa-users"></i>
                         </div>
@@ -423,19 +926,19 @@
                         </a>
                     </div>
                     
-                    <!-- Legal Resources -->
-                    <div class="feature-card-enhanced">
+                    <!-- Whistleblower Portal -->
+                    <div class="feature-card-enhanced" data-aos="fade-up" data-aos-delay="500">
                         <div class="feature-icon">
-                            <i class="fas fa-library"></i>
+                            <i class="fas fa-bullhorn"></i>
                         </div>
-                        <h3>Legal Resource Library</h3>
-                        <p>Extensive collection of legal documents, templates, case studies, and educational materials accessible anytime, anywhere.</p>
+                        <h3>Whistleblower Portal</h3>
+                        <p>Securely report illegal activities with complete anonymity. Our platform ensures your protection while making important disclosures.</p>
                         <div class="feature-stats">
-                            <span class="stat">10,000+ Documents</span>
-                            <span class="stat">Regular Updates</span>
+                            <span class="stat">100% Anonymous</span>
+                            <span class="stat">End-to-End Encryption</span>
                         </div>
-                        <a href="legal-library.html" class="feature-link">
-                            Explore <i class="fas fa-book-open"></i>
+                        <a href="whistleblower.html" class="feature-link">
+                            Report Safely <i class="fas fa-lock"></i>
                         </a>
                     </div>
                 </div>
@@ -455,7 +958,7 @@
                 </div>
                 
                 <div class="tech-grid">
-                    <div class="tech-item">
+                    <div class="tech-item" data-aos="fade-up">
                         <div class="tech-icon">
                             <i class="fas fa-brain"></i>
                         </div>
@@ -463,7 +966,7 @@
                         <p>Advanced NLP algorithms understand legal documents in multiple languages</p>
                     </div>
                     
-                    <div class="tech-item">
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="tech-icon">
                             <i class="fas fa-eye"></i>
                         </div>
@@ -471,15 +974,15 @@
                         <p>OCR technology extracts text from scanned documents and images</p>
                     </div>
                     
-                    <div class="tech-item">
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="200">
                         <div class="tech-icon">
-                            <i class="fas fa-shield-virus"></i>
+                            <i class="fas fa-shield-alt"></i>
                         </div>
                         <h4>End-to-End Encryption</h4>
                         <p>Bank-level security protects all your sensitive legal information</p>
                     </div>
                     
-                    <div class="tech-item">
+                    <div class="tech-item" data-aos="fade-up" data-aos-delay="300">
                         <div class="tech-icon">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
@@ -491,82 +994,11 @@
         </section>
     </main>
 
-    <!-- Enhanced Footer -->
-    <footer class="modern-footer-enhanced">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-brand">
-                        <div class="footer-logo">
-                            <img src="nyaya_mitra_logo.jpg" alt="Nyaya Mitra">
-                            <h3>Nyaya Mitra</h3>
-                        </div>
-                        <p>Empowering citizens with accessible legal services through advanced technology and innovation. Building a more just society for everyone.</p>
-                        <div class="social-icons">
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-links">
-                        <h4>Legal Services</h4>
-                        <ul>
-                            <li><a href="document-analyzer.html">Document Analysis</a></li>
-                            <li><a href="legal-consultation.html">Expert Consultation</a></li>
-                            <li><a href="case-tracker.html">Case Tracking</a></li>
-                            <li><a href="document-generator.html">Document Generator</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-links">
-                        <h4>Emergency & Community</h4>
-                        <ul>
-                            <li><a href="sos-alerts.html">SOS Alerts</a></li>
-                            <li><a href="civic-feedback.html">Civic Feedback</a></li>
-                            <li><a href="whistleblower.html">Whistleblower</a></li>
-                            <li><a href="legal-awareness.html">Legal Awareness</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-contact">
-                        <h4>Contact & Support</h4>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>support@nyayamitra.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>+91 1800-NYAYA-MITRA</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>New Delhi, India</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <span>24/7 Emergency Support</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2025 Nyaya Mitra. All rights reserved. | Made with <i class="fas fa-heart"></i> for legal empowerment</p>
-                    <div class="footer-bottom-links">
-                        <a href="privacy-policy.html">Privacy Policy</a>
-                        <a href="terms-of-service.html">Terms of Service</a>
-                        <a href="accessibility.html">Accessibility</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Standard footer will be inserted by script.js -->
+    <footer class="modern-footer"></footer>
+
+    <!-- Ensure footer styles are loaded -->
+    <link rel="stylesheet" href="css/modern-footer.css">
 
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
@@ -583,13 +1015,60 @@
     </button>
 
     <!-- JavaScript -->
-    <script src="enhanced-navigation.js"></script>
-    <script src="modern-index.js"></script>
+    <script src="script.js"></script>
     
-    <!-- Service Worker for PWA -->
+    <!-- Additional Scripts for Enhanced Index -->
     <script>
+        // Hide loading screen when page is fully loaded
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            loadingScreen.classList.add('hidden');
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        });
+
+        // Back to Top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Scroll indicator functionality
+        document.getElementById('scrollIndicator').addEventListener('click', function() {
+            document.getElementById('featuresSection').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+        
+        // Add 'data-aos' attribute to elements for animation
+        document.querySelectorAll('.feature-card-enhanced, .tech-item').forEach(el => {
+            if (!el.hasAttribute('data-aos')) {
+                el.setAttribute('data-aos', 'fade-up');
+            }
+        });
+        
+        // Register service worker for PWA
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js');
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.error('Service Worker registration failed:', error);
+                });
         }
     </script>
 </body>

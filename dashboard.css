@@ -1,9 +1,136 @@
-/* Dashboard Specific Styles */
+/* Dashboard Styles for Nyaya Mitra */
 .dashboard-main {
     margin-top: var(--nav-height);
     padding: 40px 0;
     min-height: calc(100vh - var(--nav-height));
     background: var(--bg-color);
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 70px;
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+    width: 280px;
+    background: #1a1a1a;
+    color: #e1e1e1;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 900;
+}
+
+.sidebar-user {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d37827, #f39c12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.user-info h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.user-info p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.sidebar-nav {
+    flex: 1;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 5px;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    color: #e1e1e1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    font-size: 15px;
+}
+
+.sidebar-nav a i {
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-nav li:hover a {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: #d37827;
+    color: #f39c12;
+}
+
+.sidebar-nav li.active a {
+    background: rgba(211, 120, 39, 0.15);
+    border-left-color: #d37827;
+    color: #f39c12;
+}
+
+.sidebar-footer {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #e1e1e1;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background: rgba(231, 76, 60, 0.2);
+    border-color: rgba(231, 76, 60, 0.3);
+    color: #e74c3c;
 }
 
 .dashboard-header {

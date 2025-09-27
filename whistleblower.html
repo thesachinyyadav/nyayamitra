@@ -8,29 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="nav-dropdown.css">
+    <link rel="stylesheet" href="nav-enhanced.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-brand">
-                <img src="nyaya_mitra_logo.jpg" alt="Nyaya Mitra">
-                <h1>Nyaya Mitra</h1>
-            </a>
-            <div class="nav-center">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="sos-alerts.html">SOS Alerts</a>
-                <a href="document-analyzer.html">Document Analyzer</a>
-                <a href="civic-feedback.html">Civic Feedback</a>
-                <a href="whistleblower.html" class="active">Whistleblower</a>
-            </div>
-            <div class="nav-actions">
-                <a href="about.html" class="btn btn-secondary">Learn More</a>
-                <a href="contact.html" class="btn btn-primary">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <!-- Standard navigation will be inserted by script.js -->
+    <header class="navbar-container"></header>
 
     <!-- Page Hero -->
     <section class="page-hero">
@@ -446,53 +429,8 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Nyaya Mitra</h4>
-                    <p>Secure, anonymous platform for reporting corruption and building a transparent society. Your safety and anonymity are our top priorities.</p>
-                    <div class="social-links">
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Report Types</h4>
-                    <ul>
-                        <li><a href="#bribery">Bribery</a></li>
-                        <li><a href="#embezzlement">Embezzlement</a></li>
-                        <li><a href="#fraud">Fraud</a></li>
-                        <li><a href="#abuse">Abuse of Power</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Your Safety</h4>
-                    <ul>
-                        <li><a href="#anonymity">Anonymous Reporting</a></li>
-                        <li><a href="#protection">Legal Protection</a></li>
-                        <li><a href="#security">Technical Security</a></li>
-                        <li><a href="#support">Legal Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Need Help?</h4>
-                    <p>Questions about the reporting process?</p>
-                    <a href="https://studio.pickaxeproject.com/STUDIO2OYY1JALUDK2UF3/Nyaya_Mitra_TKKN0"
-                       target="_blank" class="btn btn-outline">
-                        <i class="fas fa-robot"></i> Ask AI Assistant
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Nyaya Mitra - Secure Whistleblower Portal. All rights reserved.</p>
-                <p>Protected by advanced encryption - Your identity is safe with us.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Standard footer will be inserted by script.js -->
+    <footer class="modern-footer"></footer>
 
     <!-- Floating Chatbot -->
     <div class="floating-chatbot">
@@ -505,6 +443,17 @@
 
     <script src="js/database.js"></script>
     <script src="script.js"></script>
+    <script type="module">
+        // Import navigation and footer components
+        import { insertNavigation } from './components/navigation.js';
+        import { insertFooter } from './components/footer.js';
+        
+        // Insert the navigation and footer when DOM content is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            insertNavigation('whistleblower'); // Pass the current page id to highlight in nav
+            insertFooter();
+        });
+    </script>
     <script>
         // Character count for description
         const descriptionField = document.getElementById('description');

@@ -1,49 +1,50 @@
 // Database Configuration and Integration
-class SupabaseClient {
+class DatabaseClient {
     constructor() {
-        this.supabaseUrl = 'https://your-project-id.supabase.co'; // Replace with actual URL
-        this.supabaseKey = 'your-anon-key'; // Replace with actual anon key
-        this.apiUrl = `${this.supabaseUrl}/rest/v1`;
-        
-        // Note: In production, replace with your actual Supabase credentials
-        console.log('⚠️ Database integration ready - Configure Supabase credentials for production');
+        this.apiBaseUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            ? `http://${window.location.hostname}:3000/api`
+            : '/api';
+            
+        console.log('📊 SQLite database client initialized');
     }
 
-    async query(table, data, method = 'POST') {
+    async query(endpoint, data = null, method = 'POST') {
         try {
+            const token = localStorage.getItem('authToken');
             const headers = {
-                'Content-Type': 'application/json',
-                'apikey': this.supabaseKey,
-                'Authorization': `Bearer ${this.supabaseKey}`,
-                'Prefer': 'return=representation'
+                'Content-Type': 'application/json'
             };
-
+            
+            if (token) {
+                headers['Authorization'] = `Bearer ${token}`;
+            }
+            
             const options = {
                 method: method,
                 headers: headers
             };
-
+            
             if (data && (method === 'POST' || method === 'PUT')) {
                 options.body = JSON.stringify(data);
             }
-
-            const response = await fetch(`${this.apiUrl}/${table}`, options);
+            
+            const response = await fetch(`${this.apiBaseUrl}/${endpoint}`, options);
             
             if (!response.ok) {
                 throw new Error(`Database error: ${response.status} ${response.statusText}`);
             }
-
+            
             return await response.json();
         } catch (error) {
             console.error('Database operation failed:', error);
-            // Fallback to local storage for demo purposes
-            return this.fallbackStorage(table, data, method);
+            // Fallback to local storage for demo purposes when server is not available
+            return this.fallbackStorage(endpoint, data, method);
         }
     }
-
-    // Fallback storage for demo purposes
-    fallbackStorage(table, data, method) {
-        const storageKey = `nyaya_mitra_${table}`;
+    
+    // Fallback storage for demo or development purposes
+    fallbackStorage(endpoint, data, method) {
+        const storageKey = `nyaya_mitra_${endpoint.split('/').pop()}`;
         
         try {
             if (method === 'POST') {
@@ -55,123 +56,107 @@ class SupabaseClient {
                 };
                 existing.push(newRecord);
                 localStorage.setItem(storageKey, JSON.stringify(existing));
-                return [newRecord];
+                return { success: true, data: [newRecord] };
             } else if (method === 'GET') {
                 return JSON.parse(localStorage.getItem(storageKey) || '[]');
             }
         } catch (error) {
             console.error('Fallback storage error:', error);
-            return [];
+            return { success: false, message: 'Storage operation failed' };
         }
     }
-
-    // SOS Alerts table operations
+    
+    // SOS Alerts operations
     async createSOSAlert(alertData) {
-        const data = {
-            user_id: alertData.userId || `user_${Date.now()}`,
-            alert_type: alertData.type,
+        return await this.query('sos/create', {
+            alertType: alertData.type,
             description: alertData.description,
-            gps_location: alertData.location,
-            status: 'active',
-            priority: alertData.priority || 'high'
-        };
-        
-        return await this.query('sos_alerts', data);
+            location: alertData.location
+        });
     }
-
-    async getSOSAlerts(userId = null) {
-        let url = 'sos_alerts';
-        if (userId) {
-            url += `?user_id=eq.${userId}`;
-        }
-        return await this.query(url, null, 'GET');
+    
+    async getSOSAlerts() {
+        return await this.query('sos/user-alerts', null, 'GET');
     }
-
-    // Whistleblower Reports table operations
+    
+    // Whistleblower Reports operations
     async createWhistleblowerReport(reportData) {
-        const data = {
-            reporter_id: reportData.reporterId || `reporter_${Date.now()}`,
-            report_type: reportData.type,
+        return await this.query('whistleblower/submit', {
+            type: reportData.type,
             title: reportData.title,
             description: reportData.description,
             location: reportData.location,
-            evidence_files: reportData.evidenceFiles || [],
-            anonymity_level: reportData.anonymityLevel,
-            status: 'submitted'
-        };
-        
-        return await this.query('whistleblower_reports', data);
+            anonymity: reportData.anonymity
+        });
     }
-
-    async getWhistleblowerReports(reporterId = null) {
-        let url = 'whistleblower_reports';
-        if (reporterId) {
-            url += `?reporter_id=eq.${reporterId}`;
-        }
-        return await this.query(url, null, 'GET');
-    }
-
-    // Civic Feedback table operations
+    
+    // Civic Feedback operations
     async createCivicFeedback(feedbackData) {
-        const data = {
-            citizen_id: feedbackData.citizenId || `citizen_${Date.now()}`,
-            feedback_type: feedbackData.type,
+        return await this.query('feedback/submit', {
             category: feedbackData.category,
             title: feedbackData.title,
             description: feedbackData.description,
-            location: feedbackData.location,
-            priority: feedbackData.priority,
-            status: 'submitted'
-        };
-        
-        return await this.query('civic_feedback', data);
+            location: feedbackData.location
+        });
     }
-
-    async getCivicFeedback(citizenId = null) {
-        let url = 'civic_feedback';
-        if (citizenId) {
-            url += `?citizen_id=eq.${citizenId}`;
-        }
-        return await this.query(url, null, 'GET');
-    }
-
-    // Contact Messages table operations
+    
+    // Contact Messages operations
     async createContactMessage(messageData) {
-        const data = {
+        return await this.query('contact/submit', {
             name: messageData.name,
             email: messageData.email,
-            phone: messageData.phone,
             subject: messageData.subject,
-            message: messageData.message,
-            status: 'new'
-        };
-        
-        return await this.query('contact_messages', data);
+            message: messageData.message
+        });
     }
-
-    async getContactMessages() {
-        return await this.query('contact_messages', null, 'GET');
-    }
-
-    // Document Analysis Results (optional)
+    
+    // Document Analysis operations
     async saveDocumentAnalysis(analysisData) {
-        const data = {
-            user_id: analysisData.userId || `user_${Date.now()}`,
-            document_name: analysisData.fileName,
-            analysis_result: analysisData.result,
-            confidence_score: analysisData.confidence,
-            analysis_type: analysisData.type || 'legal_document'
-        };
-        
-        return await this.query('document_analyses', data);
+        return await this.query('documents/save-analysis', {
+            filename: analysisData.fileName,
+            fileType: analysisData.fileType,
+            analysisResults: analysisData.results
+        });
+    }
+    
+    async getUserDocuments() {
+        return await this.query('documents/user-documents', null, 'GET');
     }
 }
 
 // Initialize database client
-const db = new SupabaseClient();
+const db = new DatabaseClient();
+
+// Auth functions
+async function loginUser(email, password) {
+    return await db.query('auth/login', { email, password });
+}
+
+async function registerUser(userData) {
+    return await db.query('auth/register', userData);
+}
+
+async function getCurrentUser() {
+    const token = localStorage.getItem('authToken');
+    if (!token) return null;
+    
+    try {
+        return await db.query('auth/me', null, 'GET');
+    } catch (error) {
+        localStorage.removeItem('authToken');
+        return null;
+    }
+}
 
 // Utility functions for form integration
 function showDatabaseStatus(success, message) {
+    // Check if showNotification is defined in script.js
+    if (typeof showNotification === 'function') {
+        showNotification(message, success ? 'success' : 'error');
+        return;
+    }
+    
+    // Fallback notification
     const statusDiv = document.createElement('div');
     statusDiv.className = `database-status ${success ? 'success' : 'error'}`;
     statusDiv.innerHTML = `
@@ -186,7 +171,7 @@ function showDatabaseStatus(success, message) {
     }, 5000);
 }
 
-// Add database status styles
+// Add database status styles for fallback notifications
 const dbStyles = document.createElement('style');
 dbStyles.textContent = `
     .database-status {
@@ -219,7 +204,27 @@ dbStyles.textContent = `
 `;
 document.head.appendChild(dbStyles);
 
+// Check database connection
+async function checkDatabaseConnection() {
+    try {
+        const status = await fetch(`${db.apiBaseUrl}/db/status`);
+        const data = await status.json();
+        return data.status === 'connected';
+    } catch (error) {
+        console.error('Database connection check failed:', error);
+        return false;
+    }
+}
+
 // Export for use in other files
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { SupabaseClient, db, showDatabaseStatus };
+    module.exports = { 
+        DatabaseClient, 
+        db, 
+        loginUser, 
+        registerUser, 
+        getCurrentUser,
+        checkDatabaseConnection,
+        showDatabaseStatus 
+    };
 }
